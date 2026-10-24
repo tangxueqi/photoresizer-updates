@@ -1,6 +1,6 @@
 {
-  "versionCode": 14,
-  "versionName": "1.13",
-  "url": "https://cdn.jsdelivr.net/gh/tangxueqi/photoresizer-updates@v113/PhotoResizer-1.13.apk",
-  "notes": "尺寸标注的默认文字单位由 px 改为 mm（如「1723mm」），仍可手动改成任意文字。"
+  "versionCode": 15,
+  "versionName": "1.14",
+  "url": "https://cdn.jsdelivr.net/gh/tangxueqi/photoresizer-updates@v114/PhotoResizer-1.14.apk",
+  "notes": "有新版本时，右上角版本号上方会显示小红点提醒；点版本号即可检查升级，红点随后消失。"
 }
