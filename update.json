@@ -1,6 +1,6 @@
 {
-  "versionCode": 21,
-  "versionName": "1.20",
-  "url": "https://cdn.jsdelivr.net/gh/tangxueqi/photoresizer-updates@v120/PhotoResizer-1.20.apk",
-  "notes": "去水印体验改进：① 去除后预览即时显示干净结果（不再被红色涂抹层遮挡）；② 笔刷大小改为滑条连续调节，最小可到 1，方便清理极小范围水印。"
+  "versionCode": 22,
+  "versionName": "1.21",
+  "url": "https://cdn.jsdelivr.net/gh/tangxueqi/photoresizer-updates@v121/PhotoResizer-1.21.apk",
+  "notes": "升级检测升级为「多源并行、取最高版本」：同时查 GitHub 真源(raw)、GitHub API、jsDelivr，任一源报到更高版本即提醒，彻底解决 jsDelivr 缓存滞后导致的「发了新版却检测不到」。含 v1.20 去水印改进：预览实时显示清除结果、笔刷滑条可调(最小1)。"
 }
