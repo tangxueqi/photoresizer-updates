@@ -1,6 +1,6 @@
 {
-  "versionCode": 19,
-  "versionName": "1.18",
-  "url": "https://cdn.jsdelivr.net/gh/tangxueqi/photoresizer-updates@v118/PhotoResizer-1.18.apk",
-  "notes": "修复「去水印」清除不成功：处理图解码后用精确缩放对齐掩膜尺寸，避免「尺寸不匹配导致整次处理失败」（此前多数手机照片因 inSampleSize 取整会触发）。去水印功能现在对常见尺寸照片均可正常去除。"
+  "versionCode": 20,
+  "versionName": "1.19",
+  "url": "https://cdn.jsdelivr.net/gh/tangxueqi/photoresizer-updates@v119/PhotoResizer-1.19.apk",
+  "notes": "升级检测改为「jsDelivr 主源 + GitHub 真源兜底」双源容错：主源不可达时自动回退，检查更稳；保持国内 jsDelivr 为主，兼顾 GitHub 直连。升级体验更可靠。"
 }
