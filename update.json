@@ -1,6 +1,6 @@
 {
-  "versionCode": 18,
-  "versionName": "1.17",
-  "url": "https://cdn.jsdelivr.net/gh/tangxueqi/photoresizer-updates@v117/PhotoResizer-1.17.apk",
-  "notes": "修复升级提醒：App 每次冷启动都自动检测升级并点亮右上角小红点（之前「当天只查一次」导致发版后再打开不提醒）；自动检查只亮红点不弹窗，点版本号查看升级详情。"
+  "versionCode": 19,
+  "versionName": "1.18",
+  "url": "https://cdn.jsdelivr.net/gh/tangxueqi/photoresizer-updates@v118/PhotoResizer-1.18.apk",
+  "notes": "修复「去水印」清除不成功：处理图解码后用精确缩放对齐掩膜尺寸，避免「尺寸不匹配导致整次处理失败」（此前多数手机照片因 inSampleSize 取整会触发）。去水印功能现在对常见尺寸照片均可正常去除。"
 }
