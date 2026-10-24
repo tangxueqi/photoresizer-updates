@@ -1,6 +1,6 @@
 {
-  "versionCode": 15,
-  "versionName": "1.14",
-  "url": "https://cdn.jsdelivr.net/gh/tangxueqi/photoresizer-updates@v114/PhotoResizer-1.14.apk",
-  "notes": "有新版本时，右上角版本号上方会显示小红点提醒；点版本号即可检查升级，红点随后消失。"
+  "versionCode": 16,
+  "versionName": "1.15",
+  "url": "https://cdn.jsdelivr.net/gh/tangxueqi/photoresizer-updates@v115/PhotoResizer-1.15.apk",
+  "notes": "新增「去水印」功能：首页选 1 张图，涂抹水印区域后自动修复，保存到相册；纯色背景效果几乎无痕。"
 }
