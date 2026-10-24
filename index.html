@@ -66,7 +66,7 @@
 
 <div class="hero">
   <h1>图片批量调整</h1>
-  <p>批量改尺寸 · 转格式 · 调质量 · 存相册</p>
+  <p>批量改尺寸 · 转格式 · 调质量 · 去水印 · 存相册</p>
 </div>
 
 <div class="wrap">
@@ -76,11 +76,21 @@
     <div class="meta">
       <span class="tag">Android 7.0+</span>
       <span class="tag">17 MB</span>
-      <span class="tag">版本 1.14</span>
+      <span class="tag">版本 1.15</span>
       <span class="tag">Debug 版</span>
     </div>
-    <a class="btn" href="https://cdn.jsdelivr.net/gh/tangxueqi/photoresizer-updates@v114/PhotoResizer-1.14.apk" download>下载 APK 安装包（v1.14）</a>
+    <a class="btn" href="https://cdn.jsdelivr.net/gh/tangxueqi/photoresizer-updates@v115/PhotoResizer-1.15.apk" download>下载 APK 安装包（v1.15）</a>
     <span class="btn-sub">永久固定下载地址（GitHub + jsDelivr CDN），不会失效</span>
+  </div>
+
+  <div class="card">
+    <h2>v1.15 更新内容：新增去水印</h2>
+    <ol>
+      <li><strong>首页新增「去水印」入口</strong>——选 1 张图 → 用手指涂抹水印区域 → 点「开始去除」→ 保存到相册，全流程本地处理，不上传图片</li>
+      <li><strong>智能修复</strong>——基于图像修复算法，从涂抹区域边界向内逐层填充，自动用周边干净像素补全，无需联网</li>
+      <li><strong>纯色/简单背景效果几乎无痕</strong>——白底图、纯色背景上的文字水印去除效果很好；复杂纹理背景可去字，但可能留极轻微痕迹（涂抹时贴紧水印、稍大一圈效果最佳）</li>
+      <li><strong>笔刷三档 + 撤销/清除</strong>——涂错了可撤销、可清空重涂；去除后不满意可「继续涂抹」反复处理</li>
+    </ol>
   </div>
 
   <div class="card">
@@ -187,6 +197,7 @@
       <li>尺寸默认 <strong>800 × 800</strong>，可手动改宽高</li>
       <li>格式默认 <strong>JPG</strong>；切到 <strong>PNG</strong> 后压缩质量滑块会置灰（PNG 为无损格式）</li>
       <li>处理完成后点「保存到相册」，图片会存到 <code>Pictures/PhotoResizer/</code></li>
+      <li><strong>去水印</strong>——首页选「去水印」→ 选 1 张图 → 涂抹覆盖水印 → 「开始去除」→「保存到相册」；笔刷可换粗细，涂错可撤销</li>
       <li><strong>分享接收</strong>——在豆包等 App 里选中图片 → 分享 → 选择「图片批量调整」，图片直接进入本 App 已选列表</li>
     </ol>
   </div>
@@ -200,12 +211,12 @@
 
   <div class="card">
     <h2>文件校验</h2>
-    <div class="hash">SHA-256<br>babc8d9f12461d4310ce143c6179b84fa9407aaced98fc35b33a20a2ed7ae722</div>
+    <div class="hash">SHA-256<br>3c64f95899f5fd3c1a18070399130c67e8c616f339cc3f298894e1af332d39c1</div>
   </div>
 
 </div>
 
-<div class="foot">本页面为临时下载页，链接可能随时失效</div>
+<div class="foot">本页面托管于 GitHub（jsDelivr CDN 加速），地址永久有效</div>
 
 </body>
 </html>
