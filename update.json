@@ -1,6 +1,6 @@
 {
-  "versionCode": 16,
-  "versionName": "1.15",
-  "url": "https://cdn.jsdelivr.net/gh/tangxueqi/photoresizer-updates@v115/PhotoResizer-1.15.apk",
-  "notes": "新增「去水印」功能：首页选 1 张图，涂抹水印区域后自动修复，保存到相册；纯色背景效果几乎无痕。"
+  "versionCode": 17,
+  "versionName": "1.16",
+  "url": "https://cdn.jsdelivr.net/gh/tangxueqi/photoresizer-updates@v116/PhotoResizer-1.16.apk",
+  "notes": "「尚未选择图片」区域现在就是添加按钮：点击即可打开相册选图，不用再找右上角。"
 }
