@@ -1,0 +1,6 @@
+{
+  "versionCode": 13,
+  "versionName": "1.12",
+  "url": "https://cdn.jsdelivr.net/gh/tangxueqi/photoresizer-updates@v112/PhotoResizer-1.12.apk",
+  "notes": "升级地址迁移至 GitHub + jsDelivr 永久固定地址，彻底修复临时隧道失效导致的升级下载失败；包含 v1.11 分享接收功能（豆包等 App 分享图片直接进入本 App）。"
+}
