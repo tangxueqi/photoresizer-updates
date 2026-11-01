@@ -1,6 +1,6 @@
 {
-  "versionCode": 30,
-  "versionName": "1.29",
-  "url": "https://cdn.jsdelivr.net/gh/tangxueqi/photoresizer-updates@v129/BingYing-1.29.apk",
-  "notes": "继续收紧自动识别：切掉与文字连成一片的叶片误检尾巴，叶片上不再被误涂；四个字的笔画覆盖仍保持 95% 以上。"
+  "versionCode": 31,
+  "versionName": "1.30",
+  "url": "https://cdn.jsdelivr.net/gh/tangxueqi/photoresizer-updates@v130/BingYing-1.30.apk",
+  "notes": "去水印换成生成式修复（MI-GAN）：被水印遮住的叶片、轴座结构会被 AI 重新补出来，不再糊成一片白雾。APK 体积相应增加到 71 MB（内置 27 MB 模型）。"
 }
