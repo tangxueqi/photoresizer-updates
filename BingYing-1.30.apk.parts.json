@@ -1,0 +1,22 @@
+{
+  "file": "BingYing-1.30.apk",
+  "size": 62874085,
+  "sha256": "8335ebbc4b46f8345dcb18e4c344929110683b5842c018fb310bbef8fb326090",
+  "parts": [
+    {
+      "name": "BingYing-1.30.apk.part00.zip",
+      "offset": 0,
+      "size": 27262976
+    },
+    {
+      "name": "BingYing-1.30.apk.part01.zip",
+      "offset": 27262976,
+      "size": 27262976
+    },
+    {
+      "name": "BingYing-1.30.apk.part02.zip",
+      "offset": 54525952,
+      "size": 8348133
+    }
+  ]
+}
