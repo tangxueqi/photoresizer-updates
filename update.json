@@ -1,6 +1,6 @@
 {
   "versionCode": 31,
   "versionName": "1.30",
-  "url": "https://github.com/tangxueqi/photoresizer-updates/releases/download/v130/BingYing-1.30.apk",
+  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v130/BingYing-1.30.apk",
   "notes": "去水印换成生成式修复（MI-GAN）：被水印遮住的叶片、轴座结构会被 AI 重新补出来，不再糊成一片白雾。APK 体积从 18 MB 增至 60 MB（内置 27 MB 模型，仅支持 arm64 设备）。"
 }
