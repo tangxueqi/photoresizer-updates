@@ -1,6 +1,6 @@
 {
-  "versionCode": 22,
-  "versionName": "1.21",
-  "url": "https://cdn.jsdelivr.net/gh/tangxueqi/photoresizer-updates@v121/PhotoResizer-1.21.apk",
-  "notes": "升级检测升级为「多源并行、取最高版本」：同时查 GitHub 真源(raw)、GitHub API、jsDelivr，任一源报到更高版本即提醒，彻底解决 jsDelivr 缓存滞后导致的「发了新版却检测不到」。含 v1.20 去水印改进：预览实时显示清除结果、笔刷滑条可调(最小1)。"
+  "versionCode": 23,
+  "versionName": "1.22",
+  "url": "https://cdn.jsdelivr.net/gh/tangxueqi/photoresizer-updates@v122/PhotoResizer-1.22.apk",
+  "notes": "首页新增「抖音视频去水印下载」：粘贴抖音分享链接（支持整段分享文案自动抠链接），自动解析无水印播放地址并下载保存到相册 Movies/Douyin（Android 10+ 无需存储权限）。仍保留多源升级检测与去水印改进。"
 }
