@@ -75,12 +75,24 @@
     <h2>安装包信息</h2>
     <div class="meta">
       <span class="tag">Android 7.0+</span>
-      <span class="tag">18 MB</span>
-      <span class="tag">版本 1.29</span>
+      <span class="tag">71 MB</span>
+      <span class="tag">版本 1.30</span>
       <span class="tag">Debug 版</span>
     </div>
-    <a class="btn" href="https://cdn.jsdelivr.net/gh/tangxueqi/photoresizer-updates@v129/BingYing-1.29.apk" download>下载 APK 安装包（v1.29）</a>
+    <a class="btn" href="https://cdn.jsdelivr.net/gh/tangxueqi/photoresizer-updates@v130/BingYing-1.30.apk" download>下载 APK 安装包（v1.30）</a>
     <span class="btn-sub">永久固定下载地址（GitHub + jsDelivr CDN），不会失效</span>
+  </div>
+
+  <div class="card">
+    <h2>v1.30 更新内容：换成 AI 生成式修复</h2>
+    <ol>
+      <li><strong>之前为什么糊</strong>——旧版用的是「从边界向内插值」：文字带横贯整个画面宽度，左右两端是白色背景，白底就被一层层推进到画面中心，于是扇叶中间糊成一片白雾。这不是参数没调好，是算法品类决定的：插值只会「平均」，不会「生成」</li>
+      <li><strong>现在怎么做的</strong>——改用 <strong>MI-GAN</strong>（Picsart AI Research，ICCV 2023）生成式修复。它靠训练学到的图像先验去「补」被遮住的内容，所以扇叶的硬边、轴座的金属反光、圆形的轮廓都能重新长出来，而不是被抹平</li>
+      <li><strong>修完还要「接缝」</strong>——生成结果与周围原图之间做了 6 像素的渐变过渡，否则拼接边会看出一条线</li>
+      <li><strong>识别也补了一处漏</strong>——水印压在深色轴孔上的那一截笔画，之前因为「与主块不相连」被整块丢掉，修完会残留一小片淡蓝；现在会把主带内被误删的大块补回来</li>
+      <li><strong>体积说明</strong>——模型 27 MB 随包内置（不用联网、装上即用），加上 ONNX Runtime 原生库，APK 从 18 MB 增至 71 MB。模型只保留 arm64-v8a 与 armeabi-v7a 两个架构</li>
+      <li><strong>兜底</strong>——真机上模型加载或推理失败时，会自动退回原来的插值算法，功能不会不可用</li>
+    </ol>
   </div>
 
   <div class="card">
@@ -334,7 +346,7 @@
 
   <div class="card">
     <h2>文件校验</h2>
-    <div class="hash">SHA-256<br>4a8baa5ca737f7b442a4db8756821e883cbaec9292e30ecf891124a1eed5d1ca</div>
+    <div class="hash">SHA-256<br>98befe2a8fd46a1503f31c881172452d45186d50134662d56db1397541b9488e</div>
   </div>
 
 </div>
