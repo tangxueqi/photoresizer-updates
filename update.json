@@ -1,6 +1,6 @@
 {
-  "versionCode": 26,
-  "versionName": "1.25",
-  "url": "https://cdn.jsdelivr.net/gh/tangxueqi/photoresizer-updates@v125/BingYing-1.25.apk",
-  "notes": "应用更名为「冰影电商素材」：桌面图标名、标题栏、系统分享面板均显示新名称。相册保存目录同步改为 Pictures/冰影电商素材（此前保存在 Pictures/PhotoResizer，老图片仍在旧目录中，不会被删除）。功能不变，可直接覆盖升级。"
+  "versionCode": 27,
+  "versionName": "1.26",
+  "url": "https://cdn.jsdelivr.net/gh/tangxueqi/photoresizer-updates@v126/BingYing-1.26.apk",
+  "notes": "换上新的冰晶质感图标：圆形/方形/圆角等各机型遮罩下均完整显示，含 Android 13+ 自适应图标与旧版本兜底图标。功能与上一版一致，可直接覆盖升级。"
 }
