@@ -1,6 +1,6 @@
 {
-  "versionCode": 25,
-  "versionName": "1.24",
-  "url": "https://cdn.jsdelivr.net/gh/tangxueqi/photoresizer-updates@v124/PhotoResizer-1.24.apk",
-  "notes": "彻底修复抖音解析超时：放弃原来「隐藏网页截取视频地址」的方案（抖音分享页现在只是引导打开 App 的中转页，根本不会请求视频，所以必然超时），改为直接读取抖音服务端返回的视频数据，解析通常 1-3 秒完成。按钮下方进度条保持原样：解析中滑动、下载中显示百分比。"
+  "versionCode": 26,
+  "versionName": "1.25",
+  "url": "https://cdn.jsdelivr.net/gh/tangxueqi/photoresizer-updates@v125/BingYing-1.25.apk",
+  "notes": "应用更名为「冰影电商素材」：桌面图标名、标题栏、系统分享面板均显示新名称。相册保存目录同步改为 Pictures/冰影电商素材（此前保存在 Pictures/PhotoResizer，老图片仍在旧目录中，不会被删除）。功能不变，可直接覆盖升级。"
 }
