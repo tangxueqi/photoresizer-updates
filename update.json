@@ -1,6 +1,6 @@
 {
-  "versionCode": 23,
-  "versionName": "1.22",
-  "url": "https://cdn.jsdelivr.net/gh/tangxueqi/photoresizer-updates@v122/PhotoResizer-1.22.apk",
-  "notes": "首页新增「抖音视频去水印下载」：粘贴抖音分享链接（支持整段分享文案自动抠链接），自动解析无水印播放地址并下载保存到相册 Movies/Douyin（Android 10+ 无需存储权限）。仍保留多源升级检测与去水印改进。"
+  "versionCode": 24,
+  "versionName": "1.23",
+  "url": "https://cdn.jsdelivr.net/gh/tangxueqi/photoresizer-updates@v123/PhotoResizer-1.23.apk",
+  "notes": "修复抖音下载：点击「解析并下载」后不再出现空白页面，始终停留在本页；按钮下方新增进度条——解析中为滑动进度条，下载中显示确定进度与百分比，完成后提示已保存到相册。同时加固解析引擎（防页面跳走、提升兼容性）。"
 }
