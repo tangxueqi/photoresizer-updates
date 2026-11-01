@@ -1,6 +1,6 @@
 {
-  "versionCode": 24,
-  "versionName": "1.23",
-  "url": "https://cdn.jsdelivr.net/gh/tangxueqi/photoresizer-updates@v123/PhotoResizer-1.23.apk",
-  "notes": "修复抖音下载：点击「解析并下载」后不再出现空白页面，始终停留在本页；按钮下方新增进度条——解析中为滑动进度条，下载中显示确定进度与百分比，完成后提示已保存到相册。同时加固解析引擎（防页面跳走、提升兼容性）。"
+  "versionCode": 25,
+  "versionName": "1.24",
+  "url": "https://cdn.jsdelivr.net/gh/tangxueqi/photoresizer-updates@v124/PhotoResizer-1.24.apk",
+  "notes": "彻底修复抖音解析超时：放弃原来「隐藏网页截取视频地址」的方案（抖音分享页现在只是引导打开 App 的中转页，根本不会请求视频，所以必然超时），改为直接读取抖音服务端返回的视频数据，解析通常 1-3 秒完成。按钮下方进度条保持原样：解析中滑动、下载中显示百分比。"
 }
