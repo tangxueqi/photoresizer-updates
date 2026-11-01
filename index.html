@@ -76,11 +76,21 @@
     <div class="meta">
       <span class="tag">Android 7.0+</span>
       <span class="tag">18 MB</span>
-      <span class="tag">版本 1.27</span>
+      <span class="tag">版本 1.28</span>
       <span class="tag">Debug 版</span>
     </div>
-    <a class="btn" href="https://cdn.jsdelivr.net/gh/tangxueqi/photoresizer-updates@v127/BingYing-1.27.apk" download>下载 APK 安装包（v1.27）</a>
+    <a class="btn" href="https://cdn.jsdelivr.net/gh/tangxueqi/photoresizer-updates@v128/BingYing-1.28.apk" download>下载 APK 安装包（v1.28）</a>
     <span class="btn-sub">永久固定下载地址（GitHub + jsDelivr CDN），不会失效</span>
+  </div>
+
+  <div class="card">
+    <h2>v1.28 更新内容：自动识别终于把四个字认全了</h2>
+    <ol>
+      <li><strong>修掉"只认出中间几笔"</strong>——上一版按"绝对颜色"找水印，而水印是同一种半透明色压在深浅不同的底上：压在深灰扇叶上偏青蓝，压在浅灰铝座上几乎是淡蓝白。用固定颜色范围去找，只能咬住其中一部分，实测只覆盖了水印笔画的 56%</li>
+      <li><strong>改为按"色度偏移"识别</strong>——不再看颜色绝对值，而是看每个像素"相对同亮度区域的色偏方向"。半透明水印不管压在哪，色偏方向是一致的，于是深色扇叶、浅色铝座上的笔画能一次认全。实测四个字覆盖率 <strong>96.6% / 96.7% / 98.1% / 98.8%</strong></li>
+      <li><strong>文字带按纵向重叠率收块</strong>——一个字常横跨条带边界，按"块中心是否落在带内"会把"冰"的上下沿整块丢掉；改成按重叠比例收，边角笔画不再缺</li>
+      <li><strong>误检清理</strong>——闭运算后丢掉细碎孤立块，扇叶反光、画面边缘这类误判不再画上红膜；无文字水印的图仍会正确提示"未识别到"</li>
+    </ol>
   </div>
 
   <div class="card">
@@ -314,7 +324,7 @@
 
   <div class="card">
     <h2>文件校验</h2>
-    <div class="hash">SHA-256<br>807b7a675ff571058d9f74552f4c34e90d149123376c5cd60d9849376b7212c8</div>
+    <div class="hash">SHA-256<br>88c35b101b58126b317350774d0f424b3a681e23b05bb4e27a697855aef0f8df</div>
   </div>
 
 </div>
