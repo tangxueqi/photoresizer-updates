@@ -75,12 +75,22 @@
     <h2>安装包信息</h2>
     <div class="meta">
       <span class="tag">Android 7.0+</span>
-      <span class="tag">17 MB</span>
-      <span class="tag">版本 1.26</span>
+      <span class="tag">18 MB</span>
+      <span class="tag">版本 1.27</span>
       <span class="tag">Debug 版</span>
     </div>
-    <a class="btn" href="https://cdn.jsdelivr.net/gh/tangxueqi/photoresizer-updates@v126/BingYing-1.26.apk" download>下载 APK 安装包（v1.26）</a>
+    <a class="btn" href="https://cdn.jsdelivr.net/gh/tangxueqi/photoresizer-updates@v127/BingYing-1.27.apk" download>下载 APK 安装包（v1.27）</a>
     <span class="btn-sub">永久固定下载地址（GitHub + jsDelivr CDN），不会失效</span>
+  </div>
+
+  <div class="card">
+    <h2>v1.27 更新内容：去水印重做，自动识别不再手涂</h2>
+    <ol>
+      <li><strong>打开带字水印的图，自动识别、不用涂抹</strong>——进入去水印页后自动分析整张图，把「整幅图里共用同一颜色、横向铺开、笔画式稀疏」的那一片文字判为水印，识别到就直接用红膜标出，你确认后点「开始去除」即可。原理是按颜色分簇统计，不依赖 OCR，所以中英文、艺术字、半透明字都能抓</li>
+      <li><strong>主体不再被连带抹掉</strong>——新的掩膜算法只保留与水印笔画连通的部分，并且对封闭笔画内部的小孔做有上限的填充：字被笔画围住的干净扇叶、纹理不会被整块糊掉</li>
+      <li><strong>手涂仍然保留，可以和自动识别叠加</strong>——自动没抓全的地方（比如字压在金属高光上）用手指补两笔，二者取并集后一起处理；右上角还有「自动识别」按钮可以重新跑一次</li>
+      <li><strong>认不出会明确告诉你</strong>——如果图里没有符合特征的文字（比如纯风景、纯商品图），会提示「未识别到文字水印，请用手指涂抹水印区域」，不会乱涂乱删</li>
+    </ol>
   </div>
 
   <div class="card">
@@ -290,7 +300,7 @@
       <li>尺寸默认 <strong>800 × 800</strong>，可手动改宽高</li>
       <li>格式默认 <strong>JPG</strong>；切到 <strong>PNG</strong> 后压缩质量滑块会置灰（PNG 为无损格式）</li>
       <li>处理完成后点「保存到相册」，图片会存到 <code>Pictures/PhotoResizer/</code></li>
-      <li><strong>去水印</strong>——首页选「去水印」→ 选 1 张图 → 涂抹覆盖水印 → 「开始去除」→「保存到相册」；笔刷可换粗细，涂错可撤销</li>
+      <li><strong>去水印</strong>——首页选「去水印」→ 选 1 张图 → <strong>自动识别文字水印</strong>（红膜标出，可手指补涂）→「开始去除」→「保存到相册」；笔刷可换粗细，涂错可撤销，右上「自动识别」可重跑</li>
       <li><strong>分享接收</strong>——在豆包等 App 里选中图片 → 分享 → 选择「冰影电商素材」，图片直接进入本 App 已选列表</li>
     </ol>
   </div>
@@ -304,7 +314,7 @@
 
   <div class="card">
     <h2>文件校验</h2>
-    <div class="hash">SHA-256<br>f2e57822d9fa0412c6277fd9fd1c6cee3411797e92915787ea876248173f8797</div>
+    <div class="hash">SHA-256<br>807b7a675ff571058d9f74552f4c34e90d149123376c5cd60d9849376b7212c8</div>
   </div>
 
 </div>
