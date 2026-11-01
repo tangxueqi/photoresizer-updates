@@ -1,6 +1,6 @@
 {
-  "versionCode": 29,
-  "versionName": "1.28",
-  "url": "https://cdn.jsdelivr.net/gh/tangxueqi/photoresizer-updates@v128/BingYing-1.28.apk",
-  "notes": "修复自动识别只认出中间几笔的问题：改为按色度偏移识别，同一水印压在深色扇叶和浅色铝面上都能认全，四个字笔画全部覆盖。"
+  "versionCode": 30,
+  "versionName": "1.29",
+  "url": "https://cdn.jsdelivr.net/gh/tangxueqi/photoresizer-updates@v129/BingYing-1.29.apk",
+  "notes": "继续收紧自动识别：切掉与文字连成一片的叶片误检尾巴，叶片上不再被误涂；四个字的笔画覆盖仍保持 95% 以上。"
 }
