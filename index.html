@@ -76,11 +76,21 @@
     <div class="meta">
       <span class="tag">Android 7.0+</span>
       <span class="tag">18 MB</span>
-      <span class="tag">版本 1.28</span>
+      <span class="tag">版本 1.29</span>
       <span class="tag">Debug 版</span>
     </div>
-    <a class="btn" href="https://cdn.jsdelivr.net/gh/tangxueqi/photoresizer-updates@v128/BingYing-1.28.apk" download>下载 APK 安装包（v1.28）</a>
+    <a class="btn" href="https://cdn.jsdelivr.net/gh/tangxueqi/photoresizer-updates@v129/BingYing-1.29.apk" download>下载 APK 安装包（v1.29）</a>
     <span class="btn-sub">永久固定下载地址（GitHub + jsDelivr CDN），不会失效</span>
+  </div>
+
+  <div class="card">
+    <h2>v1.29 更新内容：去掉叶片上的误识别</h2>
+    <ol>
+      <li><strong>切掉误检"尾巴"</strong>——文字块会和叶片阴影连成一个巨大的连通块。实测这个块从 y=462 一直拖到 y=780，其中 y&gt;642 的部分每行只有不到 40 个像素（文字行是 150~350），而且完全不含水印色。原来它是整块被收进来的，叶片上就多出一片红膜</li>
+      <li><strong>按行密度断裂判定</strong>——从行密度峰值向两侧走，连续多行低于峰值 35% 就判定文字带结束，带外像素全部裁掉。文字行密度沿纵向变化平缓，误检尾巴是骤降，两者很容易分开</li>
+      <li><strong>精确率 77.6% → 85.3%</strong>，四个字覆盖率仍有 <strong>95.7% / 96.5% / 98.1% / 97.9%</strong>，几乎没有为了精确牺牲完整</li>
+      <li><strong>没有过度收紧</strong>——试过把色度阈值从 0.022 提到 0.030，精确率只涨 1.4 个点，但"影"字覆盖率会掉到 85.7%，笔画开始缺失，所以最终保持 0.022。剩下的"误差"里 85% 其实带明显水印色，是水印的羽化边，去掉反而会留淡色残影</li>
+    </ol>
   </div>
 
   <div class="card">
@@ -324,7 +334,7 @@
 
   <div class="card">
     <h2>文件校验</h2>
-    <div class="hash">SHA-256<br>88c35b101b58126b317350774d0f424b3a681e23b05bb4e27a697855aef0f8df</div>
+    <div class="hash">SHA-256<br>4a8baa5ca737f7b442a4db8756821e883cbaec9292e30ecf891124a1eed5d1ca</div>
   </div>
 
 </div>
