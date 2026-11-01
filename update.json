@@ -1,6 +1,6 @@
 {
-  "versionCode": 27,
-  "versionName": "1.26",
-  "url": "https://cdn.jsdelivr.net/gh/tangxueqi/photoresizer-updates@v126/BingYing-1.26.apk",
-  "notes": "换上新的冰晶质感图标：圆形/方形/圆角等各机型遮罩下均完整显示，含 Android 13+ 自适应图标与旧版本兜底图标。功能与上一版一致，可直接覆盖升级。"
+  "versionCode": 28,
+  "versionName": "1.27",
+  "url": "https://cdn.jsdelivr.net/gh/tangxueqi/photoresizer-updates@v127/BingYing-1.27.apk",
+  "notes": "去水印重做：打开水印图自动识别图中文字水印，不用再涂抹；新增连通性约束与孔洞保护，主体不再被连带抹掉。"
 }
