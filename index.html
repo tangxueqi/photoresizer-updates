@@ -76,11 +76,20 @@
     <div class="meta">
       <span class="tag">Android 7.0+</span>
       <span class="tag">17 MB</span>
-      <span class="tag">版本 1.22</span>
+      <span class="tag">版本 1.23</span>
       <span class="tag">Debug 版</span>
     </div>
-    <a class="btn" href="https://cdn.jsdelivr.net/gh/tangxueqi/photoresizer-updates@v122/PhotoResizer-1.22.apk" download>下载 APK 安装包（v1.22）</a>
+    <a class="btn" href="https://cdn.jsdelivr.net/gh/tangxueqi/photoresizer-updates@v123/PhotoResizer-1.23.apk" download>下载 APK 安装包（v1.23）</a>
     <span class="btn-sub">永久固定下载地址（GitHub + jsDelivr CDN），不会失效</span>
+  </div>
+
+  <div class="card">
+    <h2>v1.23 更新内容：修复抖音下载空白页</h2>
+    <ol>
+      <li><strong>修复点击「解析并下载」后整页空白</strong>——部分机型上隐藏的解析 WebView 会把页面内容顶掉；现改为 1 像素、全透明并移出屏幕的方式后台运行，不会再影响任何页面显示</li>
+      <li><strong>按钮下方新增进度条</strong>——解析中显示滑动进度条并提示"正在解析视频地址…"；下载中显示确定进度条与百分比；完成后提示"已保存到相册（Movies/Douyin）"，失败显示红色原因。全程停留本页，不跳转</li>
+      <li><strong>解析引擎加固</strong>——拦截抖音 App 唤起跳转防止解析被打断，启用 DOM 存储提升分享页兼容性，解析回调切回主线程更稳定</li>
+    </ol>
   </div>
 
   <div class="card">
@@ -267,7 +276,7 @@
 
   <div class="card">
     <h2>文件校验</h2>
-    <div class="hash">SHA-256<br>904dcc784b414b125da963b5c67f91a10736da37b11c8bb28da730d95a6cc8e4</div>
+    <div class="hash">SHA-256<br>e2f8e0ef5852bd21b1c4c98c70346f0ef08b93281163893e54b5062768e71081</div>
   </div>
 
 </div>
