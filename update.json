@@ -1,6 +1,6 @@
 {
-  "versionCode": 32,
-  "versionName": "1.31",
-  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v131/BingYing-1.31.apk",
-  "notes": "修复去水印后出现红色鬼影的问题：AI 修复改为整图一次推理，能看到完整场景再补纹理，效果比 v1.30 更自然。"
+  "versionCode": 33,
+  "versionName": "1.32",
+  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v132/BingYing-1.32.apk",
+  "notes": "去水印新增「选框」方式：在图上拖动蓝色选框，或用步长 1/5/10 像素微调尺寸和位置；点「确定并保存坐标」后，之后每张图都按这个坐标清除，已选多张时可一键批量应用。"
 }
