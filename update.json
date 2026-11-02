@@ -1,12 +1,12 @@
 {
-  "versionCode": 40,
-  "versionName": "1.39",
-  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v139/BingYing-1.39.apk",
+  "versionCode": 41,
+  "versionName": "1.40",
+  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v140/BingYing-1.40.apk",
   "size": 57025910,
   "mirrors": [
-    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v139/BingYing-1.39.apk",
-    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v139/BingYing-1.39.apk",
-    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v139/BingYing-1.39.apk"
+    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v140/BingYing-1.40.apk",
+    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v140/BingYing-1.40.apk",
+    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v140/BingYing-1.40.apk"
   ],
-  "notes": "视频号解析可用：切换到国内可达的解析服务（解决 workers.dev 被墙导致的连接失败）；适配真实响应结构，返回明文直链无需解密；错误提示更明确（视频已删/私密/服务维护等）。"
+  "notes": "支持浏览器跳转地址：视频号链接归一化，channels…sph?id=XXX 自动转换成官方短链 weixin.qq.com/sph/XXX 再解析，两种粘贴方式都支持。"
 }
