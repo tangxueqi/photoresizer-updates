@@ -1,12 +1,12 @@
 {
-  "versionCode": 36,
-  "versionName": "1.35",
-  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v135/BingYing-1.35.apk",
+  "versionCode": 37,
+  "versionName": "1.36",
+  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v136/BingYing-1.36.apk",
   "size": 62939621,
   "mirrors": [
-    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v135/BingYing-1.35.apk",
-    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v135/BingYing-1.35.apk",
-    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v135/BingYing-1.35.apk"
+    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v136/BingYing-1.36.apk",
+    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v136/BingYing-1.36.apk",
+    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v136/BingYing-1.36.apk"
   ],
-  "notes": "修复升级下载：进度百分比显示错误（爆表）与下载完成后误报失败——探测请求误把 206 响应长度当文件总长，现已改为从 Content-Range 解析真实总长，并行下载也随之真正生效。"
+  "notes": "去水印选框改进：① 去掉四角小方块，只保留虚线线条，不再遮挡视野；② 手指点在框内任意位置即可直接拖动选框到任意位置，边缘外侧窄带仍可拖拽改尺寸，小距离用上下左右微调。"
 }
