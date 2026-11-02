@@ -76,14 +76,23 @@
     <div class="meta">
       <span class="tag">Android 7.0+</span>
       <span class="tag">约 57 MB</span>
-      <span class="tag">版本 1.38</span>
+      <span class="tag">版本 1.39</span>
       <span class="tag">Debug 版</span>
     </div>
-    <a class="btn" href="https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v138/BingYing-1.38.apk" download>下载 APK 安装包（v1.38）</a>
+    <a class="btn" href="https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v139/BingYing-1.39.apk" download>下载 APK 安装包（v1.39）</a>
     <span class="btn-sub">国内加速下载地址（GitHub Releases 加速镜像，支持多镜像自动切换与并行下载）</span>
-    <span class="btn-sub">若加速镜像不可用，点 <a href="https://github.com/tangxueqi/photoresizer-updates/releases/download/v138/BingYing-1.38.apk" target="_blank">GitHub 直链</a> 或换用桌面浏览器下载后再传手机</span>
+    <span class="btn-sub">若加速镜像不可用，点 <a href="https://github.com/tangxueqi/photoresizer-updates/releases/download/v139/BingYing-1.39.apk" target="_blank">GitHub 直链</a> 或换用桌面浏览器下载后再传手机</span>
   </div>
 
+
+  <div class="card">
+    <h2>v1.39 更新内容：视频号解析可用</h2>
+    <ol>
+      <li><strong>修复「解析服务暂不可用」的真正根因</strong>——v1.38 用的解析服务是 <code>*.workers.dev</code> 域名，在国内网络被 DNS 污染/阻断，手机根本连不上；现已切换到同一开源服务的自定义域名部署（wx.defou.ai），国内可达且已实测全链路可用</li>
+      <li><strong>适配真实响应结构</strong>——实测发现直链在 <code>feedInfo.videoUrl</code>（而非 media 数组），且返回的是<strong>明文 mp4 无需解密</strong>；media 数组路径与 ISAAC64 解密保留作兼容</li>
+      <li><strong>错误提示更明确</strong>——视频已删除/私密 →「该视频可能已被删除、设为私密，或不是公开分享链接」；服务维护 →「解析服务配置失效」；网络不通 →「无法连接解析服务」</li>
+    </ol>
+  </div>
 
   <div class="card">
     <h2>v1.38 更新内容：修复视频号解析</h2>
