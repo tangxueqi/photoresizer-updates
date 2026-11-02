@@ -76,12 +76,21 @@
     <div class="meta">
       <span class="tag">Android 7.0+</span>
       <span class="tag">60 MB</span>
-      <span class="tag">版本 1.30</span>
+      <span class="tag">版本 1.31</span>
       <span class="tag">Debug 版</span>
     </div>
-    <a class="btn" href="https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v130/BingYing-1.30.apk" download>下载 APK 安装包（v1.30）</a>
+    <a class="btn" href="https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v131/BingYing-1.31.apk" download>下载 APK 安装包（v1.31）</a>
     <span class="btn-sub">国内加速下载地址（GitHub Releases 加速镜像），已实测 60 MB 约几秒下完</span>
-    <span class="btn-sub">若加速镜像不可用，点 <a href="https://github.com/tangxueqi/photoresizer-updates/releases/download/v130/BingYing-1.30.apk" target="_blank">GitHub 直链</a> 或换用桌面浏览器下载后再传手机</span>
+    <span class="btn-sub">若加速镜像不可用，点 <a href="https://github.com/tangxueqi/photoresizer-updates/releases/download/v131/BingYing-1.31.apk" target="_blank">GitHub 直链</a> 或换用桌面浏览器下载后再传手机</span>
+  </div>
+
+  <div class="card">
+    <h2>v1.31 更新内容：修复红色鬼影</h2>
+    <ol>
+      <li><strong>修复 v1.30 去水印后出现红色鬼影的问题</strong>——v1.30 把图切成 512 的小窗口逐块修复，水印在小窗口里占比过大、上下文残缺，AI 生成了整片错乱内容（实机表现为水印位置变成红色字块）</li>
+      <li><strong>改为整图一次推理</strong>——实测模型内部固定按 512 分辨率处理，整图送入不增加任何耗时，但能看到完整场景，补出的纹理反而更自然（800 / 1024 / 1280 / 1600 像素四种尺寸全部验证通过）</li>
+      <li><strong>新增推理有效性检查</strong>——若模型几乎原样返回水印，自动退回插值算法，保证水印一定会被抹掉</li>
+    </ol>
   </div>
 
   <div class="card">
@@ -349,7 +358,7 @@
 
   <div class="card">
     <h2>文件校验</h2>
-    <div class="hash">SHA-256<br>0ee5e9bb4987654423c294d5524fce0b89f20b79336757bc3037e60fb9d19db2</div>
+    <div class="hash">SHA-256<br>bd09ab5cc70c9408d48efaf5562f03558cdce3414791a04ef8b14a74986a1571</div>
   </div>
 
 </div>
