@@ -76,14 +76,23 @@
     <div class="meta">
       <span class="tag">Android 7.0+</span>
       <span class="tag">约 57 MB</span>
-      <span class="tag">版本 1.37</span>
+      <span class="tag">版本 1.38</span>
       <span class="tag">Debug 版</span>
     </div>
-    <a class="btn" href="https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v137/BingYing-1.37.apk" download>下载 APK 安装包（v1.37）</a>
+    <a class="btn" href="https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v138/BingYing-1.38.apk" download>下载 APK 安装包（v1.38）</a>
     <span class="btn-sub">国内加速下载地址（GitHub Releases 加速镜像，支持多镜像自动切换与并行下载）</span>
-    <span class="btn-sub">若加速镜像不可用，点 <a href="https://github.com/tangxueqi/photoresizer-updates/releases/download/v137/BingYing-1.37.apk" target="_blank">GitHub 直链</a> 或换用桌面浏览器下载后再传手机</span>
+    <span class="btn-sub">若加速镜像不可用，点 <a href="https://github.com/tangxueqi/photoresizer-updates/releases/download/v138/BingYing-1.38.apk" target="_blank">GitHub 直链</a> 或换用桌面浏览器下载后再传手机</span>
   </div>
 
+
+  <div class="card">
+    <h2>v1.38 更新内容：修复视频号解析</h2>
+    <ol>
+      <li><strong>修复「解析服务暂不可用」</strong>——v1.37 的接口路径与真实解析服务不匹配（当时无法联网验证），现已对齐真实契约（<code>POST /api/fetch_video_profile</code>），按 <code>feedInfo.media</code> 取直链并拼接 urlToken</li>
+      <li><strong>新增 ISAAC64 解密</strong>——视频号视频不是明文 mp4：前 128KB 用 ISAAC64 密钥流加密，下载完成后自动解密，保存到相册即可正常播放</li>
+      <li><strong>失败原因更明确</strong>——解析失败时会显示具体原因（服务端返回的错误、仅作者可见/私密链接、HTTP 状态码），不再只说「暂不可用」</li>
+    </ol>
+  </div>
 
   <div class="card">
     <h2>v1.37 更新内容：抖音 / 视频号双平台下载</h2>
