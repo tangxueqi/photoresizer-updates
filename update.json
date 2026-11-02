@@ -1,12 +1,12 @@
 {
-  "versionCode": 34,
-  "versionName": "1.33",
-  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v133/BingYing-1.33.apk",
-  "size": 62939617,
+  "versionCode": 35,
+  "versionName": "1.34",
+  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v134/BingYing-1.34.apk",
+  "size": 62939621,
   "mirrors": [
-    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v133/BingYing-1.33.apk",
-    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v133/BingYing-1.33.apk",
-    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v133/BingYing-1.33.apk"
+    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v134/BingYing-1.34.apk",
+    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v134/BingYing-1.34.apk",
+    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v134/BingYing-1.34.apk"
   ],
-  "notes": "升级体验改进：① 升级弹窗显示安装包大小；② 下载改为多镜像自动择优 + 4 路并行分块，速度更快；③ 安装完成后自动清理旧安装包，不再占用存储空间。"
+  "notes": "修复：选框模式下面板遮挡图片——面板展开时图片自动等比缩小到面板上方，右下角水印不再被盖住，框得到也看得清。"
 }
