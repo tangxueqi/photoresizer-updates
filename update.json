@@ -1,12 +1,12 @@
 {
-  "versionCode": 37,
-  "versionName": "1.36",
-  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v136/BingYing-1.36.apk",
-  "size": 62939621,
+  "versionCode": 38,
+  "versionName": "1.37",
+  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v137/BingYing-1.37.apk",
+  "size": 57025910,
   "mirrors": [
-    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v136/BingYing-1.36.apk",
-    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v136/BingYing-1.36.apk",
-    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v136/BingYing-1.36.apk"
+    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v137/BingYing-1.37.apk",
+    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v137/BingYing-1.37.apk",
+    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v137/BingYing-1.37.apk"
   ],
-  "notes": "去水印选框改进：① 去掉四角小方块，只保留虚线线条，不再遮挡视野；② 手指点在框内任意位置即可直接拖动选框到任意位置，边缘外侧窄带仍可拖拽改尺寸，小距离用上下左右微调。"
+  "notes": "首页视频下载升级为抖音与微信视频号双平台自动识别：输入链接后按域名自动路由，输入框下方实时显示已识别平台。抖音链接走设备端无水印解析；微信视频号(weixin.qq.com/sph/...)链接自动获取 finder.video.qq.com 原始无水印直链并下载。"
 }
