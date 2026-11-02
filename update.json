@@ -1,12 +1,12 @@
 {
-  "versionCode": 38,
-  "versionName": "1.37",
-  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v137/BingYing-1.37.apk",
+  "versionCode": 39,
+  "versionName": "1.38",
+  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v138/BingYing-1.38.apk",
   "size": 57025910,
   "mirrors": [
-    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v137/BingYing-1.37.apk",
-    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v137/BingYing-1.37.apk",
-    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v137/BingYing-1.37.apk"
+    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v138/BingYing-1.38.apk",
+    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v138/BingYing-1.38.apk",
+    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v138/BingYing-1.38.apk"
   ],
-  "notes": "首页视频下载升级为抖音与微信视频号双平台自动识别：输入链接后按域名自动路由，输入框下方实时显示已识别平台。抖音链接走设备端无水印解析；微信视频号(weixin.qq.com/sph/...)链接自动获取 finder.video.qq.com 原始无水印直链并下载。"
+  "notes": "修复视频号解析失败：接口路径对齐真实解析服务契约，并新增 ISAAC64 解密——视频号视频前 128KB 是加密的，下载后自动解密成可播放视频；解析失败时提示更具体的原因。"
 }
