@@ -76,14 +76,23 @@
     <div class="meta">
       <span class="tag">Android 7.0+</span>
       <span class="tag">约 60 MB</span>
-      <span class="tag">版本 1.34</span>
+      <span class="tag">版本 1.35</span>
       <span class="tag">Debug 版</span>
     </div>
-    <a class="btn" href="https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v134/BingYing-1.34.apk" download>下载 APK 安装包（v1.34）</a>
+    <a class="btn" href="https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v135/BingYing-1.35.apk" download>下载 APK 安装包（v1.35）</a>
     <span class="btn-sub">国内加速下载地址（GitHub Releases 加速镜像，支持多镜像自动切换与并行下载）</span>
-    <span class="btn-sub">若加速镜像不可用，点 <a href="https://github.com/tangxueqi/photoresizer-updates/releases/download/v134/BingYing-1.34.apk" target="_blank">GitHub 直链</a> 或换用桌面浏览器下载后再传手机</span>
+    <span class="btn-sub">若加速镜像不可用，点 <a href="https://github.com/tangxueqi/photoresizer-updates/releases/download/v135/BingYing-1.35.apk" target="_blank">GitHub 直链</a> 或换用桌面浏览器下载后再传手机</span>
   </div>
 
+
+  <div class="card">
+    <h2>v1.35 更新内容：修复升级下载的进度与误报</h2>
+    <ol>
+      <li><strong>修复进度百分比爆表</strong>——v1.33/1.34 下载时百分比可能显示成几亿%（如「1112775500%」）：探测请求用 Range 取回 206 响应，代码却把这个 1 字节响应的长度当成了文件总长，导致「百分比 = 已下载字节 × 100」</li>
+      <li><strong>修复下载完成后误报失败</strong>——同一个错误还导致「文件长度 ≠ 总长(1)」校验必失败，好容易下完的安装包被当成坏包删掉、报「下载或安装拉起失败」。现改为从响应头 Content-Range 里解析真实总长</li>
+      <li><strong>多连接并行下载真正生效</strong>——此前因总长被误判为 1 字节，并行分块从未触发；修复后大文件会真正开 4 路并行，速度更快</li>
+    </ol>
+  </div>
 
   <div class="card">
     <h2>v1.34 更新内容：修复选框面板遮挡图片</h2>
@@ -387,7 +396,7 @@
 
   <div class="card">
     <h2>文件校验</h2>
-    <div class="hash">SHA-256<br>ea659dc5847159a4e608ecffd11123d99719cdf18dd01b3dfa30ff12a9e1280d</div>
+    <div class="hash">SHA-256<br>ece2652486d31d05c6304faebad6a773685bf59a24a55379695c689ecfa7e772</div>
   </div>
 
 </div>
