@@ -1,6 +1,12 @@
 {
-  "versionCode": 33,
-  "versionName": "1.32",
-  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v132/BingYing-1.32.apk",
-  "notes": "去水印新增「选框」方式：在图上拖动蓝色选框，或用步长 1/5/10 像素微调尺寸和位置；点「确定并保存坐标」后，之后每张图都按这个坐标清除，已选多张时可一键批量应用。"
+  "versionCode": 34,
+  "versionName": "1.33",
+  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v133/BingYing-1.33.apk",
+  "size": 62939617,
+  "mirrors": [
+    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v133/BingYing-1.33.apk",
+    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v133/BingYing-1.33.apk",
+    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v133/BingYing-1.33.apk"
+  ],
+  "notes": "升级体验改进：① 升级弹窗显示安装包大小；② 下载改为多镜像自动择优 + 4 路并行分块，速度更快；③ 安装完成后自动清理旧安装包，不再占用存储空间。"
 }
