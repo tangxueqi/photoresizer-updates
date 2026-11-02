@@ -1,12 +1,12 @@
 {
-  "versionCode": 39,
-  "versionName": "1.38",
-  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v138/BingYing-1.38.apk",
+  "versionCode": 40,
+  "versionName": "1.39",
+  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v139/BingYing-1.39.apk",
   "size": 57025910,
   "mirrors": [
-    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v138/BingYing-1.38.apk",
-    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v138/BingYing-1.38.apk",
-    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v138/BingYing-1.38.apk"
+    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v139/BingYing-1.39.apk",
+    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v139/BingYing-1.39.apk",
+    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v139/BingYing-1.39.apk"
   ],
-  "notes": "修复视频号解析失败：接口路径对齐真实解析服务契约，并新增 ISAAC64 解密——视频号视频前 128KB 是加密的，下载后自动解密成可播放视频；解析失败时提示更具体的原因。"
+  "notes": "视频号解析可用：切换到国内可达的解析服务（解决 workers.dev 被墙导致的连接失败）；适配真实响应结构，返回明文直链无需解密；错误提示更明确（视频已删/私密/服务维护等）。"
 }
