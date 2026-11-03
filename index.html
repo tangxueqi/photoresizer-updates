@@ -77,14 +77,25 @@
     <div class="meta">
       <span class="tag">Android 7.0+</span>
       <span class="tag">约 57 MB</span>
-      <span class="tag">版本 1.44</span>
+      <span class="tag">版本 1.45</span>
       <span class="tag">Debug 版</span>
     </div>
-    <a class="btn" href="https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.44.apk" download>下载 APK 安装包（v1.44）</a>
+    <a class="btn" href="https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.45.apk" download>下载 APK 安装包（v1.45）</a>
     <span class="btn-sub">国内加速下载地址（GitHub Releases 加速镜像，支持多镜像自动切换与并行下载）</span>
-    <span class="btn-sub">若加速镜像不可用，点 <a href="https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.44.apk" target="_blank">GitHub 直链</a> 或换用桌面浏览器下载后再传手机</span>
+    <span class="btn-sub">若加速镜像不可用，点 <a href="https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.45.apk" target="_blank">GitHub 直链</a> 或换用桌面浏览器下载后再传手机</span>
   </div>
 
+
+  <div class="card">
+    <h2>v1.45 更新内容：签章抗大幅缩放</h2>
+    <ol>
+      <li><strong>双尺度签章</strong>——盖章时除了原有的细网格层，再用「粗网格 + 更低频」把同一份签章多写一遍。粗层信号波长是细层的 2~3 倍，图片被大幅缩小后依然存活</li>
+      <li><strong>实测效果</strong>——800×800 盖章后缩到 512×512、400×400 再查验，100% 检出（此前 512 就会失败）；缩到 300 以下属于极端破坏，不保证</li>
+      <li><strong>画质不变</strong>——双层叠加后最大像素差约 19（0~255 灰阶），肉眼完全看不出；白底产品图同样干净</li>
+      <li><strong>兼容旧图</strong>——旧版本盖的章（只有细层）仍可正常查验</li>
+    </ol>
+    <p class="note">说明：缩放到 300×300 以下时图像只剩约 9 万像素，任何盲水印都没有足够空间承载签章信息，这是物理极限。建议对外发布至少保留 400px 以上尺寸。</p>
+  </div>
 
   <div class="card">
     <h2>v1.44 更新内容：修复「导出权属证书」没反应</h2>
@@ -485,7 +496,7 @@
 
   <div class="card">
     <h2>文件校验</h2>
-    <div class="hash">SHA-256<br>d4612877ced41132325ff4bc13b6dc827efcec2bdbf6ec84224f0ebcfacea2ca</div>
+    <div class="hash">SHA-256<br>57f87f56b802cc5f9adc7600477929a2ab490b4d2d5d77f5db88ac146d9a0547</div>
   </div>
 
 </div>
