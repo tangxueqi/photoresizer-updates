@@ -1,12 +1,12 @@
 {
-  "versionCode": 44,
-  "versionName": "1.43",
-  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.43.apk",
+  "versionCode": 45,
+  "versionName": "1.44",
+  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.44.apk",
   "size": 57075062,
   "mirrors": [
-    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.43.apk",
-    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.43.apk",
-    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.43.apk"
+    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.44.apk",
+    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.44.apk",
+    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.44.apk"
   ],
-  "notes": "修复电子签章「盖了章却查验不到」：查验改为多尺度识别 + 自动纠错重试，盖章后立即自检（不通过则提示重试，不再保存无效签章）。常见尺寸与白底产品图检出率已到 100%。"
+  "notes": "修复「导出权属证书」无反应：证书此前被当成图片存入相册集合，.txt 文件图库不显示且失败无提示；现改存到「下载/冰影电商素材」目录，导出中/成功/失败均有明确提示。"
 }
