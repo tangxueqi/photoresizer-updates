@@ -1,12 +1,12 @@
 {
-  "versionCode": 45,
-  "versionName": "1.44",
-  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.44.apk",
+  "versionCode": 46,
+  "versionName": "1.45",
+  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.45.apk",
   "size": 57075062,
   "mirrors": [
-    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.44.apk",
-    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.44.apk",
-    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.44.apk"
+    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.45.apk",
+    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.45.apk",
+    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.45.apk"
   ],
-  "notes": "修复「导出权属证书」无反应：证书此前被当成图片存入相册集合，.txt 文件图库不显示且失败无提示；现改存到「下载/冰影电商素材」目录，导出中/成功/失败均有明确提示。"
+  "notes": "电子签章支持大幅缩放：同一签章以「粗+细」双尺度网格写入图片，图片被缩小到 512×512、400×400 后仍可查验（实测 100% 检出）；画质保持肉眼不可见。"
 }
