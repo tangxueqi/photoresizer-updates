@@ -1,12 +1,12 @@
 {
-  "versionCode": 43,
-  "versionName": "1.42",
-  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.42.apk",
+  "versionCode": 44,
+  "versionName": "1.43",
+  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.43.apk",
   "size": 57075062,
   "mirrors": [
-    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.42.apk",
-    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.42.apk",
-    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.42.apk"
+    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.43.apk",
+    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.43.apk",
+    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.43.apk"
   ],
-  "notes": "新增「电子签章」：给图片加盖肉眼不可见的版权签章（身份指纹+盖章时间），对方重压缩、缩放也抹不掉；内置查验与权属证书导出，可自证版权。"
+  "notes": "修复电子签章「盖了章却查验不到」：查验改为多尺度识别 + 自动纠错重试，盖章后立即自检（不通过则提示重试，不再保存无效签章）。常见尺寸与白底产品图检出率已到 100%。"
 }
