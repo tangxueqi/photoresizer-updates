@@ -77,14 +77,25 @@
     <div class="meta">
       <span class="tag">Android 7.0+</span>
       <span class="tag">约 57 MB</span>
-      <span class="tag">版本 1.50</span>
+      <span class="tag">版本 1.51</span>
       <span class="tag">Debug 版</span>
     </div>
-    <a class="btn" href="https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.50.apk" download>下载 APK 安装包（v1.50）</a>
+    <a class="btn" href="https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.51.apk" download>下载 APK 安装包（v1.51）</a>
     <span class="btn-sub">国内加速下载地址（GitHub Releases 加速镜像，支持多镜像自动切换与并行下载）</span>
-    <span class="btn-sub">若加速镜像不可用，点 <a href="https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.50.apk" target="_blank">GitHub 直链</a> 或换用桌面浏览器下载后再传手机</span>
+    <span class="btn-sub">若加速镜像不可用，点 <a href="https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.51.apk" target="_blank">GitHub 直链</a> 或换用桌面浏览器下载后再传手机</span>
   </div>
 
+
+  <div class="card">
+    <h2>v1.51 更新内容：彻底修掉透明 PNG 叠上去变黑块</h2>
+    <ol>
+      <li><strong>上一版没修到点子上</strong>——真机上部分 PNG 解出来后，像素里明明 alpha=0，但整张 bitmap 的 <code>hasAlpha</code> 标志是 false，系统绘制时会直接忽略逐像素透明，把透明区（RGB 通常是 0）画成纯黑方块。这个现象只在真机出现，模拟器测试复现不了</li>
+      <li><strong>现在从解码到绘制全程修</strong>——读图后立即开启 alpha 标志；预览与导出前都强制重建一张干净的 ARGB_8888（透明像素的黑色 RGB 一并清零），不再依赖「是否检测到透明」的自动判断</li>
+      <li><strong>去背默认恒开</strong>——真透明 PNG 也只是被标准化、不改内容；黑底 / 白底 / 灰底等纯色底照样从四边连通区抠成透明</li>
+      <li><strong>页面可自查</strong>——叠加页开关下方新增一行「叠层已标准化：透明区 xx%」。看到这行字就说明新版已生效；看不到说明手机装的还是旧版，需要在 App 里点检查更新</li>
+    </ol>
+    <p class="note">用法不变。若装上新版后仍看到黑块，请先看这一行状态文字是否存在，再看「透明区」百分比是否合理（一般在 50% 以上）；把它截图发来即可直接定位。</p>
+  </div>
 
   <div class="card">
     <h2>v1.50 更新内容：修复叠加后透明 PNG 变黑块</h2>
