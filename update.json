@@ -1,12 +1,12 @@
 {
-  "versionCode": 47,
-  "versionName": "1.46",
-  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.46.apk",
+  "versionCode": 48,
+  "versionName": "1.47",
+  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.47.apk",
   "size": 57091446,
   "mirrors": [
-    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.46.apk",
-    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.46.apk",
-    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.46.apk"
+    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.47.apk",
+    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.47.apk",
+    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.47.apk"
   ],
-  "notes": "修复签章两处硬伤：①白底产品图存 q95 后查不出签章（已修，贴纯白块自动加肉眼不可见的 2 级抖动）；②亮部被压暗导致白底发灰（最大像素差 45→个位数）。另外修掉极端缩放下「读出错误指纹」的问题，宁可提示未检出也不张冠李戴。"
+  "notes": "电子签章支持批量：主界面选好几张图进来，一次给全部图片盖章并保存到相册，不再一张一张来。带进度显示和逐张结果（哪张成功、哪张因画面过曝失败），可继续添加或删除某一张。"
 }
