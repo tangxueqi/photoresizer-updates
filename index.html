@@ -77,14 +77,25 @@
     <div class="meta">
       <span class="tag">Android 7.0+</span>
       <span class="tag">约 57 MB</span>
-      <span class="tag">版本 1.45</span>
+      <span class="tag">版本 1.46</span>
       <span class="tag">Debug 版</span>
     </div>
-    <a class="btn" href="https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.45.apk" download>下载 APK 安装包（v1.45）</a>
+    <a class="btn" href="https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.46.apk" download>下载 APK 安装包（v1.46）</a>
     <span class="btn-sub">国内加速下载地址（GitHub Releases 加速镜像，支持多镜像自动切换与并行下载）</span>
-    <span class="btn-sub">若加速镜像不可用，点 <a href="https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.45.apk" target="_blank">GitHub 直链</a> 或换用桌面浏览器下载后再传手机</span>
+    <span class="btn-sub">若加速镜像不可用，点 <a href="https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.46.apk" target="_blank">GitHub 直链</a> 或换用桌面浏览器下载后再传手机</span>
   </div>
 
+
+  <div class="card">
+    <h2>v1.46 更新内容：修掉两个会让签章「失效」的硬伤</h2>
+    <ol>
+      <li><strong>白底商品图查不出签章</strong>——白底块内像素全挤在 248~255，水印波形和 JPEG 量化步长重叠，信号被抹平。现在对贴近纯白/纯黑的块自动注入 2 级抖动撑开动态余量（肉眼不可见），白底图存 q95 后可正常检出</li>
+      <li><strong>图片变亮发灰</strong>——此前为了防止白底被截断，对亮块做了 30~60 级的整体压暗，白底图会明显变灰。现改为按水印实际振幅留最小余量，最大像素差从 45 降到个位数</li>
+      <li><strong>改尺寸后读出「错乱的指纹」</strong>——极端缩放下粗层只错 2 位，但校验时用了同一份被污染的数据自证，导致输出一个「看似有效但错」的指纹。现在只有存在独立可信依据时才纠错，否则如实返回「未检出」——宁可查不到，也不张冠李戴</li>
+      <li><strong>回归验证</strong>——28 项签章相关测试全部通过，覆盖大幅缩放（1600/1200/800→512/400）、白底产品图、JPEG q95 压缩、肉眼不可见性</li>
+    </ol>
+    <p class="note">已知边界：缩到 320px 以下、或原图某边不足 400px 的极端横版图，可能如实提示「未检出」而不是给出错误结论。建议对外发布保留 400px 以上。</p>
+  </div>
 
   <div class="card">
     <h2>v1.45 更新内容：签章抗大幅缩放</h2>
