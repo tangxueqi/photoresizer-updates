@@ -1,12 +1,12 @@
 {
-  "versionCode": 49,
-  "versionName": "1.48",
-  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.48.apk",
-  "size": 57124210,
+  "versionCode": 50,
+  "versionName": "1.49",
+  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.49.apk",
+  "size": 57124214,
   "mirrors": [
-    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.48.apk",
-    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.48.apk",
-    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.48.apk"
+    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.49.apk",
+    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.49.apk",
+    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.49.apk"
   ],
-  "notes": "新增「图片叠加合成」：编辑图片模式下选 2 张图（第 1 张 JPG 底图、第 2 张透明 PNG 叠层），把 PNG 叠到 JPG 上做成一张成品图。支持拖动、缩放、旋转、调透明度、交换图层、一键斜放居中；叠层若是白底而非透明 PNG 会自动去除浅色背景（只抠边缘、保留主体高光）。合成结果保存到相册。"
+  "notes": "改变图片大小新增「比例缩放」：宽高输入框自动预填所选图片的实际像素尺寸；× 号下方新增链条小标，闭合时改任一数字、另一个按原图长宽比自动跟随，打开时两框自由填写，图片按填写的尺寸处理。重置恢复为原图实际尺寸。"
 }
