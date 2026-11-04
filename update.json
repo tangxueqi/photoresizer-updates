@@ -1,12 +1,12 @@
 {
-  "versionCode": 46,
-  "versionName": "1.45",
-  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.45.apk",
-  "size": 57075062,
+  "versionCode": 47,
+  "versionName": "1.46",
+  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.46.apk",
+  "size": 57091446,
   "mirrors": [
-    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.45.apk",
-    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.45.apk",
-    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.45.apk"
+    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.46.apk",
+    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.46.apk",
+    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.46.apk"
   ],
-  "notes": "电子签章支持大幅缩放：同一签章以「粗+细」双尺度网格写入图片，图片被缩小到 512×512、400×400 后仍可查验（实测 100% 检出）；画质保持肉眼不可见。"
+  "notes": "修复签章两处硬伤：①白底产品图存 q95 后查不出签章（已修，贴纯白块自动加肉眼不可见的 2 级抖动）；②亮部被压暗导致白底发灰（最大像素差 45→个位数）。另外修掉极端缩放下「读出错误指纹」的问题，宁可提示未检出也不张冠李戴。"
 }
