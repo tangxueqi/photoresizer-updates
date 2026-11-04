@@ -1,12 +1,12 @@
 {
-  "versionCode": 50,
-  "versionName": "1.49",
-  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.49.apk",
+  "versionCode": 51,
+  "versionName": "1.50",
+  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.50.apk",
   "size": 57124214,
   "mirrors": [
-    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.49.apk",
-    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.49.apk",
-    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.49.apk"
+    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.50.apk",
+    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.50.apk",
+    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.50.apk"
   ],
-  "notes": "改变图片大小新增「比例缩放」：宽高输入框自动预填所选图片的实际像素尺寸；× 号下方新增链条小标，闭合时改任一数字、另一个按原图长宽比自动跟随，打开时两框自由填写，图片按填写的尺寸处理。重置恢复为原图实际尺寸。"
+  "notes": "修复图片叠加合成中「透明 PNG 叠上去变成黑块」：部分相册 / 微信 / 手机系统转存 PNG 时会丢掉 alpha 通道，透明像素被拍平成纯黑。现在自动识别叠层是否成片透明，不透明时从四边推断纯色底色（黑 / 白 / 灰 / 浅米色皆可）并抠成透明，只抠连到四边的底色、不误伤零件暗部与高光。真透明 PNG 原样叠加不做任何改动。"
 }
