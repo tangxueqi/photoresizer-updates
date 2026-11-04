@@ -1,12 +1,12 @@
 {
-  "versionCode": 48,
-  "versionName": "1.47",
-  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.47.apk",
-  "size": 57091446,
+  "versionCode": 49,
+  "versionName": "1.48",
+  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.48.apk",
+  "size": 57124210,
   "mirrors": [
-    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.47.apk",
-    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.47.apk",
-    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.47.apk"
+    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.48.apk",
+    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.48.apk",
+    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.48.apk"
   ],
-  "notes": "电子签章支持批量：主界面选好几张图进来，一次给全部图片盖章并保存到相册，不再一张一张来。带进度显示和逐张结果（哪张成功、哪张因画面过曝失败），可继续添加或删除某一张。"
+  "notes": "新增「图片叠加合成」：编辑图片模式下选 2 张图（第 1 张 JPG 底图、第 2 张透明 PNG 叠层），把 PNG 叠到 JPG 上做成一张成品图。支持拖动、缩放、旋转、调透明度、交换图层、一键斜放居中；叠层若是白底而非透明 PNG 会自动去除浅色背景（只抠边缘、保留主体高光）。合成结果保存到相册。"
 }
