@@ -77,14 +77,26 @@
     <div class="meta">
       <span class="tag">Android 7.0+</span>
       <span class="tag">约 57 MB</span>
-      <span class="tag">版本 1.49</span>
+      <span class="tag">版本 1.50</span>
       <span class="tag">Debug 版</span>
     </div>
-    <a class="btn" href="https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.49.apk" download>下载 APK 安装包（v1.49）</a>
+    <a class="btn" href="https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.50.apk" download>下载 APK 安装包（v1.50）</a>
     <span class="btn-sub">国内加速下载地址（GitHub Releases 加速镜像，支持多镜像自动切换与并行下载）</span>
-    <span class="btn-sub">若加速镜像不可用，点 <a href="https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.49.apk" target="_blank">GitHub 直链</a> 或换用桌面浏览器下载后再传手机</span>
+    <span class="btn-sub">若加速镜像不可用，点 <a href="https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.50.apk" target="_blank">GitHub 直链</a> 或换用桌面浏览器下载后再传手机</span>
   </div>
 
+
+  <div class="card">
+    <h2>v1.50 更新内容：修复叠加后透明 PNG 变黑块</h2>
+    <ol>
+      <li><strong>问题原因</strong>——透明 PNG 经相册、微信或部分手机的文件选择器转存时，alpha 通道会被丢掉，原本透明的像素被拍平成<strong>纯黑</strong>，叠上去就成了一块黑方块。这不是图片本身坏了，也不是叠加功能把透明改没了</li>
+      <li><strong>自动识别</strong>——叠层读进来后先判断是否「成片透明」；真透明 PNG 原样使用、一个像素都不改；只有判定出「没有透明通道」才自动开启去背</li>
+      <li><strong>底色自动推断</strong>——不再只认白底。从图片四边采样算出底色，黑底、白底、灰底、浅米色底都能抠成透明，覆盖不同手机拍平透明时用的不同颜色</li>
+      <li><strong>不误伤主体</strong>——只从四边连通区向内抠，零件内部的深色螺纹、金属反光、白色高光都在主体包围内，不会被抠掉；叠层若本身是完整照片（没有成片纯色底），则原样返回不乱抠</li>
+      <li><strong>界面说清楚</strong>——开关改名为「去除纯色背景（黑 / 白底）」，并提示「检测到叠层没有透明通道，已自动把纯色底抠成透明」，不再是让人困惑的「去除浅色背景」</li>
+    </ol>
+    <p class="note">用法不变：编辑图片模式选 2 张 → 开始叠加合成 → 调整位置 → 合成并保存。进页面后保持去背开关自动开启即可；若你用的是真透明 PNG，开关会自动关闭，属正常现象。</p>
+  </div>
 
   <div class="card">
     <h2>v1.49 更新内容：改变大小支持「比例缩放」</h2>
