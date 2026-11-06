@@ -1,12 +1,12 @@
 {
-  "versionCode": 53,
-  "versionName": "1.52",
-  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.52.apk",
+  "versionCode": 54,
+  "versionName": "1.53",
+  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.53.apk",
   "size": 57140598,
   "mirrors": [
-    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.52.apk",
-    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.52.apk",
-    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.52.apk"
+    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.53.apk",
+    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.53.apk",
+    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.53.apk"
   ],
-  "notes": "编辑图片新增「图片剪切」：在图上拖动选框，框外变暗预览，点一次剪切即只保留框内内容。拖四角/四边调整大小，框内拖动移动；下方实时显示选框的宽高像素与原图尺寸；提供自由、1:1、4:3、3:4、3:2、2:3、16:9、9:16 比例一键锁定，锁定后拖动手柄另一边自动跟随。选多张时同一选框按归一化坐标批量套用，逐张保存到相册；预览与导出共用同一套坐标，所见即所得，导出按原图分辨率。透明 PNG 自动存为 PNG，不会被压成黑底。"
+  "notes": "修复「图片剪切」页面不显示图片：此前该页漏了画布尺寸测量，图片被按 0×0 绘制，只剩一片灰底和左上角一个白色小方块。现在进入剪切页即可正常看到原图与选框，框外变暗、框内保留，拖动选框时下方像素数值照常实时更新；另补上「正在载入图片…」与「图片加载失败，请返回重新选择」提示，多张图切换时手势不再误用上一张的旧尺寸。改尺寸、图片叠加、电子签章等功能不变。"
 }
