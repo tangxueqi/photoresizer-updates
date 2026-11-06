@@ -77,14 +77,25 @@
     <div class="meta">
       <span class="tag">Android 7.0+</span>
       <span class="tag">约 57 MB</span>
-      <span class="tag">版本 1.52</span>
+      <span class="tag">版本 1.53</span>
       <span class="tag">Debug 版</span>
     </div>
-    <a class="btn" href="https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.52.apk" download>下载 APK 安装包（v1.52）</a>
+    <a class="btn" href="https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.53.apk" download>下载 APK 安装包（v1.53）</a>
     <span class="btn-sub">国内加速下载地址（GitHub Releases 加速镜像，支持多镜像自动切换与并行下载）</span>
-    <span class="btn-sub">若加速镜像不可用，点 <a href="https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.52.apk" target="_blank">GitHub 直链</a> 或换用桌面浏览器下载后再传手机</span>
+    <span class="btn-sub">若加速镜像不可用，点 <a href="https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.53.apk" target="_blank">GitHub 直链</a> 或换用桌面浏览器下载后再传手机</span>
   </div>
 
+
+  <div class="card">
+    <h2>v1.53 更新内容：修复「图片剪切」不显示图片</h2>
+    <ol>
+      <li><strong>问题出在哪</strong>——剪切页漏了测量画布尺寸，图片被按 0×0 绘制。所以整块预览区只剩灰底，左上角一个白色小方块（其实是 8 个手柄全挤到了原点），看着就是「没有显示图片」；下方像素数值其实一直在正常计算</li>
+      <li><strong>现在正常显示</strong>——补上画布尺寸测量，进入剪切页立刻看到原图、选框和框外变暗预览；拖四角 / 四边调大小、框内拖动移动、实时像素数值、1:1 等比例锁定、批量剪切全部照常可用</li>
+      <li><strong>加载状态更清楚</strong>——新增「正在载入图片…」与「图片加载失败，请返回重新选择」提示，不再一律显示「请先在主界面选择图片」；多张图来回切换时，手势计算不再误用上一张的旧尺寸</li>
+      <li><strong>加了防回归测试</strong>——新增 6 项自动化测试，界面测试会直接检查画布算出来的图片显示矩形是否非零、是否越界、是否保持原图比例；全量回归 238 项全部通过</li>
+    </ol>
+    <p class="note">用法不变：首页选「编辑图片」→ 选好图片 → 点「开始剪切」→ 拖动选框、点 1:1（或别的比例）→ 看下方像素数值 → 点「剪切并保存到相册」。改尺寸、图片叠加、电子签章等功能不受影响。</p>
+  </div>
 
   <div class="card">
     <h2>v1.52 更新内容：编辑图片新增「图片剪切」</h2>
