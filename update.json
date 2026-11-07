@@ -1,12 +1,12 @@
 {
-  "versionCode": 66,
-  "versionName": "1.65",
-  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.65.apk",
+  "versionCode": 67,
+  "versionName": "1.66",
+  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.66.apk",
   "size": 57156982,
   "mirrors": [
-    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.65.apk",
-    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.65.apk",
-    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.65.apk"
+    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.66.apk",
+    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.66.apk",
+    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.66.apk"
   ],
-  "notes": "线条粗细和文字大小默认改成「细 / 小」。进入标注页时「线条粗细」默认选中「细」、「文字大小」默认选中「小」，新建线条、尺寸标注、文字标注一律按此起点，避免粗线大字一上来就盖住商品图；三档按钮照旧可随时切换成「中」「粗」「大」，选中已有标注时面板仍自动同步为该标注自身的粗细与字号，改完即时生效。颜色、文字背景、放大镜、撤销重做、保存行为全部不变。新增 2 项测试（默认预设常量、界面默认高亮），全量回归 272 项全部通过。"
+  "notes": "选择图片框改回严格 1:1 正方形，框内首屏固定显示两排、每排两个正方形缩略图。左侧选图卡片宽高都锁成同一尺寸，不再被按钮列或系统字体拉成竖长方形，右侧六个功能按钮仍与它上下等高。缩略图原本宽度按两列均分、高度按两行平分，两个数值不一致会变成长方形；现在每格边长统一取宽度与高度两个方向里较小的值，严格正方形，图片不变形。不足 4 张时用可点击的空位补齐成完整 2×2 网格，点空格子即可继续添加图片；超过 4 张时仍在这块固定区域里上下滑动，右侧滑行条照旧。点单张放大预览、右上角删除、继续添加、六个功能按钮全部不变。新增 2 项布局测试（正方形格子、首屏 2×2 占位），全量回归 274 项全部通过。"
 }
