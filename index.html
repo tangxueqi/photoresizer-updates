@@ -77,14 +77,25 @@
     <div class="meta">
       <span class="tag">Android 7.0+</span>
       <span class="tag">约 57 MB</span>
-      <span class="tag">版本 1.61</span>
+      <span class="tag">版本 1.62</span>
       <span class="tag">Debug 版</span>
     </div>
-    <a class="btn" href="https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.61.apk" download>下载 APK 安装包（v1.61）</a>
+    <a class="btn" href="https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.62.apk" download>下载 APK 安装包（v1.62）</a>
     <span class="btn-sub">国内加速下载地址（GitHub Releases 加速镜像，支持多镜像自动切换与并行下载）</span>
-    <span class="btn-sub">若加速镜像不可用，点 <a href="https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.61.apk" target="_blank">GitHub 直链</a> 或换用桌面浏览器下载后再传手机</span>
+    <span class="btn-sub">若加速镜像不可用，点 <a href="https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.62.apk" target="_blank">GitHub 直链</a> 或换用桌面浏览器下载后再传手机</span>
   </div>
 
+
+  <div class="card">
+    <h2>v1.62 更新内容：放大镜里也能看到正在拖动的红线条</h2>
+    <ol>
+      <li><strong>放大镜不再只有红点</strong>——之前放大镜只放大了底图加一个准星红点，正在画的那条标注线看不见；现在会把标注一起放大显示，拖动时红线和端点位置一目了然</li>
+      <li><strong>和画布、导出完全一致</strong>——放大镜复用同一套标注渲染器，线条颜色、粗细，以及尺寸标注的刻度与文字都随底图等比放大，不会出现放大镜里与画布上对不上的情况</li>
+      <li><strong>三种拖动都覆盖</strong>——新建「线条」、默认「尺寸标注」拖动画线，以及「调整」工具拖动已有标注的整体 / 端点 / 文字缩放，放大镜里都能看到对应的线</li>
+      <li><strong>原有行为不变</strong>——2.6 倍取景、边缘自动钳制、十字准星、松手与切换工具自动收起全部照旧；新增 7 项测试（坐标变换、红线像素级验证、调整态叠加），全量回归 262 项全部通过</li>
+    </ol>
+    <p class="note">用法：标注页按住画面拖动 → 右上角放大镜里同时看底图和红线 → 对准位置松手。</p>
+  </div>
 
   <div class="card">
     <h2>v1.61 更新内容：拖动标注线时右上角实时放大镜</h2>
