@@ -1,12 +1,12 @@
 {
-  "versionCode": 55,
-  "versionName": "1.54",
-  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.54.apk",
+  "versionCode": 56,
+  "versionName": "1.55",
+  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.55.apk",
   "size": 57140594,
   "mirrors": [
-    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.54.apk",
-    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.54.apk",
-    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.54.apk"
+    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.55.apk",
+    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.55.apk",
+    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.55.apk"
   ],
-  "notes": "编辑图片界面精简：把原来三张带大段文字的说明卡片合并成「剪切 / 标注 / 合成」三个并排按钮，去掉重复的「开始编辑」底部大按钮；选图不足时只在按钮下方留一行小提示。三个功能的入口与处理逻辑完全不变，改尺寸、去水印、电子签章等界面不受影响。"
+  "notes": "「改变大小」并入「编辑图片」栏目，按钮改名为「缩放」，编辑栏目变成「缩放 / 剪切 / 标注 / 合成」四个按钮；首页精简为「编辑图片 / 去水印 / 电子签章」三个无说明文字的按钮，去掉标题与副标题，顶部功能切换也收成一行。缩放功能本身（尺寸设置、比例链条、格式与质量、批量处理）完全不变，去水印与电子签章不受影响。全量回归 241 项全部通过。"
 }
