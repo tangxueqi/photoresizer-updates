@@ -1,12 +1,12 @@
 {
-  "versionCode": 63,
-  "versionName": "1.62",
-  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.62.apk",
+  "versionCode": 64,
+  "versionName": "1.63",
+  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.63.apk",
   "size": 57156982,
   "mirrors": [
-    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.62.apk",
-    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.62.apk",
-    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.62.apk"
+    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.63.apk",
+    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.63.apk",
+    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.63.apk"
   ],
-  "notes": "放大镜里补上正在拖动的标注线：此前放大镜只放大底图和一个准星红点，看不到正在画的线。现在放大镜复用与画布、导出相同的标注渲染器，把已有标注和正在拖动的预览线一起等比放大绘制，线条颜色、粗细、尺寸标注的刻度与文字都与画面一致。新建线条、默认尺寸标注拖动，以及「调整」工具拖动已有标注的整体 / 端点 / 文字缩放，放大镜里都能看到对应红线。2.6 倍取景、边缘钳制、十字准星、松手与切换工具自动收起等原有行为不变。新增 7 项测试，全量回归 262 项全部通过。"
+  "notes": "放大镜由圆形改成大直角方框：圆形会裁掉四角、视野受限，改为正方形方框后四角内容完整可见。边长由 116dp 提升到 168dp，可视面积约为原来的 2.7 倍；中心的定位圆环也改成小方框，十字线贯穿整个方框，红色中心点保留。放大 2.6 倍、边缘自动钳制、松手与切换工具自动收起等取景行为不变，上一版加入的放大镜内显示正在拖动的红线条保持不变。新增 1 项形状回归测试，全量回归 263 项全部通过。"
 }
