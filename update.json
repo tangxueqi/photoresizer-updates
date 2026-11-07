@@ -1,12 +1,12 @@
 {
-  "versionCode": 68,
-  "versionName": "1.67",
-  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.67.apk",
+  "versionCode": 69,
+  "versionName": "1.68",
+  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.68.apk",
   "size": 57189750,
   "mirrors": [
-    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.67.apk",
-    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.67.apk",
-    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.67.apk"
+    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.68.apk",
+    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.68.apk",
+    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.68.apk"
   ],
-  "notes": "首页「去水印」改名为「水印」，水印页顶部提供「去水印 / 加水印」两个子功能，共用同一批已选图片。新增批量加水印：一次给整批图片打上同一套文字水印，逐张处理并显示进度，完成后直接存相册。水印文字颜色提供白、黑、红、黄、蓝、绿六色可选，透明度与字号用滑条连续调节，位置可点九宫格快捷选择，也能直接在预览图上拖动文字到任意位置；改动实时反映在预览上，预览与导出共用同一套绘制。内置预制版权文案「本图版权归＿＿所有，未经许可禁止盗用商用。」，只需填写版权拥有人名称即可生成完整文案，也支持自己写任意水印文字；长文案自动折行、按图片宽度自适应字号，不会被裁掉，并带对比色细描边保证任何底图都清晰。批量去水印、涂抹 / 选框 / 自动识别、点单张放大预览、六个功能按钮全部不变。新增 18 项测试（模板、折行、颜色 / 透明度 / 位置像素级验证、界面控件与按钮状态），全量回归 292 项全部通过。"
+  "notes": "加水印新增双指旋转：在预览图上用两根手指按住并转动，水印文字实时跟着旋转；单指拖动照旧用来调整位置，两种手势互不干扰，出现第二根手指后本次手势只旋转、不会再让水印跳到手指底下。参数面板新增「旋转角度」滑条（-180° ~ 180°）、实时度数显示与「归零」按钮，可精确微调，双指转过的角度也会同步到滑条上。长文案的自动折行与自适应字号按旋转之后的实际包围盒计算，竖排、斜排都不会被画面边缘裁掉；预览与批量导出共用同一套绘制器，角度随整批图片一起保存到相册。版权拥有人填空、预制文案、六种颜色、透明度 / 字号 / 九宫格位置、批量去水印全部不变。新增 8 项测试（角度收敛、双指向量角度、跨 ±180° 最短弧、旋转像素方向、双指手势端到端），全量回归 300 项全部通过。"
 }
