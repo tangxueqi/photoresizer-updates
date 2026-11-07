@@ -1,12 +1,12 @@
 {
-  "versionCode": 65,
-  "versionName": "1.64",
-  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.64.apk",
-  "size": 57156978,
+  "versionCode": 66,
+  "versionName": "1.65",
+  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.65.apk",
+  "size": 57156982,
   "mirrors": [
-    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.64.apk",
-    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.64.apk",
-    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.64.apk"
+    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.65.apk",
+    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.65.apk",
+    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.65.apk"
   ],
-  "notes": "文字背景色可改 + 「调整」工具恢复无放大镜方案。标注页工具面板新增「文字背景」颜色行，文字标注与尺寸标注后面的黑色半透明底衬不再写死，提供半透明黑、白、红、蓝、黄与「无背景」共 6 项；点选已有标注可即时换色，新建标注沿用当前选择，画布预览、放大镜预览线与导出图片三处颜色完全一致。「调整」工具按反馈改回以前的交互：手指落下不再弹出放大镜，放大镜只保留给新建线条 / 尺寸标注的拖动。新增 7 项测试（工具门控、面板色行、无背景与自定义底衬像素级验证），全量回归 270 项全部通过。"
+  "notes": "线条粗细和文字大小默认改成「细 / 小」。进入标注页时「线条粗细」默认选中「细」、「文字大小」默认选中「小」，新建线条、尺寸标注、文字标注一律按此起点，避免粗线大字一上来就盖住商品图；三档按钮照旧可随时切换成「中」「粗」「大」，选中已有标注时面板仍自动同步为该标注自身的粗细与字号，改完即时生效。颜色、文字背景、放大镜、撤销重做、保存行为全部不变。新增 2 项测试（默认预设常量、界面默认高亮），全量回归 272 项全部通过。"
 }
