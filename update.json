@@ -1,12 +1,12 @@
 {
-  "versionCode": 67,
-  "versionName": "1.66",
-  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.66.apk",
-  "size": 57156982,
+  "versionCode": 68,
+  "versionName": "1.67",
+  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.67.apk",
+  "size": 57189750,
   "mirrors": [
-    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.66.apk",
-    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.66.apk",
-    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.66.apk"
+    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.67.apk",
+    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.67.apk",
+    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.67.apk"
   ],
-  "notes": "选择图片框改回严格 1:1 正方形，框内首屏固定显示两排、每排两个正方形缩略图。左侧选图卡片宽高都锁成同一尺寸，不再被按钮列或系统字体拉成竖长方形，右侧六个功能按钮仍与它上下等高。缩略图原本宽度按两列均分、高度按两行平分，两个数值不一致会变成长方形；现在每格边长统一取宽度与高度两个方向里较小的值，严格正方形，图片不变形。不足 4 张时用可点击的空位补齐成完整 2×2 网格，点空格子即可继续添加图片；超过 4 张时仍在这块固定区域里上下滑动，右侧滑行条照旧。点单张放大预览、右上角删除、继续添加、六个功能按钮全部不变。新增 2 项布局测试（正方形格子、首屏 2×2 占位），全量回归 274 项全部通过。"
+  "notes": "首页「去水印」改名为「水印」，水印页顶部提供「去水印 / 加水印」两个子功能，共用同一批已选图片。新增批量加水印：一次给整批图片打上同一套文字水印，逐张处理并显示进度，完成后直接存相册。水印文字颜色提供白、黑、红、黄、蓝、绿六色可选，透明度与字号用滑条连续调节，位置可点九宫格快捷选择，也能直接在预览图上拖动文字到任意位置；改动实时反映在预览上，预览与导出共用同一套绘制。内置预制版权文案「本图版权归＿＿所有，未经许可禁止盗用商用。」，只需填写版权拥有人名称即可生成完整文案，也支持自己写任意水印文字；长文案自动折行、按图片宽度自适应字号，不会被裁掉，并带对比色细描边保证任何底图都清晰。批量去水印、涂抹 / 选框 / 自动识别、点单张放大预览、六个功能按钮全部不变。新增 18 项测试（模板、折行、颜色 / 透明度 / 位置像素级验证、界面控件与按钮状态），全量回归 292 项全部通过。"
 }
