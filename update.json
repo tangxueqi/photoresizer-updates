@@ -1,12 +1,12 @@
 {
-  "versionCode": 57,
-  "versionName": "1.56",
-  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.56.apk",
+  "versionCode": 58,
+  "versionName": "1.57",
+  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.57.apk",
   "size": 57140598,
   "mirrors": [
-    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.56.apk",
-    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.56.apk",
-    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.56.apk"
+    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.57.apk",
+    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.57.apk",
+    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.57.apk"
   ],
-  "notes": "首页整合为一个共用选图区 + 六个功能按钮「缩放 / 剪切 / 标注 / 合成 / 去水印 / 电子签章」：去水印与电子签章并入同一栏目，共用选图；未选图时六个按钮全部灰框且不可点，选图后才可点，只有点按选中的那个变蓝框；每个处理页的返回键（含系统返回键）统一回到程序最初页面；去掉首页功能选择与顶部模式切换，界面更简洁。全量回归 240 项全部通过。"
+  "notes": "首页版面重排：缩略图改成固定两行 × 每行两张的滑行区，多余图片在区内上下滑动并带滑行条；选择图片在左，六个功能按钮收进右侧居中竖列，「继续添加」移到「选择图片」标题右侧，下面一版是视频采集。六个按钮的选图后可用、灰框 / 蓝框选中态、统一返回首页等逻辑保持不变。全量回归 243 项全部通过。"
 }
