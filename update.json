@@ -1,12 +1,12 @@
 {
-  "versionCode": 54,
-  "versionName": "1.53",
-  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.53.apk",
-  "size": 57140598,
+  "versionCode": 55,
+  "versionName": "1.54",
+  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.54.apk",
+  "size": 57140594,
   "mirrors": [
-    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.53.apk",
-    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.53.apk",
-    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.53.apk"
+    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.54.apk",
+    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.54.apk",
+    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.54.apk"
   ],
-  "notes": "修复「图片剪切」页面不显示图片：此前该页漏了画布尺寸测量，图片被按 0×0 绘制，只剩一片灰底和左上角一个白色小方块。现在进入剪切页即可正常看到原图与选框，框外变暗、框内保留，拖动选框时下方像素数值照常实时更新；另补上「正在载入图片…」与「图片加载失败，请返回重新选择」提示，多张图切换时手势不再误用上一张的旧尺寸。改尺寸、图片叠加、电子签章等功能不变。"
+  "notes": "编辑图片界面精简：把原来三张带大段文字的说明卡片合并成「剪切 / 标注 / 合成」三个并排按钮，去掉重复的「开始编辑」底部大按钮；选图不足时只在按钮下方留一行小提示。三个功能的入口与处理逻辑完全不变，改尺寸、去水印、电子签章等界面不受影响。"
 }
