@@ -1,12 +1,12 @@
 {
-  "versionCode": 56,
-  "versionName": "1.55",
-  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.55.apk",
-  "size": 57140594,
+  "versionCode": 57,
+  "versionName": "1.56",
+  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.56.apk",
+  "size": 57140598,
   "mirrors": [
-    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.55.apk",
-    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.55.apk",
-    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.55.apk"
+    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.56.apk",
+    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.56.apk",
+    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.56.apk"
   ],
-  "notes": "「改变大小」并入「编辑图片」栏目，按钮改名为「缩放」，编辑栏目变成「缩放 / 剪切 / 标注 / 合成」四个按钮；首页精简为「编辑图片 / 去水印 / 电子签章」三个无说明文字的按钮，去掉标题与副标题，顶部功能切换也收成一行。缩放功能本身（尺寸设置、比例链条、格式与质量、批量处理）完全不变，去水印与电子签章不受影响。全量回归 241 项全部通过。"
+  "notes": "首页整合为一个共用选图区 + 六个功能按钮「缩放 / 剪切 / 标注 / 合成 / 去水印 / 电子签章」：去水印与电子签章并入同一栏目，共用选图；未选图时六个按钮全部灰框且不可点，选图后才可点，只有点按选中的那个变蓝框；每个处理页的返回键（含系统返回键）统一回到程序最初页面；去掉首页功能选择与顶部模式切换，界面更简洁。全量回归 240 项全部通过。"
 }
