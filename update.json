@@ -1,12 +1,12 @@
 {
-  "versionCode": 60,
-  "versionName": "1.59",
-  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.59.apk",
+  "versionCode": 61,
+  "versionName": "1.60",
+  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.60.apk",
   "size": 57156982,
   "mirrors": [
-    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.59.apk",
-    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.59.apk",
-    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.59.apk"
+    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.60.apk",
+    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.60.apk",
+    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.60.apk"
   ],
-  "notes": "首页选图卡片改成 1:1 正方形，宽高完全一致，右侧六个功能按钮与它上下严格对齐；按钮整体收窄、按可用高度均匀分布，字号与间距同步收紧；移除电子签章按钮下方被裁切的那行提示文字；未选图空状态的图标与提示同步缩小，正方形卡片内不会被裁切。缩略图滑行条、点图放大预览、选图后才可点、灰框/蓝框选中态、各处理页统一返回首页等逻辑不变。全量回归 247 项全部通过。"
+  "notes": "首页选图卡片宽度由约 57% 提升到 75%，仍保持 1:1 正方形，边长随之变大；右侧六个按钮列由约 42% 收窄到 25%（缩短近一半），并移除按钮列外层白色卡片与边框，六个按钮直接排在页面背景上，减少留白。左右两块仍上下对齐，缩略图两行滑行条、点图放大预览、选图后才可点、灰框/蓝框选中态、各处理页统一返回首页等逻辑不变。全量回归 248 项全部通过。"
 }
