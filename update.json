@@ -1,12 +1,12 @@
 {
-  "versionCode": 72,
-  "versionName": "1.71",
-  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.71.apk",
-  "size": 57206134,
+  "versionCode": 73,
+  "versionName": "1.72",
+  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v143/BingYing-1.72.apk",
+  "size": 57238902,
   "mirrors": [
-    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.71.apk",
-    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.71.apk",
-    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.71.apk"
+    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v143/BingYing-1.72.apk",
+    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v143/BingYing-1.72.apk",
+    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v143/BingYing-1.72.apk"
   ],
-  "notes": "标注编辑的文字块旋转改成「按住右上角的小圆圈转圈」这种操作，双指旋转整套取消。选中文字块后，框的右上角外侧会出现一个带弧形箭头的圆形标志，手指按住它拖动，文字块就绕自己的中心跟着手指转，转到 15° 的整数倍附近会自动吸附（水平、垂直、45° 都很好对），松手就停在那个角度。单指拖标志只改角度、不会把文字块挪走，也不会改字号；单指拖文字块本身仍是移动，拖右下角仍是缩放，拖线条端点仍是调整长短，各管各的不抢手指。双指落在画布上现在不会触发任何旋转——之前乱转就是因为按两指连线的夹角算角度，手指稍有抖动角度就跳，现在彻底不再走那条路。旋转后的选框、缩放手柄、旋转标志都跟着一起转，点到哪就选到哪；已旋转的文字块再编辑文字、改颜色、改字号都不会把角度弄丢，导出与预览完全一致。新增旋转标志相关测试 13 项（标志位置在框外右上、跟着角度绕中心转、未选中不出现、夹角增量计算、15° 吸附与容差、在原角度上继续转、双指不再旋转、提示文案），全量回归 342 项全部通过。"
+  "notes": "首页视频区新增「修改视频 MD5」。选一个视频，页面会显示首帧预览、时长、文件名、大小和原 MD5，点「开始修改MD5」几秒内算出新 MD5，再点「保存到相册」就存进相册，视频照常播放。原理不是造假：MD5 是文件内容的摘要，只有改变字节才会变，所以程序只改播放器根本不读的区域——MP4 里如果有填充盒（free/skip），就直接把盒内填充字节换成随机数，文件大小一个字节都不变；没有填充盒就在文件末尾补一个合法的 free 盒（几十字节）；mkv、avi 等其它容器在末尾追加一小段随机数据。画面、声音、时长、清晰度全都不受影响，实测改写前后逐帧比对完全一致。源文件不会被改动，生成的是一份新文件；处理全在本机完成，不上传服务器，也不联网。建议单个视频不超过 100MB，越大读取和计算越慢。新增改 MD5 字节级测试 24 项（已知摘要、盒扫描含 64 位大盒与截断头、填充盒改写后大小不变且结构不变、无填充盒时补出合法 free 盒、非 MP4 容器只追加不改前缀、源文件零改动、同种子可复现、4MB 流式处理），全量回归 367 项全部通过。"
 }
