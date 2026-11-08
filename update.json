@@ -1,12 +1,12 @@
 {
-  "versionCode": 73,
-  "versionName": "1.72",
-  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v143/BingYing-1.72.apk",
+  "versionCode": 74,
+  "versionName": "1.73",
+  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v144/BingYing-1.73.apk",
   "size": 57238902,
   "mirrors": [
-    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v143/BingYing-1.72.apk",
-    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v143/BingYing-1.72.apk",
-    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v143/BingYing-1.72.apk"
+    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v144/BingYing-1.73.apk",
+    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v144/BingYing-1.73.apk",
+    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v144/BingYing-1.73.apk"
   ],
-  "notes": "首页视频区新增「修改视频 MD5」。选一个视频，页面会显示首帧预览、时长、文件名、大小和原 MD5，点「开始修改MD5」几秒内算出新 MD5，再点「保存到相册」就存进相册，视频照常播放。原理不是造假：MD5 是文件内容的摘要，只有改变字节才会变，所以程序只改播放器根本不读的区域——MP4 里如果有填充盒（free/skip），就直接把盒内填充字节换成随机数，文件大小一个字节都不变；没有填充盒就在文件末尾补一个合法的 free 盒（几十字节）；mkv、avi 等其它容器在末尾追加一小段随机数据。画面、声音、时长、清晰度全都不受影响，实测改写前后逐帧比对完全一致。源文件不会被改动，生成的是一份新文件；处理全在本机完成，不上传服务器，也不联网。建议单个视频不超过 100MB，越大读取和计算越慢。新增改 MD5 字节级测试 24 项（已知摘要、盒扫描含 64 位大盒与截断头、填充盒改写后大小不变且结构不变、无填充盒时补出合法 free 盒、非 MP4 容器只追加不改前缀、源文件零改动、同种子可复现、4MB 流式处理），全量回归 367 项全部通过。"
+  "notes": "首页下半部分重新排过，整页一屏放下不用上下滚。原来「抖音 / 视频号 视频下载」和「修改视频 MD5」是两张各自带标题和说明的大卡片，一屏装不下，必须往下滑才能看到改 MD5。现在合并成一块「视频工具」：一行小标题、一条链接输入框，下面「解析并下载」和「修改视频 MD5」两个按钮左右并排。输入框和识别提示只在需要时出现，解析进度、下载进度、成功或失败提示也只在有内容时占位，空闲状态下不留空白。原来的限制 100MB 提示、卡片式说明、免责声明都收成底部一行小字。上半部分的选图框和六个功能按钮样式、按钮位置、灰框蓝框交互完全没动，只是高度改成按屏幕自适应：手机越高、屏幕越大，选图框和按钮跟着放大，把空间用满，不会再出现上面一小块、下面一大片空白的情况。小屏机型上程序会自动把上半部分等比缩小，保证下半部分始终完整显示、不被截掉，全程不需要滚动。新增 4 项布局测试（视频块为单一紧凑块、两按钮并排等高、视频工具与底部小字完整落在页面内、改 MD5 按钮直达改 MD5 页），全量回归 371 项全部通过。"
 }
