@@ -77,14 +77,26 @@
     <div class="meta">
       <span class="tag">Android 7.0+</span>
       <span class="tag">约 57 MB</span>
-      <span class="tag">版本 1.69</span>
+      <span class="tag">版本 1.70</span>
       <span class="tag">Debug 版</span>
     </div>
-    <a class="btn" href="https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.69.apk" download>下载 APK 安装包（v1.69）</a>
+    <a class="btn" href="https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.70.apk" download>下载 APK 安装包（v1.70）</a>
     <span class="btn-sub">国内加速下载地址（GitHub Releases 加速镜像，支持多镜像自动切换与并行下载）</span>
-    <span class="btn-sub">若加速镜像不可用，点 <a href="https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.69.apk" target="_blank">GitHub 直链</a> 或换用桌面浏览器下载后再传手机</span>
+    <span class="btn-sub">若加速镜像不可用，点 <a href="https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.70.apk" target="_blank">GitHub 直链</a> 或换用桌面浏览器下载后再传手机</span>
   </div>
 
+
+  <div class="card">
+    <h2>v1.70 更新内容：标注文字块可双指旋转 · 点选不再跳动</h2>
+    <ol>
+      <li><strong>一碰就放大、点文字就缩小 —— 修好了</strong>——原因是选中标注后底部面板会多出一整块「正在调整」提示，把画布挤矮，图片被迫重新适配，看着就像被放大 / 缩小。现在改成高度固定的操作条：未选中时显示「未选中标注」，选中时就地变成「正在调整：xx」并带「改文字 / 删除」，画布高度前后完全一致</li>
+      <li><strong>文字块双指旋转 —— 现在能转</strong>——以前「调整」工具只跟踪第一根手指、文字数据里也没有角度字段，所以怎么比划都转不动。现在第二根手指一落下就切换成旋转手势，按两指连线的角度变化实时转动文字块与尺寸标注的文字标签</li>
+      <li><strong>转得稳、不会甩飞</strong>——转过 ±180° 取最短弧，不会突然反向；手指轻微抖动也不会把文字块拽歪或突然甩半圈；单指仍是拖动移动、拖端点调整长短，与双指旋转互不干扰</li>
+      <li><strong>转完还能正常点选和缩放</strong>——选框跟着文字一起转，缩放手柄搬到旋转后的角上，点到哪就选到哪，不会错位</li>
+      <li><strong>其余不变</strong>——文字颜色、底衬颜色、字号、导出清晰度全部照旧，导出与预览一致；新增 15 项测试（角度收敛、最短弧、旋转矩形命中、手柄跟角、渲染像素宽高互换、画布高度恒定、双指手势不误触发），全量回归 335 项全部通过</li>
+    </ol>
+    <p class="note">用法：进入「标注」→ 点「调整」→ 点一下文字块选中 → 两根手指在文字块上转动即可调整角度。</p>
+  </div>
 
   <div class="card">
     <h2>v1.69 更新内容：升级下载改为自适应多线程 · 迅雷式分块进度</h2>
