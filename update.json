@@ -1,12 +1,12 @@
 {
-  "versionCode": 71,
-  "versionName": "1.70",
-  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.70.apk",
+  "versionCode": 72,
+  "versionName": "1.71",
+  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.71.apk",
   "size": 57206134,
   "mirrors": [
-    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.70.apk",
-    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.70.apk",
-    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.70.apk"
+    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.71.apk",
+    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.71.apk",
+    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.71.apk"
   ],
-  "notes": "标注编辑的两个老毛病一起修了。1）一碰屏幕图片就放大、点文字图片就缩小：原因是选中标注后底部面板会多出一整块「正在调整」提示，把画布挤矮，图片被迫重新适配，看起来就像被放大了。现在改成高度固定的操作条——未选中时显示「未选中标注」，选中时就地变成「正在调整：xx」并带「改文字 / 删除」按钮，画布高度前后完全一致，点选标注画面不会再跳动。2）文字块双指旋转不成功：原来「调整」工具只跟踪第一根手指，第二根手指被完全忽略，文字模型里也没有角度字段，所以怎么比划都转不动。现在双指一落下就切换成旋转手势，按两指连线的角度变化实时转动文字块与尺寸标注的文字标签，转过 ±180° 取最短弧不会突然反向，手指抖动也不会把文字拽歪；旋转后再点选、缩放，判定区域会跟着一起转，手柄也搬到了旋转后的角上，点到哪就选到哪。单指仍是拖动移动，拖端点调整长短，不会和旋转打架。文字底衬、颜色、字号、导出分辨率都不受影响，导出的图与预览一致。新增旋转相关测试 15 项（角度收敛、最短弧、旋转矩形命中、手柄跟角、渲染像素宽高互换、画布高度恒定、双指手势不误触发），全量回归 335 项全部通过。"
+  "notes": "标注编辑的文字块旋转改成「按住右上角的小圆圈转圈」这种操作，双指旋转整套取消。选中文字块后，框的右上角外侧会出现一个带弧形箭头的圆形标志，手指按住它拖动，文字块就绕自己的中心跟着手指转，转到 15° 的整数倍附近会自动吸附（水平、垂直、45° 都很好对），松手就停在那个角度。单指拖标志只改角度、不会把文字块挪走，也不会改字号；单指拖文字块本身仍是移动，拖右下角仍是缩放，拖线条端点仍是调整长短，各管各的不抢手指。双指落在画布上现在不会触发任何旋转——之前乱转就是因为按两指连线的夹角算角度，手指稍有抖动角度就跳，现在彻底不再走那条路。旋转后的选框、缩放手柄、旋转标志都跟着一起转，点到哪就选到哪；已旋转的文字块再编辑文字、改颜色、改字号都不会把角度弄丢，导出与预览完全一致。新增旋转标志相关测试 13 项（标志位置在框外右上、跟着角度绕中心转、未选中不出现、夹角增量计算、15° 吸附与容差、在原角度上继续转、双指不再旋转、提示文案），全量回归 342 项全部通过。"
 }
