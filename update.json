@@ -1,12 +1,12 @@
 {
-  "versionCode": 74,
-  "versionName": "1.73",
-  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v144/BingYing-1.73.apk",
-  "size": 57238902,
+  "versionCode": 75,
+  "versionName": "1.74",
+  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v145/BingYing-1.74.apk",
+  "size": 57238898,
   "mirrors": [
-    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v144/BingYing-1.73.apk",
-    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v144/BingYing-1.73.apk",
-    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v144/BingYing-1.73.apk"
+    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v145/BingYing-1.74.apk",
+    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v145/BingYing-1.74.apk",
+    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v145/BingYing-1.74.apk"
   ],
-  "notes": "首页下半部分重新排过，整页一屏放下不用上下滚。原来「抖音 / 视频号 视频下载」和「修改视频 MD5」是两张各自带标题和说明的大卡片，一屏装不下，必须往下滑才能看到改 MD5。现在合并成一块「视频工具」：一行小标题、一条链接输入框，下面「解析并下载」和「修改视频 MD5」两个按钮左右并排。输入框和识别提示只在需要时出现，解析进度、下载进度、成功或失败提示也只在有内容时占位，空闲状态下不留空白。原来的限制 100MB 提示、卡片式说明、免责声明都收成底部一行小字。上半部分的选图框和六个功能按钮样式、按钮位置、灰框蓝框交互完全没动，只是高度改成按屏幕自适应：手机越高、屏幕越大，选图框和按钮跟着放大，把空间用满，不会再出现上面一小块、下面一大片空白的情况。小屏机型上程序会自动把上半部分等比缩小，保证下半部分始终完整显示、不被截掉，全程不需要滚动。新增 4 项布局测试（视频块为单一紧凑块、两按钮并排等高、视频工具与底部小字完整落在页面内、改 MD5 按钮直达改 MD5 页），全量回归 371 项全部通过。"
+  "notes": "视频工具采集支持今日头条了。以前只认抖音和微信视频号，现在把今日头条的分享文案整段粘进输入框也能直接解析，程序先自己判断是哪家平台，再走对应平台的解析链路，识别到就显示「已识别：今日头条」。今天头条的解析走的是官方 VOD 接口：先把分享短链跟到最终的 video 页，从页面里的 RENDER_DATA 读出视频 ID 和 playAuthTokenV2，解出 GetPlayInfoToken 后向 vod.bytedanceapi.com 换取官方播放信息，在各种清晰度里挑分辨率最高的那路原片，拿到的是平台给的原视频直链，不带任何平台角标和账号水印。实测这条分享链接（500公里奔现）解析出 720×1280、40MB 的完整原片，抽帧检查画面里只有创作者自己加的字幕，没有水印。下载保存到相册的 Movies/Toutiao 目录，文件名走 toutiao_ 前缀，和抖音、视频号的下载互不干扰。解析失败的分支也分清楚了：链接是图文而不是视频时直接提示「该链接不是视频内容（可能是图文）」，不再笼统报无法识别。输入框占位文案改成「粘贴抖音 / 头条 / 视频号链接」，未识别时提示支持的三个平台。新增 25 项测试（识别头条分享文案、短链、video/article 两种路径、中文标点截断、无 scheme 补全、西瓜视频不误判；RENDER_DATA 解码、字段提取、图文兜底、token 的 base64url 与缺 padding、清晰度按分辨率和码率择优、备用地址回退），全量回归 398 项全部通过，另外真实网络链路自检也已跑通。"
 }
