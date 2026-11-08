@@ -77,14 +77,27 @@
     <div class="meta">
       <span class="tag">Android 7.0+</span>
       <span class="tag">约 57 MB</span>
-      <span class="tag">版本 1.68</span>
+      <span class="tag">版本 1.69</span>
       <span class="tag">Debug 版</span>
     </div>
-    <a class="btn" href="https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.68.apk" download>下载 APK 安装包（v1.68）</a>
+    <a class="btn" href="https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.69.apk" download>下载 APK 安装包（v1.69）</a>
     <span class="btn-sub">国内加速下载地址（GitHub Releases 加速镜像，支持多镜像自动切换与并行下载）</span>
-    <span class="btn-sub">若加速镜像不可用，点 <a href="https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.68.apk" target="_blank">GitHub 直链</a> 或换用桌面浏览器下载后再传手机</span>
+    <span class="btn-sub">若加速镜像不可用，点 <a href="https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.69.apk" target="_blank">GitHub 直链</a> 或换用桌面浏览器下载后再传手机</span>
   </div>
 
+
+  <div class="card">
+    <h2>v1.69 更新内容：升级下载改为自适应多线程 · 迅雷式分块进度</h2>
+    <ol>
+      <li><strong>先探测再决定</strong>——点升级后先发一次 Range 探测，看服务器是否支持分段（回 206 或声明 Accept-Ranges: bytes）。支持才开多线程，不支持就直接单线程，不会硬试、不会卡在「连不上分块」</li>
+      <li><strong>支持时开 3~5 个线程并行</strong>——按安装包大小自动决定：2~48MB 开 3 条、48~68MB 开 4 条、68MB 以上开 5 条；每块独立 Range 请求、写入同一文件的不同位置，下载总耗时明显缩短</li>
+      <li><strong>迅雷式分块进度</strong>——多线程下载时进度区变成一排方格，每格对应一个线程负责的那段，各自从左往右填充、下完一格整格点亮，下方还有整体进度条和「5 线程并行 · 3/5 段已完成」</li>
+      <li><strong>单线程只显示一条进度条</strong>——服务器不支持分段时，界面就是一条普通进度条，不假装有并行；界面还会显示实时速度和预计剩余时间</li>
+      <li><strong>兜底不糊弄</strong>——多线程中途失败（镜像拒 Range、断流）会自动退回单线程重下，并核对文件长度；下载不完整就清理残包，绝不装坏包</li>
+      <li><strong>其余不变</strong>——多镜像自动择优、版本清单多源取最高版本、自动检查更新红点全部照旧；新增 21 项测试（服务器能力判定、线程数分档、分块区间不重叠、进度聚合、进度条几何、单/多线程界面状态），另含一项对真实镜像跑通的可选自检，全量回归 321 项全部通过</li>
+    </ol>
+    <p class="note">用法：首页点右上角版本号 → 发现新版本点「立即升级」→ 支持分段的服务器会看到分块进度条与线程数，下载完自动拉起安装。</p>
+  </div>
 
   <div class="card">
     <h2>v1.68 更新内容：加水印支持双指旋转角度</h2>
