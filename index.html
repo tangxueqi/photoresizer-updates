@@ -77,14 +77,27 @@
     <div class="meta">
       <span class="tag">Android 7.0+</span>
       <span class="tag">约 57 MB</span>
-      <span class="tag">版本 1.71</span>
+      <span class="tag">版本 1.72</span>
       <span class="tag">Debug 版</span>
     </div>
-    <a class="btn" href="https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.71.apk" download>下载 APK 安装包（v1.71）</a>
+    <a class="btn" href="https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v143/BingYing-1.72.apk" download>下载 APK 安装包（v1.72）</a>
     <span class="btn-sub">国内加速下载地址（GitHub Releases 加速镜像，支持多镜像自动切换与并行下载）</span>
-    <span class="btn-sub">若加速镜像不可用，点 <a href="https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.71.apk" target="_blank">GitHub 直链</a> 或换用桌面浏览器下载后再传手机</span>
+    <span class="btn-sub">若加速镜像不可用，点 <a href="https://github.com/tangxueqi/photoresizer-updates/releases/download/v143/BingYing-1.72.apk" target="_blank">GitHub 直链</a> 或换用桌面浏览器下载后再传手机</span>
   </div>
 
+
+  <div class="card">
+    <h2>v1.72 更新内容：新增「修改视频 MD5」</h2>
+    <ol>
+      <li><strong>入口在首页</strong>——首页视频区下方多了一张「修改视频 MD5」卡片，点「选择视频并查看 MD5」进入；视频选择和图片那套完全分开，不会影响已选的图片</li>
+      <li><strong>选完就看清</strong>——进页面先看到视频首帧和时长，下面依次是文件名、文件大小、原 MD5（32 位小写，等宽字体，一行行排好不串行）</li>
+      <li><strong>一键换 MD5</strong>——点「开始修改MD5」，几秒内生成一份新视频，新 MD5 紧接着显示在原 MD5 下面，两串一对比一目了然；按钮同时变成「保存到相册」</li>
+      <li><strong>不是造假，是真改字节</strong>——MD5 是文件内容的摘要，只有改变内容才会变。程序只动播放器根本不读的区域：MP4 有填充盒（free / skip）就把盒里的填充字节换成随机数，文件大小一个字节不变；没有填充盒就在末尾补一个合法的 free 盒；mkv、avi 等容器在末尾追加一小段随机数据</li>
+      <li><strong>画面声音都不动</strong>——实测改写前后逐帧比对，视频帧、音频帧完全一致，时长、清晰度、文件能否正常播放都不受影响；源文件原样保留，产出的是另一份文件</li>
+      <li><strong>全程本机</strong>——不联网、不上传服务器；建议单个视频不超过 100MB，越大读取与计算越慢；新增 24 项字节级测试（已知摘要、盒扫描含 64 位大盒与截断头、改写后大小与结构不变、补盒合法性、非 MP4 只追加、源文件零改动、同种子可复现、4MB 流式处理），全量回归 367 项全部通过</li>
+    </ol>
+    <p class="note">用法：首页「修改视频 MD5」→ 选择视频 → 看原 MD5 → 点「开始修改MD5」→ 出现新 MD5 → 点「保存到相册」。</p>
+  </div>
 
   <div class="card">
     <h2>v1.71 更新内容：文字块改成「按住右上角旋转标志」转角度</h2>
