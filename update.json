@@ -1,12 +1,12 @@
 {
-  "versionCode": 69,
-  "versionName": "1.68",
-  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.68.apk",
-  "size": 57189750,
+  "versionCode": 70,
+  "versionName": "1.69",
+  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.69.apk",
+  "size": 57206134,
   "mirrors": [
-    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.68.apk",
-    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.68.apk",
-    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.68.apk"
+    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.69.apk",
+    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.69.apk",
+    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v142/BingYing-1.69.apk"
   ],
-  "notes": "加水印新增双指旋转：在预览图上用两根手指按住并转动，水印文字实时跟着旋转；单指拖动照旧用来调整位置，两种手势互不干扰，出现第二根手指后本次手势只旋转、不会再让水印跳到手指底下。参数面板新增「旋转角度」滑条（-180° ~ 180°）、实时度数显示与「归零」按钮，可精确微调，双指转过的角度也会同步到滑条上。长文案的自动折行与自适应字号按旋转之后的实际包围盒计算，竖排、斜排都不会被画面边缘裁掉；预览与批量导出共用同一套绘制器，角度随整批图片一起保存到相册。版权拥有人填空、预制文案、六种颜色、透明度 / 字号 / 九宫格位置、批量去水印全部不变。新增 8 项测试（角度收敛、双指向量角度、跨 ±180° 最短弧、旋转像素方向、双指手势端到端），全量回归 300 项全部通过。"
+  "notes": "升级下载改为自适应多线程：点升级后先探测服务器是否支持分段下载（回 206 或声明 Accept-Ranges: bytes），支持才开多线程，不支持就直接走单线程，不会硬试。支持时按安装包大小自动开 3~5 个线程并行（2~48MB 开 3 条、48~68MB 开 4 条、68MB 以上开 5 条），每块独立 Range 请求写入同一文件不同位置，明显缩短下载耗时。多线程下载时进度区变成迅雷式分块进度条：一排方格对应各线程负责的区间，各自从左往右填充、下完一格整格点亮，下方另有整体进度条与「5 线程并行 · 3/5 段已完成」。服务器不支持分段时只显示一条普通进度条，不假装并行。两种模式都显示实时速度与预计剩余时间。多线程中途失败会自动退回单线程重下，并核对文件长度，不完整就清理残包。多镜像择优与版本清单多源取最高版本照旧。新增 21 项测试（服务器能力判定、线程数分档、分块区间不重叠、进度聚合、进度条几何、单/多线程界面状态），另含一项对真实镜像跑通的可选自检，全量回归 321 项全部通过。"
 }
