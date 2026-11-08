@@ -77,14 +77,28 @@
     <div class="meta">
       <span class="tag">Android 7.0+</span>
       <span class="tag">约 57 MB</span>
-      <span class="tag">版本 1.73</span>
+      <span class="tag">版本 1.74</span>
       <span class="tag">Debug 版</span>
     </div>
-    <a class="btn" href="https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v144/BingYing-1.73.apk" download>下载 APK 安装包（v1.73）</a>
+    <a class="btn" href="https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v145/BingYing-1.74.apk" download>下载 APK 安装包（v1.74）</a>
     <span class="btn-sub">国内加速下载地址（GitHub Releases 加速镜像，支持多镜像自动切换与并行下载）</span>
-    <span class="btn-sub">若加速镜像不可用，点 <a href="https://github.com/tangxueqi/photoresizer-updates/releases/download/v144/BingYing-1.73.apk" target="_blank">GitHub 直链</a> 或换用桌面浏览器下载后再传手机</span>
+    <span class="btn-sub">若加速镜像不可用，点 <a href="https://github.com/tangxueqi/photoresizer-updates/releases/download/v145/BingYing-1.74.apk" target="_blank">GitHub 直链</a> 或换用桌面浏览器下载后再传手机</span>
   </div>
 
+
+  <div class="card">
+    <h2>v1.74 更新内容：视频工具支持今日头条无水印原片</h2>
+    <ol>
+      <li><strong>多认一家平台</strong>——以前视频工具只认抖音和微信视频号，现在今日头条也能解析。分享文案整段粘进输入框就行，程序先自己判断是哪家平台，识别到就在输入框下方显示「已识别：今日头条」，再点「解析并下载」</li>
+      <li><strong>走官方 VOD 接口拿原片</strong>——先把分享短链一路跟到最终的视频页，从页面里的 RENDER_DATA 读出视频 ID 和 playAuthTokenV2，解出播放令牌后向官方 vod.bytedanceapi.com 换取播放信息，在各档清晰度里挑分辨率最高的那一路</li>
+      <li><strong>拿到的是无水印原片</strong>——下载的是平台给的原视频直链，不是带角标的播放页录屏；实测「500公里奔现」这条分享链接解析出 720×1280、约 40MB 的完整原片，抽帧检查画面里只有创作者自己加的字幕，没有任何平台台标或账号水印</li>
+      <li><strong>保存位置分开</strong>——头条下载的视频存到相册 Movies/Toutiao，文件名用 toutiao_ 前缀，和抖音、视频号的下载互不覆盖、互不干扰</li>
+      <li><strong>失败提示说清楚</strong>——贴的链接是图文而不是视频时，直接提示「该链接不是视频内容（可能是图文）」，不再笼统报一句无法识别；完全认不出的链接会提示支持抖音、今日头条、微信视频号三家</li>
+      <li><strong>输入框提示同步更新</strong>——占位文案改成「粘贴抖音 / 头条 / 视频号链接」，不用再猜支持哪些平台</li>
+      <li><strong>其余不变</strong>——抖音、视频号解析链路、无水印下载、修改视频 MD5、首页一屏布局全部照旧；新增 25 项测试（分享文案与短链识别、video/article 两种路径、中文标点截断、无 scheme 补全、西瓜视频不误判；RENDER_DATA 解码、字段提取、图文兜底、令牌 base64url 与缺 padding、清晰度按分辨率和码率择优、备用地址回退），全量回归 398 项全部通过，真实网络链路也已跑通验证</li>
+    </ol>
+    <p class="note">用法：复制头条分享文案 → 粘贴到首页「视频工具」输入框 → 看到「已识别：今日头条」后点「解析并下载」→ 完成后到相册 Movies/Toutiao 查看。</p>
+  </div>
 
   <div class="card">
     <h2>v1.73 更新内容：首页下半部分重新排版，整页一屏放下</h2>
