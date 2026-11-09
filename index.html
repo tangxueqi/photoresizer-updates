@@ -77,14 +77,31 @@
     <div class="meta">
       <span class="tag">Android 7.0+</span>
       <span class="tag">约 57 MB</span>
-      <span class="tag">版本 1.74</span>
+      <span class="tag">版本 1.75</span>
       <span class="tag">Debug 版</span>
     </div>
-    <a class="btn" href="https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v145/BingYing-1.74.apk" download>下载 APK 安装包（v1.74）</a>
+    <a class="btn" href="https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v146/BingYing-1.75.apk" download>下载 APK 安装包（v1.75）</a>
     <span class="btn-sub">国内加速下载地址（GitHub Releases 加速镜像，支持多镜像自动切换与并行下载）</span>
-    <span class="btn-sub">若加速镜像不可用，点 <a href="https://github.com/tangxueqi/photoresizer-updates/releases/download/v145/BingYing-1.74.apk" target="_blank">GitHub 直链</a> 或换用桌面浏览器下载后再传手机</span>
+    <span class="btn-sub">若加速镜像不可用，点 <a href="https://github.com/tangxueqi/photoresizer-updates/releases/download/v146/BingYing-1.75.apk" target="_blank">GitHub 直链</a> 或换用桌面浏览器下载后再传手机</span>
   </div>
 
+
+  <div class="card">
+    <h2>v1.75 更新内容：新增「蓝牙传文件」，两台手机不联网直接互传</h2>
+    <ol>
+      <li><strong>不会联网传文件</strong>——两台都装了本 App 的手机，打开蓝牙就能互传照片、视频、文档。走蓝牙直连，不经过服务器、不消耗流量，关机装卡也能用</li>
+      <li><strong>三步传完</strong>——A 点「等待接收」→ B 选好文件在列表里点 A 的手机名 → 传完在 A 上点「保存到相册」。首页底部新增「蓝牙传文件 · 两台手机直连，不联网」入口，点「去传 →」进入</li>
+      <li><strong>进度看得见</strong>——百分比、已传/总量、文件名实时刷新，传输中不会被别的按钮干扰；中断了有明确原因提示和一键重试</li>
+      <li><strong>传坏的文件不会留</strong>——协议里带 CRC32 校验，中途断线或对方提前取消会被判失败并删掉半截文件，不会留下一个打不开的坏文件占着相册</li>
+      <li><strong>先确认再入库</strong>——收到的文件先放在本机缓存，列表里能看清文件名和大小，确认无误再点「保存到相册」，传错了不污染相册</li>
+      <li><strong>多文件、重名都不慌</strong>——一次可选多个文件连续传；重名自动加 (1)(2)，不会覆盖已有文件；单个文件 4GB 以内都能传</li>
+      <li><strong>只收该收的</strong>——对端发来 APK、可执行文件会被拦下并提示，图片、视频、音频、文档、压缩包正常接收</li>
+      <li><strong>找不到对方时能自救</strong>——顶部显示本机是否可被发现，不可被发现时一键开启；还能改本机设备名，两台手机在列表里一眼分得清；蓝牙没开、缺权限、定位没开、机器没蓝牙都有对应说明，不是一排灰按钮</li>
+      <li><strong>说清速度预期</strong>——蓝牙实际速度约 100–200 KB/s，1 分钟 5–10 MB，大视频建议用数据线；安卓限制两端都要在前台，锁屏会断，这些都写在页面底部</li>
+      <li><strong>其余不变</strong>——图片批处理、六个功能页、视频下载与改 MD5、首页一屏布局全部照旧；新增 40 项测试（协议编解码与转义、路径穿越净化、短读拼包、CRC 已知值与分片一致、截断与篡改检出、重名加序号、类型白名单、界面结构、首页入口仍在首屏内），全量回归 455 项全部通过</li>
+    </ol>
+    <p class="note">用法：两台手机都装本 App → 都打开蓝牙 → A 点「等待接收」→ B 选文件后点 A 的设备名 → 传完在 A 上保存到相册。</p>
+  </div>
 
   <div class="card">
     <h2>v1.74 更新内容：视频工具支持今日头条无水印原片</h2>
