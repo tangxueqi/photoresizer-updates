@@ -1,12 +1,12 @@
 {
-  "versionCode": 83,
-  "versionName": "1.82",
-  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v152/BingYing-1.82.apk",
-  "size": 57370422,
+  "versionCode": 84,
+  "versionName": "1.83",
+  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v153/BingYing-1.83.apk",
+  "size": 57403190,
   "mirrors": [
-    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v152/BingYing-1.82.apk",
-    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v152/BingYing-1.82.apk",
-    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v152/BingYing-1.82.apk"
+    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v153/BingYing-1.83.apk",
+    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v153/BingYing-1.83.apk",
+    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v153/BingYing-1.83.apk"
   ],
-  "notes": "修好了「用 Wi-Fi 传完文件后，回到发送方页面还显示上次选的文件」。以前传输结束时只把状态改成完成，没有清空待发列表，点对方设备就会把上次那个旧文件又发一遍。现在只有发送成功才自动清空队列，并删掉缓存里的文件副本；传输失败或取消会保留队列方便直接重试，接收方保存文件不影响自己的发送队列。Wi-Fi 直传卡片上现在会显示待发文件的文件名，右侧多了「清空」按钮，队列为空时自动隐藏。1.81 的蓝牙白屏修复与 1.80 的 Wi-Fi 直传握手修复都包含在内，两台手机都装 1.82 即可覆盖安装。"
+  "notes": "视频工具新增「提取音频」：首页那一行多了第三个按钮，点进去选一个视频，选完就自动把里面的声音单独提出来并保存到手机，不用再点第二次。用系统原生能力把音轨原样搬进纯音频文件，不重新编码，音质不变，大视频也几秒就好；常见 MP4 / MOV 输出 .m4a。音频保存在「音乐 / 冰影电商素材」，文件管理器和音乐 App 里都能看到，页面还提供「用其他应用打开 / 播放」。安卓相册只列图片和视频，音频归系统媒体库管，所以不会出现在相册里。视频没有声音轨道或格式不支持时会给出具体提示。1.82 的待发列表清理、1.81 的蓝牙白屏修复、1.80 的 Wi-Fi 直传握手修复都包含在内。"
 }
