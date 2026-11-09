@@ -1,12 +1,12 @@
 {
-  "versionCode": 81,
-  "versionName": "1.80",
-  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v150/BingYing-1.80.apk",
+  "versionCode": 82,
+  "versionName": "1.81",
+  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v151/BingYing-1.81.apk",
   "size": 57370422,
   "mirrors": [
-    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v150/BingYing-1.80.apk",
-    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v150/BingYing-1.80.apk",
-    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v150/BingYing-1.80.apk"
+    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v151/BingYing-1.81.apk",
+    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v151/BingYing-1.81.apk",
+    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v151/BingYing-1.81.apk"
   ],
-  "notes": "修好了「同一 Wi-Fi 直传能搜到对方、一选文件就提示传输没成功」。原因是两端的握手帧对不上：接收方说「我准备好了」，发送方却在等「收到」；接收方还多发了一个开始帧，被当成文件头解析，所以不管大文件还是小图片都必然失败。现在两端统一成：接收方说准备 → 发送方确认 → 直接发文件，中间不再插任何多余帧；热点直连那条路也一并修了。搜索、手动填地址的用法不变。注意：两台手机都要装 1.80，1.79 和 1.80 的 Wi-Fi 握手顺序不同，混装会提示「版本不一致」。"
+  "notes": "修好了「打开蓝牙后整页白屏」。进页面时蓝牙关着，点「打开蓝牙」在系统里开启后回到 App，顶栏还在但下面一片空白，看不到「我是发送方 / 我是接收方」，退出重进才恢复。原因是状态刷新在蓝牙恢复可用时没有把「蓝牙没开」这个状态清掉，而提示横幅又因为检测到蓝牙已开主动不显示，于是整个页面没有内容可画。现在蓝牙一开就自动回到角色选择页，并提示「蓝牙已就绪」；另外针对部分手机蓝牙开启较慢，回到页面后会在 0.6 秒、1.8 秒、4 秒各复查一次，不用再退出重进。1.80 修好的 Wi-Fi 直传握手也在这一版里，两台手机都装 1.81 即可。"
 }
