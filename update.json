@@ -1,12 +1,12 @@
 {
-  "versionCode": 82,
-  "versionName": "1.81",
-  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v151/BingYing-1.81.apk",
+  "versionCode": 83,
+  "versionName": "1.82",
+  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v152/BingYing-1.82.apk",
   "size": 57370422,
   "mirrors": [
-    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v151/BingYing-1.81.apk",
-    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v151/BingYing-1.81.apk",
-    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v151/BingYing-1.81.apk"
+    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v152/BingYing-1.82.apk",
+    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v152/BingYing-1.82.apk",
+    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v152/BingYing-1.82.apk"
   ],
-  "notes": "修好了「打开蓝牙后整页白屏」。进页面时蓝牙关着，点「打开蓝牙」在系统里开启后回到 App，顶栏还在但下面一片空白，看不到「我是发送方 / 我是接收方」，退出重进才恢复。原因是状态刷新在蓝牙恢复可用时没有把「蓝牙没开」这个状态清掉，而提示横幅又因为检测到蓝牙已开主动不显示，于是整个页面没有内容可画。现在蓝牙一开就自动回到角色选择页，并提示「蓝牙已就绪」；另外针对部分手机蓝牙开启较慢，回到页面后会在 0.6 秒、1.8 秒、4 秒各复查一次，不用再退出重进。1.80 修好的 Wi-Fi 直传握手也在这一版里，两台手机都装 1.81 即可。"
+  "notes": "修好了「用 Wi-Fi 传完文件后，回到发送方页面还显示上次选的文件」。以前传输结束时只把状态改成完成，没有清空待发列表，点对方设备就会把上次那个旧文件又发一遍。现在只有发送成功才自动清空队列，并删掉缓存里的文件副本；传输失败或取消会保留队列方便直接重试，接收方保存文件不影响自己的发送队列。Wi-Fi 直传卡片上现在会显示待发文件的文件名，右侧多了「清空」按钮，队列为空时自动隐藏。1.81 的蓝牙白屏修复与 1.80 的 Wi-Fi 直传握手修复都包含在内，两台手机都装 1.82 即可覆盖安装。"
 }
