@@ -77,14 +77,26 @@
     <div class="meta">
       <span class="tag">Android 7.0+</span>
       <span class="tag">约 57 MB</span>
-      <span class="tag">版本 1.80</span>
+      <span class="tag">版本 1.81</span>
       <span class="tag">Debug 版</span>
     </div>
-    <a class="btn" href="https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v150/BingYing-1.80.apk" download>下载 APK 安装包（v1.80）</a>
+    <a class="btn" href="https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v151/BingYing-1.81.apk" download>下载 APK 安装包（v1.81）</a>
     <span class="btn-sub">国内加速下载地址（GitHub Releases 加速镜像，支持多镜像自动切换与并行下载）</span>
-    <span class="btn-sub">若加速镜像不可用，点 <a href="https://github.com/tangxueqi/photoresizer-updates/releases/download/v150/BingYing-1.80.apk" target="_blank">GitHub 直链</a> 或换用桌面浏览器下载后再传手机</span>
+    <span class="btn-sub">若加速镜像不可用，点 <a href="https://github.com/tangxueqi/photoresizer-updates/releases/download/v151/BingYing-1.81.apk" target="_blank">GitHub 直链</a> 或换用桌面浏览器下载后再传手机</span>
   </div>
 
+
+  <div class="card">
+    <h2>v1.81 更新内容：打开蓝牙后不再白屏</h2>
+    <ol>
+      <li><strong>问题</strong>——进页面时蓝牙是关的，点「打开蓝牙」在系统里开启后回到 App，顶栏还在，下面一整片空白，看不到「我是发送方 / 我是接收方」；必须退出页面再进来才正常</li>
+      <li><strong>原因</strong>——状态刷新在蓝牙恢复可用时没把「蓝牙没开」这个状态清掉；而提示横幅又因为检测到适配器已开启主动不显示。两处一叠加，整个页面就没有任何内容可画了。退出重进之所以好，是因为页面重建时初始状态本来就是正常的</li>
+      <li><strong>现在</strong>——蓝牙一开就自动回到「这台手机做什么？」角色选择页，并提示「蓝牙已就绪，可以开始传输了」，不用再退出重进</li>
+      <li><strong>慢一点的手机也照顾到</strong>——部分机型开启蓝牙是异步的，回到页面那一瞬间系统还报告没开，所以会在 0.6 秒、1.8 秒、4 秒各复查一次；只在「确实还停在蓝牙没开」时执行，不会打断已经开始的传输</li>
+      <li><strong>回归测试</strong>——新增 11 项（状态转移矩阵、进行中的会话不被覆盖、横幅显示条件、真实蓝牙开关关→开→回到前台）；全量 <strong>543 项通过、0 失败、2 跳过</strong></li>
+    </ol>
+    <p class="note">本版同时包含 1.80 的 Wi-Fi 直传握手修复。<strong>两台手机都装 1.81</strong> 即可，1.79 与 1.80 的 Wi-Fi 握手顺序不同，混装会提示「版本不一致」。</p>
+  </div>
 
   <div class="card">
     <h2>v1.80 更新内容：修好「同一 Wi-Fi 直传一选文件就失败」</h2>
