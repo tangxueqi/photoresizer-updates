@@ -77,14 +77,28 @@
     <div class="meta">
       <span class="tag">Android 7.0+</span>
       <span class="tag">约 57 MB</span>
-      <span class="tag">版本 1.75</span>
+      <span class="tag">版本 1.76</span>
       <span class="tag">Debug 版</span>
     </div>
-    <a class="btn" href="https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v146/BingYing-1.75.apk" download>下载 APK 安装包（v1.75）</a>
+    <a class="btn" href="https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v147/BingYing-1.76.apk" download>下载 APK 安装包（v1.76）</a>
     <span class="btn-sub">国内加速下载地址（GitHub Releases 加速镜像，支持多镜像自动切换与并行下载）</span>
-    <span class="btn-sub">若加速镜像不可用，点 <a href="https://github.com/tangxueqi/photoresizer-updates/releases/download/v146/BingYing-1.75.apk" target="_blank">GitHub 直链</a> 或换用桌面浏览器下载后再传手机</span>
+    <span class="btn-sub">若加速镜像不可用，点 <a href="https://github.com/tangxueqi/photoresizer-updates/releases/download/v147/BingYing-1.76.apk" target="_blank">GitHub 直链</a> 或换用桌面浏览器下载后再传手机</span>
   </div>
 
+
+  <div class="card">
+    <h2>v1.76 更新内容：蓝牙传文件提速，大文件自动走 Wi-Fi 直连</h2>
+    <ol>
+      <li><strong>先说结论</strong>——以前只能用蓝牙，最快也就 300 KB/s 左右；现在两台手机都是 Android 10 及以上时，程序会自动切到 Wi-Fi 直连通道，实测可达 <strong>10–50 MB/s</strong>，几十 MB 的视频几秒传完。两台手机之间仍是直接连接，不联网、不经过服务器、不需要路由器</li>
+      <li><strong>手机怎么知道该走哪条路</strong>——蓝牙只负责"打招呼"：发送方告诉对方我有 Wi-Fi，接收方开一个不联外网的本地热点，把热点名和密码通过蓝牙递回去，发送方接上就走 Wi-Fi。任何一步不成功都自动退回纯蓝牙，不用你手动选</li>
+      <li><strong>蓝牙本身也快了</strong>——原来每 64KB 写一次、且输出流没有缓冲，每次写都要穿透一次系统底层，链路长期填不满。现在改成 256KB 大块加缓冲输出，也不在循环里反复 flush。蓝牙 RFCOMM 实测能到 320–410 KB/s，之前远没跑满</li>
+      <li><strong>能压的先压</strong>——txt、csv、json、md 这类先试压一段，压得动就边压边传，接收端边收边解压，文本表格常常省一半以上体积。视频、JPG、PNG、ZIP、APK、Office 文档本身已经压过，直接跳过，不浪费电</li>
+      <li><strong>速度看得见了</strong>——进度卡片现在同时显示实时速度、平均速度和剩余时间，"Wi-Fi 直连"还是"蓝牙"直接标在标题旁边。上一版之所以说不清慢在哪，是因为旧代码每 256KB 才算一次速度，慢速链路上十几秒不出新值，截图里那个 224 B/s 其实是时间窗口太短的抖动</li>
+      <li><strong>传坏的文件照样拦得住</strong>——压缩、换通道都没有削弱校验，CRC32 仍然逐文件核对，中途断开或数据被篡改会删掉半成品并提示，不会留下打不开的文件</li>
+      <li><strong>其余不变</strong>——多文件连续传、重名不覆盖、传完确认再存相册、拒收 APK 全部照旧；新增 28 项测试（压缩前后逐字节比对、视频跳过压缩、随机内容试压后放弃、老版本头帧兼容、控制帧密码转义、测速窗口统计、剩余时间换算、进度单调不减），全量回归 483 项全部通过</li>
+    </ol>
+    <p class="note">用法没变：两台手机都装本版 → 都开蓝牙 → A 点「等待接收」→ B 选文件点 A 的设备名。首次可能弹一次「附近的设备」权限（Wi-Fi 和蓝牙在同一个权限组），允许即可。</p>
+  </div>
 
   <div class="card">
     <h2>v1.75 更新内容：新增「蓝牙传文件」，两台手机不联网直接互传</h2>
