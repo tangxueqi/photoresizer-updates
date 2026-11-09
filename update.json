@@ -1,12 +1,12 @@
 {
-  "versionCode": 84,
-  "versionName": "1.83",
-  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v153/BingYing-1.83.apk",
+  "versionCode": 85,
+  "versionName": "1.84",
+  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v154/BingYing-1.84.apk",
   "size": 57403190,
   "mirrors": [
-    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v153/BingYing-1.83.apk",
-    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v153/BingYing-1.83.apk",
-    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v153/BingYing-1.83.apk"
+    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v154/BingYing-1.84.apk",
+    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v154/BingYing-1.84.apk",
+    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v154/BingYing-1.84.apk"
   ],
-  "notes": "视频工具新增「提取音频」：首页那一行多了第三个按钮，点进去选一个视频，选完就自动把里面的声音单独提出来并保存到手机，不用再点第二次。用系统原生能力把音轨原样搬进纯音频文件，不重新编码，音质不变，大视频也几秒就好；常见 MP4 / MOV 输出 .m4a。音频保存在「音乐 / 冰影电商素材」，文件管理器和音乐 App 里都能看到，页面还提供「用其他应用打开 / 播放」。安卓相册只列图片和视频，音频归系统媒体库管，所以不会出现在相册里。视频没有声音轨道或格式不支持时会给出具体提示。1.82 的待发列表清理、1.81 的蓝牙白屏修复、1.80 的 Wi-Fi 直传握手修复都包含在内。"
+  "notes": "修好首页「视频工具」中间按钮的文字：之前只显示「修改」，后半截「 MD5」被挤到第二行截掉了，现在完整显示「修改 MD5」。三个按钮统一收紧左右内边距并强制单行不折行，320dp 的小屏机型也不会截字。只改了按钮排版，功能全部照旧：提取音频、修改视频 MD5、蓝牙与 Wi-Fi 直传、图片批处理都不变，签名与之前版本一致，可直接覆盖安装。"
 }
