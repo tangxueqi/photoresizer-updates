@@ -77,14 +77,28 @@
     <div class="meta">
       <span class="tag">Android 7.0+</span>
       <span class="tag">约 57 MB</span>
-      <span class="tag">版本 1.76</span>
+      <span class="tag">版本 1.77</span>
       <span class="tag">Debug 版</span>
     </div>
-    <a class="btn" href="https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v147/BingYing-1.76.apk" download>下载 APK 安装包（v1.76）</a>
+    <a class="btn" href="https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v148/BingYing-1.77.apk" download>下载 APK 安装包（v1.77）</a>
     <span class="btn-sub">国内加速下载地址（GitHub Releases 加速镜像，支持多镜像自动切换与并行下载）</span>
-    <span class="btn-sub">若加速镜像不可用，点 <a href="https://github.com/tangxueqi/photoresizer-updates/releases/download/v147/BingYing-1.76.apk" target="_blank">GitHub 直链</a> 或换用桌面浏览器下载后再传手机</span>
+    <span class="btn-sub">若加速镜像不可用，点 <a href="https://github.com/tangxueqi/photoresizer-updates/releases/download/v148/BingYing-1.77.apk" target="_blank">GitHub 直链</a> 或换用桌面浏览器下载后再传手机</span>
   </div>
 
+
+  <div class="card">
+    <h2>v1.77 更新内容：蓝牙开着不再提示没开，「已连接」后不再干等，新增同一 Wi-Fi 直传</h2>
+    <ol>
+      <li><strong>蓝牙开着就不再提示</strong>——以前页面只在进入时读一次蓝牙状态，你去通知栏打开蓝牙再回来，顶部那条「蓝牙没开」还挂着。现在回到前台和每次刷新都会重新判断，确认开着就立刻消失；正在传、等待中、传完的结果也不会再被它顶掉</li>
+      <li><strong>「已连接」后不再干等</strong>——旧版接收方一连上就进接收循环死等，发送方还在读文件、准备压缩，界面只有一句「正在协商传输，马上开始…」，60MB 视频看起来像卡死。现在改成三步握手：接收方先说「我已进入接收」→ 发送方准备完文件回「开始」→ 接收方才开始收，谁都不会在没打招呼前干等</li>
+      <li><strong>过程看得见</strong>——卡片上实时显示具体在做哪一步：正在协商 Wi-Fi、正在开热点、正在加入对方热点、正在压缩某个文件（真实百分比进度条）、对方已准备好正在准备文件。等不及了可以直接点「取消」</li>
+      <li><strong>压缩只做一次</strong>——旧版为了算出压缩后体积会把文件压两遍，现在先在本地压成一份临时文件，算大小和发送都用它，传完自动删除，大文件起手快很多</li>
+      <li><strong>同一 Wi-Fi 直传（新增）</strong>——两台手机连同一个路由器时：接收方点「等待接收」后，页面直接显示本机地址（如 <code>192.168.1.23</code>）；发送方在「同一 Wi-Fi 直传」里填这个地址即发。不用配对、不开蓝牙、不用热点，60MB 视频通常 5–20 秒</li>
+      <li><strong>失败说清原因</strong>——Wi-Fi 直连掉回蓝牙时会写明为什么（热点被系统占用、缺少权限、对方没连上），不会再默默变慢；等待接收时没连 Wi-Fi 也会直说「这次只能走蓝牙」</li>
+      <li><strong>两台手机都要装这一版</strong>——传输协议的握手这一段两端都换了，新旧版本混装会握不上手。新增 24 项测试（用内存管道跑真实握手代码、对方不确认/回垃圾帧/直接断开都要有明确提示、预压缩只压一次且失败自动退回原文件、取消后不留临时文件、局域网地址输入整理、界面新增卡片），全量回归 <strong>507 项通过、0 失败</strong></li>
+    </ol>
+    <p class="note">推荐顺序：先试「同一 Wi-Fi 直传」（两台都在同一个路由器下，最快最稳）；不行再点「等待接收」走自动协商（Wi-Fi 直连 / 蓝牙自动选）。</p>
+  </div>
 
   <div class="card">
     <h2>v1.76 更新内容：蓝牙传文件提速，大文件自动走 Wi-Fi 直连</h2>
