@@ -1,12 +1,12 @@
 {
-  "versionCode": 75,
-  "versionName": "1.74",
-  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v145/BingYing-1.74.apk",
-  "size": 57238898,
+  "versionCode": 76,
+  "versionName": "1.75",
+  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v146/BingYing-1.75.apk",
+  "size": 57304706,
   "mirrors": [
-    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v145/BingYing-1.74.apk",
-    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v145/BingYing-1.74.apk",
-    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v145/BingYing-1.74.apk"
+    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v146/BingYing-1.75.apk",
+    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v146/BingYing-1.75.apk",
+    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v146/BingYing-1.75.apk"
   ],
-  "notes": "视频工具采集支持今日头条了。以前只认抖音和微信视频号，现在把今日头条的分享文案整段粘进输入框也能直接解析，程序先自己判断是哪家平台，再走对应平台的解析链路，识别到就显示「已识别：今日头条」。今天头条的解析走的是官方 VOD 接口：先把分享短链跟到最终的 video 页，从页面里的 RENDER_DATA 读出视频 ID 和 playAuthTokenV2，解出 GetPlayInfoToken 后向 vod.bytedanceapi.com 换取官方播放信息，在各种清晰度里挑分辨率最高的那路原片，拿到的是平台给的原视频直链，不带任何平台角标和账号水印。实测这条分享链接（500公里奔现）解析出 720×1280、40MB 的完整原片，抽帧检查画面里只有创作者自己加的字幕，没有水印。下载保存到相册的 Movies/Toutiao 目录，文件名走 toutiao_ 前缀，和抖音、视频号的下载互不干扰。解析失败的分支也分清楚了：链接是图文而不是视频时直接提示「该链接不是视频内容（可能是图文）」，不再笼统报无法识别。输入框占位文案改成「粘贴抖音 / 头条 / 视频号链接」，未识别时提示支持的三个平台。新增 25 项测试（识别头条分享文案、短链、video/article 两种路径、中文标点截断、无 scheme 补全、西瓜视频不误判；RENDER_DATA 解码、字段提取、图文兜底、token 的 base64url 与缺 padding、清晰度按分辨率和码率择优、备用地址回退），全量回归 398 项全部通过，另外真实网络链路自检也已跑通。"
+  "notes": "新增「蓝牙传文件」：两台装了本 App 的手机，打开蓝牙就能互相传照片、视频、文档，全程直连，不联网、不经过任何服务器、不产生流量。用法是两台都装本 App → 都打开蓝牙 → A 点「等待接收」→ B 选好文件后在设备列表里点 A 的手机名 → 传完在 A 上点「保存到相册」。这一版没有走系统的蓝牙分享入口，而是两台 App 各自占用同一个固定蓝牙服务端口：接收方在后台等连接，发送方直接连过去，连上之后就是一条私有的数据通道。这样能自己控进度（百分比、已传/总量实时刷新）、自己做 CRC32 校验（传输出错或对端提前断开会被判失败并删除半截文件，不会留下打不开的坏文件），还能传完留在缓存里让用户确认后再保存，不直接塞进系统下载目录。支持一次选多个文件连续传，重名文件自动加 (1)(2) 不覆盖；传 4GB 以内任意大小；只接受图片、视频、音频、文档和压缩包，对端发来 APK 之类会被拦下并提示。界面上一屏分三块：接收（等待接收）、发送（选文件 + 队列）、附近的手机（搜索 + 已配对设备），顶部能看到本机是否可被发现，不可被发现时可以一键开启，也能改本机设备名方便对方认出。蓝牙没开、缺权限、定位没开、设备没有蓝牙这几种情况都有对应说明和一键处理，不会只显示一排灰按钮。发送按系统蓝牙实际速率量级做了提示：约 100–200 KB/s，1 分钟 5–10 MB，大视频建议用数据线；安卓限制两端都要在前台，锁屏会断，这点也写在页面底部。权限按系统版本分开声明：Android 12 及以上只要「附近的设备」，Android 11 及以下用蓝牙旧权限加定位（这是安卓搜索蓝牙的硬性要求，本 App 不主动申请定位，已声明 neverForLocation）；蓝牙被声明为可选硬件，没有蓝牙的机型也能装，只是进这一页会给出说明。新增 40 项测试（协议帧编解码与转义、头帧缺字段/负值/超 4GB 拒绝、路径穿越净化、超长长度字段不分配内存、短读流拼包、对端提前断开、CRC 已知值、分片与大块 CRC 一致、类型白名单拦截 APK、多文件连续帧、截断与篡改检出、零字节文件、重名加序号、目录不存在自动创建、ViewModel 空队列提示与状态回落、界面三块结构齐全、每个文件类型有独立图标），全量回归 455 项全部通过；首页新增的蓝牙入口也已验证仍在首屏内，不会把页面撑出滚动。"
 }
