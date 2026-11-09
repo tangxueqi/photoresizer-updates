@@ -77,20 +77,32 @@
     <div class="meta">
       <span class="tag">Android 7.0+</span>
       <span class="tag">约 57 MB</span>
-      <span class="tag">版本 1.79</span>
+      <span class="tag">版本 1.80</span>
       <span class="tag">Debug 版</span>
     </div>
-    <a class="btn" href="https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v149/BingYing-1.79.apk" download>下载 APK 安装包（v1.79）</a>
+    <a class="btn" href="https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v150/BingYing-1.80.apk" download>下载 APK 安装包（v1.80）</a>
     <span class="btn-sub">国内加速下载地址（GitHub Releases 加速镜像，支持多镜像自动切换与并行下载）</span>
-    <span class="btn-sub">若加速镜像不可用，点 <a href="https://github.com/tangxueqi/photoresizer-updates/releases/download/v149/BingYing-1.79.apk" target="_blank">GitHub 直链</a> 或换用桌面浏览器下载后再传手机</span>
+    <span class="btn-sub">若加速镜像不可用，点 <a href="https://github.com/tangxueqi/photoresizer-updates/releases/download/v150/BingYing-1.80.apk" target="_blank">GitHub 直链</a> 或换用桌面浏览器下载后再传手机</span>
   </div>
 
+
+  <div class="card">
+    <h2>v1.80 更新内容：修好「同一 Wi-Fi 直传一选文件就失败」</h2>
+    <ol>
+      <li><strong>问题长什么样</strong>——在「同一 Wi-Fi 直传」里能搜到对方手机，点对方、选完文件，立刻弹「传输没成功 / 对方没有响应传输请求」，大视频和小图片都一样</li>
+      <li><strong>真正的原因</strong>——不是网络不通，是两端的握手帧对不上：接收方说的是「我准备好了」（WIFI_READY），发送方却在等「收到」（WIFI_ACK），一看不是就判失败。而且接收方说完准备之后还多发了一个「开始传输」帧，这个多出来的帧会被对方当成文件头解析，整条流从一开始就错位</li>
+      <li><strong>怎么修的</strong>——两端统一成一条最短路径：接收方说「准备好了」→ 发送方回「收到」→ 紧接着就是第一个文件头，中间不再插任何控制帧。热点直连那条路有同样的问题，也一起改掉了</li>
+      <li><strong>失败提示说人话</strong>——超时、对方中途退出、两端版本不一致，分别给不同提示，不会再一律显示「对方没有响应」</li>
+      <li><strong>新增 4 项真实 TCP 回环测试</strong>——用 ServerSocket + Socket 跑完整的「接收方 + 发送方」，多一帧、少一帧、顺序反了都会让测试失败；全量回归 <strong>532 项通过、0 失败、2 跳过</strong></li>
+    </ol>
+    <p class="note">用法完全没变：接收方选「我是接收方」等在那里 → 发送方选「我是发送方」→ 在「同一 Wi-Fi 直传」里点搜索 → 点对方 → 选文件即发。<strong>两台手机都要装 1.80</strong>，1.79 与 1.80 的 Wi-Fi 握手顺序不同，混装会明确提示「版本不一致」。</p>
+  </div>
 
   <div class="card">
     <h2>v1.79 更新内容：先连上再选文件 · 同一 Wi-Fi 点一下就发</h2>
     <ol>
       <li><strong>流程按你说的改了</strong>——进页面先选「我是发送方 / 我是接收方」；发送方搜到对方点「连接」，看到「连接成功」之后才出现「选择文件并发送」。不会再出现「先选文件、再点发送」那种顺序</li>
-      <li><strong>为什么你之前没看到</strong>——这套流程在 1.78 就做完了，但 1.78 一直没推自动升级，你手机上还是 1.77。这次是真正发布，两台手机都要装 1.79（1.77 与 1.79 的握手时序不兼容，混装握不上手）</li>
+      <li><strong>为什么你之前没看到</strong>——这套流程在 1.78 就做完了，但 1.78 一直没推自动升级，你手机上还是 1.77。（历史版本）那一版是第一次把新流程推上线，现在请直接用最新版 1.80</li>
       <li><strong>接收方：地址用大字显示</strong>——「我是接收方」那页中间会显示 <code>192.168.x.x</code> 这样的大号地址，右边有「复制」，不用再去设置里翻</li>
       <li><strong>发送方：搜索一下就出来</strong>——「同一 Wi-Fi 直传」里点「搜索同一 Wi-Fi 的手机」，同一路由器下的接收方会直接出现在列表里，点一下就开始传；还没选文件会先弹选择器，选完自动发，不用再回头点一次「发送」</li>
       <li><strong>手动填地址还在</strong>——路由器禁止广播、或两台手机跨网段时，仍然可以手填地址，入口在卡片最下面「手动填对方地址」</li>
