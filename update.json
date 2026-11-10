@@ -1,12 +1,12 @@
 {
-  "versionCode": 85,
-  "versionName": "1.84",
-  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v154/BingYing-1.84.apk",
+  "versionCode": 86,
+  "versionName": "1.85",
+  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v155/BingYing-1.85.apk",
   "size": 57403190,
   "mirrors": [
-    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v154/BingYing-1.84.apk",
-    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v154/BingYing-1.84.apk",
-    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v154/BingYing-1.84.apk"
+    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v155/BingYing-1.85.apk",
+    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v155/BingYing-1.85.apk",
+    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v155/BingYing-1.85.apk"
   ],
-  "notes": "修好首页「视频工具」中间按钮的文字：之前只显示「修改」，后半截「 MD5」被挤到第二行截掉了，现在完整显示「修改 MD5」。三个按钮统一收紧左右内边距并强制单行不折行，320dp 的小屏机型也不会截字。只改了按钮排版，功能全部照旧：提取音频、修改视频 MD5、蓝牙与 Wi-Fi 直传、图片批处理都不变，签名与之前版本一致，可直接覆盖安装。"
+  "notes": "尺寸标注的文字现在会跟着线条倾斜：以前斜着画尺寸线，文字却始终水平，只有 0° 和 -90° 两档。这一版按图片真实像素算出线条角度，文字自动与线同角度，线往左时自动翻正保证能读；水平线、竖直线和吸附出的直角标注保持原样。拖右上角旋转标志仍可手动微调（叠加在线条角度上），选中尺寸标注时下方会显示「标注角度 X°」。预览、放大镜、导出图共用同一套角度算法，所见即所得。1.84 的「修改 MD5」按钮文字修复、1.83 的提取音频、1.82 待发列表清理、1.81 蓝牙白屏、1.80 Wi-Fi 直传修复都包含在内，签名一致可直接覆盖安装。"
 }
