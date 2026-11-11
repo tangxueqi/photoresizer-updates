@@ -77,14 +77,26 @@
     <div class="meta">
       <span class="tag">Android 7.0+</span>
       <span class="tag">约 57 MB</span>
-      <span class="tag">版本 1.86</span>
+      <span class="tag">版本 1.87</span>
       <span class="tag">Debug 版</span>
     </div>
-    <a class="btn" href="https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v156/BingYing-1.86.apk" download>下载 APK 安装包（v1.86）</a>
+    <a class="btn" href="https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v157/BingYing-1.87.apk" download>下载 APK 安装包（v1.87）</a>
     <span class="btn-sub">国内加速下载地址（GitHub Releases 加速镜像，支持多镜像自动切换与并行下载）</span>
-    <span class="btn-sub">若加速镜像不可用，点 <a href="https://github.com/tangxueqi/photoresizer-updates/releases/download/v156/BingYing-1.86.apk" target="_blank">GitHub 直链</a> 或换用桌面浏览器下载后再传手机</span>
+    <span class="btn-sub">若加速镜像不可用，点 <a href="https://github.com/tangxueqi/photoresizer-updates/releases/download/v157/BingYing-1.87.apk" target="_blank">GitHub 直链</a> 或换用桌面浏览器下载后再传手机</span>
   </div>
 
+
+  <div class="card">
+    <h2>v1.87 更新内容：批量下载改名 + 进度条 + 改 MD5 批量</h2>
+    <ol>
+      <li><strong>批量下载改名</strong>——输入多条链接后，面板多出一个「批量命名前缀」框。填 <code>sfzj</code> 就会把下载好的文件依次存成 <code>sfzj_001.mp4</code>、<code>sfzj_002.mp4</code>……（前缀 + 下划线 + 零填充序号，数字顺序 +1）；前缀留空则沿用平台默认前缀（douyin_ / wechat_ / toutiao_）。输入框下方实时预览前两条命名，确认无误再下载</li>
+      <li><strong>整批进度条</strong>——批量下载时，从「解析第 1 条」到「下载第 N 条」全程都有进度条，并显示「第 i/N 条 · 当前动作」，能直观看到进行到哪了（单条下载的进度条保持不变）</li>
+      <li><strong>结果列表可滚动、可复制</strong>——下载结束后的列表不再只露前 8 条，而是限高可上下滑动、完整显示每条文件名（含重命名结果，不再省略）；点任意一行，就把这一行的「文件名 / 原链接标题」复制到剪贴板，方便批量导出清单</li>
+      <li><strong>改 MD5 支持批量</strong>——「修改视频 MD5」页现在用多选选择器，一次勾选多个视频，点「开始批量修改并保存」逐条 改写 MD5 并存入相册；同样有「第 i/N 条」进度条，结束后列表可滚动、可复制（文件名 + 原 MD5 + 新 MD5）。只选 1 个时仍是原来的「预览 → 改 MD5 → 存相册」三步流程</li>
+      <li><strong>关于视频号主页整页下载</strong>——微信没有公开主页列表接口，手机 App 无法直接拿到一个视频号主页里的全部视频，所以「整页下载」改为「你在微信里逐条分享、复制链接，回到 App 一起粘贴 + 填前缀」的方式；电脑端能整页下载的工具都需要登录微信并抓包，不适合手机</li>
+    </ol>
+    <p class="note">这一版同时包含 1.86 的多链接批量下载、1.85 的尺寸标注文字跟随线条角度、1.84 的「修改 MD5」按钮文字修复、1.83 的提取音频等全部修复。<strong>可直接覆盖安装</strong>，签名与之前版本一致。</p>
+  </div>
 
   <div class="card">
     <h2>v1.86 更新内容：视频多链接批量下载</h2>
@@ -107,7 +119,7 @@
       <li><strong>还能手动微调</strong>——拖文字块右上角的旋转标志，是在「线条角度」基础上再加一个偏移；选中尺寸标注时，下方会直接显示<strong>「标注角度 X°」</strong>，不用自己猜倾斜了多少度。预览、放大镜、导出图三处用的是同一套角度算法，所见即所得</li>
       <li><strong>其余不变</strong>——颜色 / 粗细 / 字号 / 文字底衬、端点拖拽、撤销重做、批量处理与之前的所有功能全部照旧</li>
     </ol>
-    <p class="note">（历史版本）这一版同时包含 1.84 的「修改 MD5」按钮文字修复、1.83 的提取音频、1.82 的待发列表清理、1.81 的蓝牙白屏修复和 1.80 的 Wi-Fi 直传握手修复。现在请直接使用最新版 1.86。</p>
+    <p class="note">（历史版本）这一版同时包含 1.84 的「修改 MD5」按钮文字修复、1.83 的提取音频、1.82 的待发列表清理、1.81 的蓝牙白屏修复和 1.80 的 Wi-Fi 直传握手修复。现在请直接使用最新版 1.87。</p>
   </div>
 
   <div class="card">
@@ -118,7 +130,7 @@
       <li><strong>现在</strong>——三个按钮统一收紧左右内边距并强制文字不折行，中间按钮完整显示<strong>「修改 MD5」</strong>；「解析下载」「提取音频」也一并保持不变，320dp 的小屏机型同样不会截字</li>
       <li><strong>其余不变</strong>——提取音频、改 MD5、蓝牙 / Wi-Fi 直传、图片批处理等功能全部照旧，只动了按钮排版；新增界面回归用例与窄屏截图核对</li>
     </ol>
-    <p class="note">（历史版本）这一版修好了「修改 MD5」按钮只显示两个字的问题，同时包含 1.83 的提取音频、1.82 的待发列表清理、1.81 的蓝牙白屏修复和 1.80 的 Wi-Fi 直传握手修复。现在请直接使用最新版 1.86。</p>
+    <p class="note">（历史版本）这一版修好了「修改 MD5」按钮只显示两个字的问题，同时包含 1.83 的提取音频、1.82 的待发列表清理、1.81 的蓝牙白屏修复和 1.80 的 Wi-Fi 直传握手修复。现在请直接使用最新版 1.87。</p>
   </div>
 
   <div class="card">
@@ -130,7 +142,7 @@
       <li><strong>格式与异常都说人话</strong>——常见 MP4 / MOV 输出 .m4a，老式 3GP 输出 .3gp，WebM 输出 .webm；视频没有声音轨道、或音轨格式系统不支持，都会给出具体提示，不会生成一个打不开的坏文件</li>
       <li><strong>关于「保存到相册」</strong>——安卓的相册只列图片和视频，音频归系统媒体库管，所以文件放在<strong>「音乐 / 冰影电商素材」</strong>，文件管理器和音乐 App 里都能看到；页面上写了说明，也给了直接打开播放的按钮</li>
     </ol>
-    <p class="note">（历史版本）这一版同时包含 1.82 的待发列表清理、1.81 的蓝牙白屏修复和 1.80 的 Wi-Fi 直传握手修复。现在请直接使用最新版 1.86。</p>
+    <p class="note">（历史版本）这一版同时包含 1.82 的待发列表清理、1.81 的蓝牙白屏修复和 1.80 的 Wi-Fi 直传握手修复。现在请直接使用最新版 1.87。</p>
   </div>
 
   <div class="card">
@@ -142,7 +154,7 @@
       <li><strong>看得见、清得掉</strong>——卡片上现在会显示待发文件的<strong>文件名</strong>，右侧多一个「清空」按钮。一眼就能分辨是上次残留还是本次新选，也能随时手动清掉；队列为空时这两项都不显示</li>
       <li><strong>回归测试</strong>——新增 6 项队列清理用例与 2 项界面用例，覆盖「成功清空、失败保留、接收完成不影响、返回上一步清空」等路径</li>
     </ol>
-    <p class="note">（历史版本）这一版修好了传完文件后待发列表没清空的问题，现在请直接使用最新版 1.86。</p>
+    <p class="note">（历史版本）这一版修好了传完文件后待发列表没清空的问题，现在请直接使用最新版 1.87。</p>
   </div>
 
   <div class="card">
@@ -154,7 +166,7 @@
       <li><strong>慢一点的手机也照顾到</strong>——部分机型开启蓝牙是异步的，回到页面那一瞬间系统还报告没开，所以会在 0.6 秒、1.8 秒、4 秒各复查一次；只在「确实还停在蓝牙没开」时执行，不会打断已经开始的传输</li>
       <li><strong>回归测试</strong>——新增 11 项（状态转移矩阵、进行中的会话不被覆盖、横幅显示条件、真实蓝牙开关关→开→回到前台）；全量 <strong>543 项通过、0 失败、2 跳过</strong></li>
     </ol>
-    <p class="note">（历史版本）这一版修好了蓝牙开启后的白屏，现在请直接使用最新版 1.86。</p>
+    <p class="note">（历史版本）这一版修好了蓝牙开启后的白屏，现在请直接使用最新版 1.87。</p>
   </div>
 
   <div class="card">
