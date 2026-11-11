@@ -1,12 +1,12 @@
 {
-  "versionCode": 88,
-  "versionName": "1.87",
-  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v157/BingYing-1.87.apk",
+  "versionCode": 89,
+  "versionName": "1.88",
+  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v158/BingYing-1.88.apk",
   "size": 57419574,
   "mirrors": [
-    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v157/BingYing-1.87.apk",
-    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v157/BingYing-1.87.apk",
-    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v157/BingYing-1.87.apk"
+    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v158/BingYing-1.88.apk",
+    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v158/BingYing-1.88.apk",
+    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v158/BingYing-1.88.apk"
   ],
-  "notes": "视频下载与改 MD5 都支持批量了。批量下载新增「命名前缀」输入框：填 sfzj 就会存成 sfzj_001.mp4、sfzj_002.mp4……（前缀留空则按平台默认前缀），整批下载时一直有进度条并显示「第 i/N 条」；结束后的结果列表可上下滑动、完整显示每条文件名，点任意一行即可复制。改 MD5 现在可以一次勾选多个视频，点一下「开始批量修改并保存」逐条改写并存入相册，结果列表同样可滚动、可复制。1.86 的多链接批量下载、1.85 的标注文字跟随线条角度等都包含在内，签名一致可直接覆盖安装。"
+  "notes": "修复 1.87「批量命名前缀」输入框字母只显示上半截的问题——根因是输入框带了浮动标签又被固定成 46dp 高度，输入区被压扁。已去掉浮动标签、高度改为 50dp（与链接输入框一致），现在字母完整可见。包含 1.87 的批量下载改名 + 进度条、结果列表可滚动可复制，以及改 MD5 批量，签名一致可直接覆盖安装。"
 }
