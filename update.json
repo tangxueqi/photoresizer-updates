@@ -1,12 +1,12 @@
 {
-  "versionCode": 91,
-  "versionName": "1.90",
-  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v160/BingYing-1.90.apk",
+  "versionCode": 92,
+  "versionName": "1.91",
+  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v161/BingYing-1.91.apk",
   "size": 57419574,
   "mirrors": [
-    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v160/BingYing-1.90.apk",
-    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v160/BingYing-1.90.apk",
-    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v160/BingYing-1.90.apk"
+    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v161/BingYing-1.91.apk",
+    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v161/BingYing-1.91.apk",
+    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v161/BingYing-1.91.apk"
   ],
-  "notes": "把「复制全部」按钮从页面最底部移到「✓ 批量下载完成：N 条全部成功」这行文字右侧的空白处，下载完立刻能看到、点得到，不用再往下滚动；失败提示行右侧也有。按钮改成实心蓝色小按钮，点后短暂显示「已复制 ✓」。底部「下载标题记录」文本框保留，仍可长按全选复制，只留「清空」按钮，不再重复放复制按钮。包含 1.89 的逐条标题记录、1.88 的前缀输入框修复等全部能力，签名一致可直接覆盖安装。"
+  "notes": "首页版面整理：把蓝牙标志 +「蓝牙传输」四个字做成一个小按钮，放到右上角版本号徽标正下方的空白处，风格与版本号一致；首页底部原来那张「蓝牙传文件 · 两台手机直连，不联网 · 去传」细长卡片，以及它下面的文字说明一并清除，底部只留视频工具一块，版面更整洁。蓝牙功能本身不变，点顶栏按钮仍进入蓝牙传文件页。包含 1.90 的复制全部按钮位置调整等全部能力，签名一致可直接覆盖安装。"
 }
