@@ -1,12 +1,12 @@
 {
-  "versionCode": 90,
-  "versionName": "1.89",
-  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v159/BingYing-1.89.apk",
+  "versionCode": 91,
+  "versionName": "1.90",
+  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v160/BingYing-1.90.apk",
   "size": 57419574,
   "mirrors": [
-    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v159/BingYing-1.89.apk",
-    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v159/BingYing-1.89.apk",
-    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v159/BingYing-1.89.apk"
+    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v160/BingYing-1.90.apk",
+    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v160/BingYing-1.90.apk",
+    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v160/BingYing-1.90.apk"
   ],
-  "notes": "底部新增「下载标题记录」文本框：每下载完一条视频就自动把标题追加一行（逐条换行），运行中实时增长；文本框可长按全选，也有「复制全部」按钮一次复制全部标题，不用再一条一条点。标题里的换行会自动压成空格，保证一行一条；失败的条目标注 [失败] 也占一行。结果列表同时把视频原始标题补回来（原来只显示重命名后的文件名）。包含 1.88 的前缀输入框显示修复、1.87 的批量改名/进度条/改 MD5 批量，签名一致可直接覆盖安装。"
+  "notes": "把「复制全部」按钮从页面最底部移到「✓ 批量下载完成：N 条全部成功」这行文字右侧的空白处，下载完立刻能看到、点得到，不用再往下滚动；失败提示行右侧也有。按钮改成实心蓝色小按钮，点后短暂显示「已复制 ✓」。底部「下载标题记录」文本框保留，仍可长按全选复制，只留「清空」按钮，不再重复放复制按钮。包含 1.89 的逐条标题记录、1.88 的前缀输入框修复等全部能力，签名一致可直接覆盖安装。"
 }
