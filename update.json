@@ -1,12 +1,12 @@
 {
-  "versionCode": 92,
-  "versionName": "1.91",
-  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v161/BingYing-1.91.apk",
+  "versionCode": 93,
+  "versionName": "1.92",
+  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v162/BingYing-1.92.apk",
   "size": 57419574,
   "mirrors": [
-    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v161/BingYing-1.91.apk",
-    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v161/BingYing-1.91.apk",
-    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v161/BingYing-1.91.apk"
+    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v162/BingYing-1.92.apk",
+    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v162/BingYing-1.92.apk",
+    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v162/BingYing-1.92.apk"
   ],
-  "notes": "首页版面整理：把蓝牙标志 +「蓝牙传输」四个字做成一个小按钮，放到右上角版本号徽标正下方的空白处，风格与版本号一致；首页底部原来那张「蓝牙传文件 · 两台手机直连，不联网 · 去传」细长卡片，以及它下面的文字说明一并清除，底部只留视频工具一块，版面更整洁。蓝牙功能本身不变，点顶栏按钮仍进入蓝牙传文件页。包含 1.90 的复制全部按钮位置调整等全部能力，签名一致可直接覆盖安装。"
+  "notes": "修改视频 MD5 保存时不再改文件名：批量和单条都严格沿用原文件名（不再追加 _md5 / _md5_001 后缀），相册里已有同名文件时直接覆盖，不会生成 xxx (1).mp4 或多出一份副本；只改文件内容（MD5），文件名、扩展名、大小写、中文一律原样保留。包含 1.91 的首页蓝牙按钮整理等全部能力，签名一致可直接覆盖安装。"
 }
