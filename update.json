@@ -1,12 +1,12 @@
 {
-  "versionCode": 86,
-  "versionName": "1.85",
-  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v155/BingYing-1.85.apk",
+  "versionCode": 87,
+  "versionName": "1.86",
+  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v156/BingYing-1.86.apk",
   "size": 57403190,
   "mirrors": [
-    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v155/BingYing-1.85.apk",
-    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v155/BingYing-1.85.apk",
-    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v155/BingYing-1.85.apk"
+    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v156/BingYing-1.86.apk",
+    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v156/BingYing-1.86.apk",
+    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v156/BingYing-1.86.apk"
   ],
-  "notes": "尺寸标注的文字现在会跟着线条倾斜：以前斜着画尺寸线，文字却始终水平，只有 0° 和 -90° 两档。这一版按图片真实像素算出线条角度，文字自动与线同角度，线往左时自动翻正保证能读；水平线、竖直线和吸附出的直角标注保持原样。拖右上角旋转标志仍可手动微调（叠加在线条角度上），选中尺寸标注时下方会显示「标注角度 X°」。预览、放大镜、导出图共用同一套角度算法，所见即所得。1.84 的「修改 MD5」按钮文字修复、1.83 的提取音频、1.82 待发列表清理、1.81 蓝牙白屏、1.80 Wi-Fi 直传修复都包含在内，签名一致可直接覆盖安装。"
+  "notes": "视频下载支持多链接批量：把多条抖音 / 头条 / 视频号分享链接整段粘进输入框（一次可粘十几条），App 自动按顺序逐条解析下载、全部存进相册，单条失败不影响其余；提示行会显示「已识别 N 条链接，将按顺序批量下载」，结束后逐条列出成功与失败原因。只粘一条时行为与旧版完全一致。1.85 的尺寸标注文字跟随线条角度、1.84 的「修改 MD5」按钮文字修复、1.83 的提取音频等修复都包含在内，签名一致可直接覆盖安装。"
 }
