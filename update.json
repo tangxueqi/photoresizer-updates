@@ -1,12 +1,12 @@
 {
-  "versionCode": 93,
-  "versionName": "1.92",
-  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v162/BingYing-1.92.apk",
+  "versionCode": 94,
+  "versionName": "1.93",
+  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v163/BingYing-1.93.apk",
   "size": 57419574,
   "mirrors": [
-    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v162/BingYing-1.92.apk",
-    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v162/BingYing-1.92.apk",
-    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v162/BingYing-1.92.apk"
+    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v163/BingYing-1.93.apk",
+    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v163/BingYing-1.93.apk",
+    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v163/BingYing-1.93.apk"
   ],
-  "notes": "修改视频 MD5 保存时不再改文件名：批量和单条都严格沿用原文件名（不再追加 _md5 / _md5_001 后缀），相册里已有同名文件时直接覆盖，不会生成 xxx (1).mp4 或多出一份副本；只改文件内容（MD5），文件名、扩展名、大小写、中文一律原样保留。包含 1.91 的首页蓝牙按钮整理等全部能力，签名一致可直接覆盖安装。"
+  "notes": "修改视频 MD5 后的保存名简化为「原文件名末尾加一个数字 8」，扩展名保持不变：例如 sfzj_001.mp4 → sfzj_0018.mp4、产品视频.mov → 产品视频8.mov，批量和单条规则一致，不再出现 _md5_001 或递增序号；大小写、中文、空格原样保留，无扩展名时补 .mp4。同名文件已存在时直接覆盖，重复处理同一个视频不会越攒越多。包含 1.92 及之前全部能力，签名一致可直接覆盖安装。"
 }
