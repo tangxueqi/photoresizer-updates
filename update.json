@@ -1,12 +1,12 @@
 {
-  "versionCode": 95,
-  "versionName": "1.94",
-  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v164/BingYing-1.94.apk",
+  "versionCode": 96,
+  "versionName": "1.95",
+  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v165/BingYing-1.95.apk",
   "size": 57419574,
   "mirrors": [
-    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v164/BingYing-1.94.apk",
-    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v164/BingYing-1.94.apk",
-    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v164/BingYing-1.94.apk"
+    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v165/BingYing-1.95.apk",
+    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v165/BingYing-1.95.apk",
+    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v165/BingYing-1.95.apk"
   ],
-  "notes": "修复改 MD5 时把文件名读错：部分系统相册/文件选择器会把 wechat_1794418225731.mp4 读成 9676.mp4（纯数字媒体 ID 拼扩展名），导致保存成 96768.mp4。现在遇到这种纯数字假名字会用 Uri 里的媒体 ID 反查相册真实文件名，正常名字一律不动，反查不到也保留原结果。同时选完视频就显示「保存为 xxx」、批量列表和结果列表都列出实际保存名，改之前和改之后都能核对。保存名规则不变：原名末尾加数字 8，如 wechat_1794418225731.mp4 → wechat_17944182257318.mp4。签名一致可直接覆盖安装。"
+  "notes": "减少升级时被系统反复询问：点「立即升级」时会先检查是否拥有「安装未知应用」权限，没开过就直接跳到本应用的授权页，开一次即可永久生效，之后升级不会再重复弹权限询问。说明：普通第三方应用无法真正提权或静默安装，Android 强制的最后一次「确认安装」仍会保留（只有 root / 设备所有者 / 系统签名才能省略）。包含 1.94 及之前全部能力，签名一致可直接覆盖安装。"
 }
