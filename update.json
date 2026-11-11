@@ -1,12 +1,12 @@
 {
-  "versionCode": 89,
-  "versionName": "1.88",
-  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v158/BingYing-1.88.apk",
+  "versionCode": 90,
+  "versionName": "1.89",
+  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v159/BingYing-1.89.apk",
   "size": 57419574,
   "mirrors": [
-    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v158/BingYing-1.88.apk",
-    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v158/BingYing-1.88.apk",
-    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v158/BingYing-1.88.apk"
+    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v159/BingYing-1.89.apk",
+    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v159/BingYing-1.89.apk",
+    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v159/BingYing-1.89.apk"
   ],
-  "notes": "修复 1.87「批量命名前缀」输入框字母只显示上半截的问题——根因是输入框带了浮动标签又被固定成 46dp 高度，输入区被压扁。已去掉浮动标签、高度改为 50dp（与链接输入框一致），现在字母完整可见。包含 1.87 的批量下载改名 + 进度条、结果列表可滚动可复制，以及改 MD5 批量，签名一致可直接覆盖安装。"
+  "notes": "底部新增「下载标题记录」文本框：每下载完一条视频就自动把标题追加一行（逐条换行），运行中实时增长；文本框可长按全选，也有「复制全部」按钮一次复制全部标题，不用再一条一条点。标题里的换行会自动压成空格，保证一行一条；失败的条目标注 [失败] 也占一行。结果列表同时把视频原始标题补回来（原来只显示重命名后的文件名）。包含 1.88 的前缀输入框显示修复、1.87 的批量改名/进度条/改 MD5 批量，签名一致可直接覆盖安装。"
 }
