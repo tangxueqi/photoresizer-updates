@@ -1,12 +1,12 @@
 {
-  "versionCode": 97,
-  "versionName": "1.96",
-  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v166/BingYing-1.96.apk",
-  "size": 57430769,
+  "versionCode": 98,
+  "versionName": "1.97",
+  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v167/BingYing-1.97.apk",
+  "size": 57463537,
   "mirrors": [
-    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v166/BingYing-1.96.apk",
-    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v166/BingYing-1.96.apk",
-    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v166/BingYing-1.96.apk"
+    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v167/BingYing-1.97.apk",
+    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v167/BingYing-1.97.apk",
+    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v167/BingYing-1.97.apk"
   ],
-  "notes": "⚠ 重要：本版更换了签名证书，必须先卸载旧版再安装，直接覆盖会提示签名冲突。旧版用的是 Android 默认调试证书（CN=Android Debug）且只签 v2，国产 ROM 的纯净模式/安装验证会把它判成「未签名/未验证」并要求输锁屏密码。1.96 改用正式发布证书（CN=BingYing, O=BingYing Studio, C=CN，有效至 2056 年），并打齐 v1/v2/v3 三套签名。注意：安装时输密码是 ROM 的「纯净模式/安装验证」策略，App 改不了，需按手机品牌在系统设置里关一次（华为/小米关纯净模式，OPPO/vivo 关安装验证），关掉后永久免输。装好 1.96 后，后续升级恢复直接覆盖安装。包含 1.95 及之前全部能力。"
+  "notes": "v1.97 新增首页「批量重命名」：在首页视频工具下方进入，选多个图片/视频后加前缀与序号改名（如 SPA001、SPA002，数字自动补零、随总数加宽，扩展名原样保留），填好前缀实时预览，完成后可逐条或一键复制。本版与 1.96 同一张正式签名证书，已装 1.96 的用户可直接覆盖安装；若你还在更早的 1.95（调试证书）版本，请先按当时的提示卸载旧版再装。包含 1.96 的正式签名、1.95 的一次性安装授权引导、1.94 的文件名读取修复等全部能力。"
 }
