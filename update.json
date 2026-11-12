@@ -1,12 +1,12 @@
 {
-  "versionCode": 99,
-  "versionName": "1.98",
-  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v168/BingYing-1.98.apk",
-  "size": 57471653,
+  "versionCode": 100,
+  "versionName": "1.99",
+  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v169/BingYing-1.99.apk",
+  "size": 57471660,
   "mirrors": [
-    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v168/BingYing-1.98.apk",
-    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v168/BingYing-1.98.apk",
-    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v168/BingYing-1.98.apk"
+    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v169/BingYing-1.99.apk",
+    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v169/BingYing-1.99.apk",
+    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v169/BingYing-1.99.apk"
   ],
-  "notes": "v1.98 修复批量重命名全部失败的 bug：1.97 执行时每个文件都被算成同一个目标名（如都变成 fdb001.jpg）互相冲突导致 5 个全失败，现已整批统一编号（fdb001、fdb002……各不相同）；并增强相册文件改名的兜底（按媒体 ID 在媒体库更新文件名，覆盖更多国产 ROM）。与 1.97 同一张正式签名证书、v1/v2/v3 三套签名齐全，已装 1.97 的用户可直接覆盖安装；若你还在更早的 1.95（调试证书）版本，请先卸载旧版再装。包含 1.97 新增的批量重命名（首页视频工具下方入口，前缀+序号 SPA001/SPA002，扩展名原样保留，实时预览与一键复制）、1.96 正式签名、1.95 一次性安装授权引导、1.94 文件名读取修复等全部能力。"
+  "notes": "v1.99 真正修好批量重命名改不了名的问题：v1.98 把编号 bug 修好了（文件名能正确算成 SPA001、SPA002…各不相同），但真机改名仍全部失败——根因是文件选择器默认只申请了读权限，改名要写文件名却没申请写权限，系统直接拒绝。本版显式授予写权限（FLAG_GRANT_WRITE_URI_PERMISSION），三条改名路径（文档重命名 / 媒体库更新 / 按媒体 ID 兜底）即可生效；同时失败条目现在会显示具体原因（如「无写权限」、「提供器不支持改名」），方便判断是相册限制还是其它问题。与 1.98 同一张正式签名证书、v1/v2/v3 三套签名齐全，已装 1.98 的用户可直接覆盖安装；若你还在更早的 1.95（调试证书）版本，请先卸载旧版再装。"
 }
