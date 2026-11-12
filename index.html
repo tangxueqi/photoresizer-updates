@@ -77,14 +77,29 @@
     <div class="meta">
       <span class="tag">Android 7.0+</span>
       <span class="tag">约 57 MB</span>
-      <span class="tag">版本 1.95</span>
-      <span class="tag">Debug 版</span>
+      <span class="tag">版本 1.96</span>
+      <span class="tag">正式签名版</span>
     </div>
-    <a class="btn" href="https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v165/BingYing-1.95.apk" download>下载 APK 安装包（v1.95）</a>
+    <a class="btn" href="https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v166/BingYing-1.96.apk" download>下载 APK 安装包（v1.96）</a>
     <span class="btn-sub">国内加速下载地址（GitHub Releases 加速镜像，支持多镜像自动切换与并行下载）</span>
-    <span class="btn-sub">若加速镜像不可用，点 <a href="https://github.com/tangxueqi/photoresizer-updates/releases/download/v165/BingYing-1.95.apk" target="_blank">GitHub 直链</a> 或换用桌面浏览器下载后再传手机</span>
+    <span class="btn-sub">若加速镜像不可用，点 <a href="https://github.com/tangxueqi/photoresizer-updates/releases/download/v166/BingYing-1.96.apk" target="_blank">GitHub 直链</a> 或换用桌面浏览器下载后再传手机</span>
+    <div class="warn" style="margin-top:14px">
+      <strong>⚠ 本版换了签名证书，必须先卸载旧版再安装</strong><br>
+      1.95 及更早版本用的是 Android 调试证书，与 1.96 签名不同，直接覆盖安装会提示「签名冲突 / 应用未安装」。请先在手机上卸载旧版，再安装这里下载的 1.96；卸载会清空 App 内的设置与待发列表。<strong>装好 1.96 之后</strong>，以后的升级就恢复直接覆盖安装，不用再卸载。
+    </div>
   </div>
 
+
+  <div class="card">
+    <h2>v1.96 更新内容：换成正式发布证书，补全 v1 / v2 / v3 签名</h2>
+    <ol>
+      <li><strong>为什么之前被提示「未签名」</strong>——旧版用的是 Android 默认调试证书（证书名 <code>CN=Android Debug</code>），而且只签了 v2 一套方案。国产 ROM 的「纯净模式 / 安装验证」看到调试证书 + 非应用商店来源，就把它判成「未验证 / 风险应用」，弹风险确认并要求输入锁屏密码。包本身一直是签过名、能正常安装的，不是坏了</li>
+      <li><strong>正式证书</strong>——改用独立生成的发布证书（<code>CN=BingYing, O=BingYing Studio, C=CN</code>，有效至 2056 年），不再带 <code>Android Debug</code> 标记；同时打齐 <strong>v1 / v2 / v3</strong> 三套签名方案，兼容各版本 Android 与各厂商的检测逻辑</li>
+      <li><strong>必须先卸载旧版</strong>——证书换了，签名与 1.95 及之前所有版本都不一致。先卸载、再装 1.96，否则系统报「签名冲突」。装好后从 1.96 起，后续升级重新支持直接覆盖安装</li>
+      <li><strong>输密码仍要关一次系统开关</strong>——安装时要求锁屏密码是 ROM 的「纯净模式 / 安装验证」策略，App 改不了，只能在系统设置里关一次：华为/鸿蒙与小米关「纯净模式」，OPPO/一加与 vivo 关「安装验证 → 安装应用时验证密码」。关掉后永久不用再输</li>
+    </ol>
+    <p class="note">包含 1.95 的一次性安装授权引导在内的全部能力。私钥保存在发版机项目外，不进安装包、不进仓库。</p>
+  </div>
 
   <div class="card">
     <h2>v1.95 更新内容：升级时不再被反复询问（一次性安装授权引导）</h2>
@@ -198,7 +213,7 @@
       <li><strong>还能手动微调</strong>——拖文字块右上角的旋转标志，是在「线条角度」基础上再加一个偏移；选中尺寸标注时，下方会直接显示<strong>「标注角度 X°」</strong>，不用自己猜倾斜了多少度。预览、放大镜、导出图三处用的是同一套角度算法，所见即所得</li>
       <li><strong>其余不变</strong>——颜色 / 粗细 / 字号 / 文字底衬、端点拖拽、撤销重做、批量处理与之前的所有功能全部照旧</li>
     </ol>
-    <p class="note">（历史版本）这一版同时包含 1.84 的「修改 MD5」按钮文字修复、1.83 的提取音频、1.82 的待发列表清理、1.81 的蓝牙白屏修复和 1.80 的 Wi-Fi 直传握手修复。现在请直接使用最新版 1.95。</p>
+    <p class="note">（历史版本）这一版同时包含 1.84 的「修改 MD5」按钮文字修复、1.83 的提取音频、1.82 的待发列表清理、1.81 的蓝牙白屏修复和 1.80 的 Wi-Fi 直传握手修复。现在请直接使用最新版 1.96。</p>
   </div>
 
   <div class="card">
@@ -209,7 +224,7 @@
       <li><strong>现在</strong>——三个按钮统一收紧左右内边距并强制文字不折行，中间按钮完整显示<strong>「修改 MD5」</strong>；「解析下载」「提取音频」也一并保持不变，320dp 的小屏机型同样不会截字</li>
       <li><strong>其余不变</strong>——提取音频、改 MD5、蓝牙 / Wi-Fi 直传、图片批处理等功能全部照旧，只动了按钮排版；新增界面回归用例与窄屏截图核对</li>
     </ol>
-    <p class="note">（历史版本）这一版修好了「修改 MD5」按钮只显示两个字的问题，同时包含 1.83 的提取音频、1.82 的待发列表清理、1.81 的蓝牙白屏修复和 1.80 的 Wi-Fi 直传握手修复。现在请直接使用最新版 1.95。</p>
+    <p class="note">（历史版本）这一版修好了「修改 MD5」按钮只显示两个字的问题，同时包含 1.83 的提取音频、1.82 的待发列表清理、1.81 的蓝牙白屏修复和 1.80 的 Wi-Fi 直传握手修复。现在请直接使用最新版 1.96。</p>
   </div>
 
   <div class="card">
@@ -221,7 +236,7 @@
       <li><strong>格式与异常都说人话</strong>——常见 MP4 / MOV 输出 .m4a，老式 3GP 输出 .3gp，WebM 输出 .webm；视频没有声音轨道、或音轨格式系统不支持，都会给出具体提示，不会生成一个打不开的坏文件</li>
       <li><strong>关于「保存到相册」</strong>——安卓的相册只列图片和视频，音频归系统媒体库管，所以文件放在<strong>「音乐 / 冰影电商素材」</strong>，文件管理器和音乐 App 里都能看到；页面上写了说明，也给了直接打开播放的按钮</li>
     </ol>
-    <p class="note">（历史版本）这一版同时包含 1.82 的待发列表清理、1.81 的蓝牙白屏修复和 1.80 的 Wi-Fi 直传握手修复。现在请直接使用最新版 1.95。</p>
+    <p class="note">（历史版本）这一版同时包含 1.82 的待发列表清理、1.81 的蓝牙白屏修复和 1.80 的 Wi-Fi 直传握手修复。现在请直接使用最新版 1.96。</p>
   </div>
 
   <div class="card">
@@ -233,7 +248,7 @@
       <li><strong>看得见、清得掉</strong>——卡片上现在会显示待发文件的<strong>文件名</strong>，右侧多一个「清空」按钮。一眼就能分辨是上次残留还是本次新选，也能随时手动清掉；队列为空时这两项都不显示</li>
       <li><strong>回归测试</strong>——新增 6 项队列清理用例与 2 项界面用例，覆盖「成功清空、失败保留、接收完成不影响、返回上一步清空」等路径</li>
     </ol>
-    <p class="note">（历史版本）这一版修好了传完文件后待发列表没清空的问题，现在请直接使用最新版 1.95。</p>
+    <p class="note">（历史版本）这一版修好了传完文件后待发列表没清空的问题，现在请直接使用最新版 1.96。</p>
   </div>
 
   <div class="card">
@@ -245,7 +260,7 @@
       <li><strong>慢一点的手机也照顾到</strong>——部分机型开启蓝牙是异步的，回到页面那一瞬间系统还报告没开，所以会在 0.6 秒、1.8 秒、4 秒各复查一次；只在「确实还停在蓝牙没开」时执行，不会打断已经开始的传输</li>
       <li><strong>回归测试</strong>——新增 11 项（状态转移矩阵、进行中的会话不被覆盖、横幅显示条件、真实蓝牙开关关→开→回到前台）；全量 <strong>543 项通过、0 失败、2 跳过</strong></li>
     </ol>
-    <p class="note">（历史版本）这一版修好了蓝牙开启后的白屏，现在请直接使用最新版 1.95。</p>
+    <p class="note">（历史版本）这一版修好了蓝牙开启后的白屏，现在请直接使用最新版 1.96。</p>
   </div>
 
   <div class="card">
@@ -264,7 +279,7 @@
     <h2>v1.79 更新内容：先连上再选文件 · 同一 Wi-Fi 点一下就发</h2>
     <ol>
       <li><strong>流程按你说的改了</strong>——进页面先选「我是发送方 / 我是接收方」；发送方搜到对方点「连接」，看到「连接成功」之后才出现「选择文件并发送」。不会再出现「先选文件、再点发送」那种顺序</li>
-      <li><strong>为什么你之前没看到</strong>——这套流程在 1.78 就做完了，但 1.78 一直没推自动升级，你手机上还是 1.77。（历史版本）那一版是第一次把新流程推上线，现在请直接使用最新版 1.95</li>
+      <li><strong>为什么你之前没看到</strong>——这套流程在 1.78 就做完了，但 1.78 一直没推自动升级，你手机上还是 1.77。（历史版本）那一版是第一次把新流程推上线，现在请直接使用最新版 1.96</li>
       <li><strong>接收方：地址用大字显示</strong>——「我是接收方」那页中间会显示 <code>192.168.x.x</code> 这样的大号地址，右边有「复制」，不用再去设置里翻</li>
       <li><strong>发送方：搜索一下就出来</strong>——「同一 Wi-Fi 直传」里点「搜索同一 Wi-Fi 的手机」，同一路由器下的接收方会直接出现在列表里，点一下就开始传；还没选文件会先弹选择器，选完自动发，不用再回头点一次「发送」</li>
       <li><strong>手动填地址还在</strong>——路由器禁止广播、或两台手机跨网段时，仍然可以手填地址，入口在卡片最下面「手动填对方地址」</li>
