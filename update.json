@@ -1,12 +1,12 @@
 {
-  "versionCode": 98,
-  "versionName": "1.97",
-  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v167/BingYing-1.97.apk",
-  "size": 57463537,
+  "versionCode": 99,
+  "versionName": "1.98",
+  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v168/BingYing-1.98.apk",
+  "size": 57471653,
   "mirrors": [
-    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v167/BingYing-1.97.apk",
-    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v167/BingYing-1.97.apk",
-    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v167/BingYing-1.97.apk"
+    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v168/BingYing-1.98.apk",
+    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v168/BingYing-1.98.apk",
+    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v168/BingYing-1.98.apk"
   ],
-  "notes": "v1.97 新增首页「批量重命名」：在首页视频工具下方进入，选多个图片/视频后加前缀与序号改名（如 SPA001、SPA002，数字自动补零、随总数加宽，扩展名原样保留），填好前缀实时预览，完成后可逐条或一键复制。本版与 1.96 同一张正式签名证书，已装 1.96 的用户可直接覆盖安装；若你还在更早的 1.95（调试证书）版本，请先按当时的提示卸载旧版再装。包含 1.96 的正式签名、1.95 的一次性安装授权引导、1.94 的文件名读取修复等全部能力。"
+  "notes": "v1.98 修复批量重命名全部失败的 bug：1.97 执行时每个文件都被算成同一个目标名（如都变成 fdb001.jpg）互相冲突导致 5 个全失败，现已整批统一编号（fdb001、fdb002……各不相同）；并增强相册文件改名的兜底（按媒体 ID 在媒体库更新文件名，覆盖更多国产 ROM）。与 1.97 同一张正式签名证书、v1/v2/v3 三套签名齐全，已装 1.97 的用户可直接覆盖安装；若你还在更早的 1.95（调试证书）版本，请先卸载旧版再装。包含 1.97 新增的批量重命名（首页视频工具下方入口，前缀+序号 SPA001/SPA002，扩展名原样保留，实时预览与一键复制）、1.96 正式签名、1.95 一次性安装授权引导、1.94 文件名读取修复等全部能力。"
 }
