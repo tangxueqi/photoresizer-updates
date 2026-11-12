@@ -1,12 +1,12 @@
 {
-  "versionCode": 96,
-  "versionName": "1.95",
-  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v165/BingYing-1.95.apk",
-  "size": 57419574,
+  "versionCode": 97,
+  "versionName": "1.96",
+  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v166/BingYing-1.96.apk",
+  "size": 57430769,
   "mirrors": [
-    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v165/BingYing-1.95.apk",
-    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v165/BingYing-1.95.apk",
-    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v165/BingYing-1.95.apk"
+    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v166/BingYing-1.96.apk",
+    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v166/BingYing-1.96.apk",
+    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v166/BingYing-1.96.apk"
   ],
-  "notes": "减少升级时被系统反复询问：点「立即升级」时会先检查是否拥有「安装未知应用」权限，没开过就直接跳到本应用的授权页，开一次即可永久生效，之后升级不会再重复弹权限询问。说明：普通第三方应用无法真正提权或静默安装，Android 强制的最后一次「确认安装」仍会保留（只有 root / 设备所有者 / 系统签名才能省略）。包含 1.94 及之前全部能力，签名一致可直接覆盖安装。"
+  "notes": "⚠ 重要：本版更换了签名证书，必须先卸载旧版再安装，直接覆盖会提示签名冲突。旧版用的是 Android 默认调试证书（CN=Android Debug）且只签 v2，国产 ROM 的纯净模式/安装验证会把它判成「未签名/未验证」并要求输锁屏密码。1.96 改用正式发布证书（CN=BingYing, O=BingYing Studio, C=CN，有效至 2056 年），并打齐 v1/v2/v3 三套签名。注意：安装时输密码是 ROM 的「纯净模式/安装验证」策略，App 改不了，需按手机品牌在系统设置里关一次（华为/小米关纯净模式，OPPO/vivo 关安装验证），关掉后永久免输。装好 1.96 后，后续升级恢复直接覆盖安装。包含 1.95 及之前全部能力。"
 }
