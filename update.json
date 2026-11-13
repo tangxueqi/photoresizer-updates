@@ -1,12 +1,12 @@
 {
-  "versionCode": 101,
-  "versionName": "1.100",
-  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v170/BingYing-1.100.apk",
-  "size": 57471662,
+  "versionCode": 102,
+  "versionName": "1.101",
+  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v171/BingYing-1.101.apk",
+  "size": 57471652,
   "mirrors": [
-    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v170/BingYing-1.100.apk",
-    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v170/BingYing-1.100.apk",
-    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v170/BingYing-1.100.apk"
+    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v171/BingYing-1.101.apk",
+    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v171/BingYing-1.101.apk",
+    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v171/BingYing-1.101.apk"
   ],
-  "notes": "v1.100 让批量重命名支持任意文件类型：v1.99 之前文件选择器被限制成只接受 image/* 和 video/*，文档、压缩包、音频、.md 等其它文件一律选不中。本版移除 MIME 限制，系统文件选择器里任意可打开的文件都能选中；改名规则不变：前缀 + 自增序号 + 原扩展名（后缀含大小写原样保留）。同时沿用 1.99 的写权限授权与失败原因提示（成功 N / 失败 M 并带原因）。与 1.99 同一张正式签名证书、v1/v2/v3 三套签名齐全，已装 1.99 的用户可直接覆盖安装；若你还在更早的 1.95（调试证书）版本，请先卸载旧版再装。"
+  "notes": "v1.101 简化首页版面：① 批量改名从「大标题 + 说明 + 全宽蓝按钮」改成像「修改 MD5」那样的描边小按钮，去掉多余说明文字；② 「解析下载」按钮与链接输入框并到同一排、置于输入框右侧；③ 下方「批量改名 · 修改 MD5 · 提取音频」三个按钮并排一行。功能逻辑不变：批量改名仍支持任意文件类型（前缀 + 自增序号 + 原扩展名，写权限授权与失败原因提示照旧）。与 1.100 同一张正式签名证书、v1/v2/v3 三套签名齐全，已装 1.100 的用户可直接覆盖安装；若你还在更早的 1.95（调试证书）版本，请先卸载旧版再装。"
 }
