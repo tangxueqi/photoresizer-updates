@@ -1,13 +1,13 @@
 {
-  "versionCode": 106,
-  "versionName": "1.105",
-  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v175/BingYing-1.105.apk",
-  "size": 29539721,
+  "versionCode": 107,
+  "versionName": "1.106",
+  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v176/BingYing-1.106.apk",
+  "size": 29539718,
   "mirrors": [
-    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v175/BingYing-1.105.apk",
-    "https://ghfast.top/https://github.com/tangxueqi/photoresizer-updates/releases/download/v175/BingYing-1.105.apk",
-    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v175/BingYing-1.105.apk",
-    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v175/BingYing-1.105.apk"
+    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v176/BingYing-1.106.apk",
+    "https://ghfast.top/https://github.com/tangxueqi/photoresizer-updates/releases/download/v176/BingYing-1.106.apk",
+    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v176/BingYing-1.106.apk",
+    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v176/BingYing-1.106.apk"
   ],
-  "notes": "v1.105 下载全面提速：外挂模型和程序升级都换成同一套高速下载引擎。以前是单连接、逐个镜像串行试、取第一个能连上的源（实测有的镜像只有几 KB/s），且 60 秒才超时，44MB 模型经常卡在 4%。现在改成：所有候选镜像并行测速择优、慢源自动淘汰；大文件切成多段并分摊到多个快源上并发下载，叠加多条线路带宽；单段失败 15 秒即自动换源重试；遇到 302 跳转也会保留分段请求，不再退化成单线程；中途退出后接着下，不用从头开始。另外补了一条国内线路 ghfast.top，镜像清单改为 4 个源。沙箱实测 8 连接聚合吞吐约是单连接的 2 倍以上。含 v1.104 的模型外置、v1.103 的图片拼接等全部能力。与 1.96~1.104 同一张正式签名证书、v1/v2/v3 三套签名齐全，已装旧版可直接覆盖安装；应用内升级清单已同步到 1.105，重新打开 App 即可检测到新版本。"
+  "notes": "v1.106 下载提速收尾：修复「点下载后先干等」的问题。上一版虽然会并行测速，但要等所有镜像都返回才开工，一旦某个镜像整体不通（实测 ghfast.top 会 30 秒无响应），用户点下载后仍要空等近 10 秒。现在改成先到先用：按完成顺序收探测结果、收够 3 个可用源立刻开工并取消剩余任务，另有 8 秒总截止兜底，挂掉的镜像完全不再拖慢起点。同时把候选源按实测吞吐重排（gh-proxy.com 最快、ghfast.top 次之，慢源与直链只作兜底），让多源多段并发优先叠加两条国内线路。含 v1.105 的高速下载引擎、v1.104 的模型外置瘦身、v1.103 的图片拼接等全部能力。与 1.96~1.105 同一张正式签名证书、v1/v2/v3 三套签名齐全，已装旧版可直接覆盖安装；应用内升级清单已同步到 1.106，重新打开 App 即可检测到新版本。"
 }
