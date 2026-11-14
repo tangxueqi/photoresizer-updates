@@ -1,13 +1,13 @@
 {
-  "versionCode": 112,
-  "versionName": "1.111",
-  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v181/BingYing-1.111.apk",
-  "size": 29572488,
+  "versionCode": 113,
+  "versionName": "1.112",
+  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v182/BingYing-1.112.apk",
+  "size": 29588998,
   "mirrors": [
-    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v181/BingYing-1.111.apk",
-    "https://ghfast.top/https://github.com/tangxueqi/photoresizer-updates/releases/download/v181/BingYing-1.111.apk",
-    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v181/BingYing-1.111.apk",
-    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v181/BingYing-1.111.apk"
+    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v182/BingYing-1.112.apk",
+    "https://ghfast.top/https://github.com/tangxueqi/photoresizer-updates/releases/download/v182/BingYing-1.112.apk",
+    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v182/BingYing-1.112.apk",
+    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v182/BingYing-1.112.apk"
   ],
-  "notes": "v1.111 专修去水印「没有仅把水印去除」。根因找到了：旧版把用户框选的整个矩形都标成待修复区交给 MI-GAN，生成式模型拿到一个大洞只能凭先验把它画满，压在版权文字下面的齿轮、金属纹理被一起重画，于是出现模糊、变形。用 800×800 原图与云端去水印结果配准出文字真值后实测：整框推理会改动框内非文字像素平均 30.3/255、24509 个像素明显变化；改成笔画级掩膜后降到 16.7/255，齿形与金属纹理逐像素保真。新增笔画级掩膜：在选框/涂抹区域内用双向一维中值估计背景，只留「窄亮凸起」的文字笔画，闭运算接回断笔画、向外 2px 盖住抗锯齿边；掩膜始终与用户选区取交集，框外一个像素都不动；认不出浅色文字时自动退回整框，保证一定能把水印抹掉；再压掉生成式修复在笔画里补出来的零星白点。修复引擎改为用户可选、随时可改：底部一行「精准去字（默认，只改文字笔画、主体不变形）/ 精细重绘（整块 AI，适合纯色背景）/ 基础修复（整块插值，无需模型）」，结果页常驻「换个方式重做」，不再一清除完就锁死在精细模型上；批量按坐标清除同样支持三种引擎。新增 8 项测试，全量 747 项通过、0 失败、2 跳过。模型文件始终没换（sha256 6f1f3530…40b），与 1.96~1.110 同一张正式签名证书、v2/v3 签名齐全，可直接覆盖安装，已下载的模型不用重下。含 1.110 缩略图看大图与模型入口、1.109 四项反馈、1.108 白底图修复、1.107 六源升级等全部能力。"
+  "notes": "v1.112 新增「说一句就自动去水印」：进水印页点标题栏麦克风或底部「点我说话」，说「去掉中间那行版权字」「清除左上角的 logo」，App 直接定位到粗框并自动跑一次去除，不用手拖选框、不用点开始。语音转文字用系统识别服务 + 离线优先标志，不往安装包里塞 ASR 模型和 JNI 库，包体仍是 29 MB，国内 ROM 的中文识别反而更稳；图片与识别文本全程不出手机，不上传任何服务器。指令理解是纯 Kotlin 的本地解析：九个方位（四角 / 上下 / 左右 / 中间）× 几种水印形态（版权文字横条 / 图标角标近方形 / 日期短横条 / 默认窄框）决定归一化选框，再加「精准 / 重绘 / 基础」等关键词决定修复引擎；解析出的框与引擎显式传给处理函数，避免界面状态还没刷新就读了旧框，出现「说了左上角却擦了中间」。**没听清明确位置时绝不猜框动手**——那会误伤主体，只会停下来给提示，让用户改用常驻底部的一键快捷指令（中间版权字 / 左上角图标 / 底部水印 / 右上角日期）；系统没装语音识别、没给麦克风权限或不想说话时也走这套快捷指令，功能不打折。结果页回显本次指令被理解成了什么，仍可「换个方式重做」；顺带把重做按钮的引擎时序也改成显式传值。定位到粗框后交给 1.111 的「精准去字」自动精化成笔画级掩膜，所以不需要端侧大模型。新增 15 项测试（指令解析 11 项：方位区分、全角/标点/大小写、引擎关键词、所有框不越界且面积不过半、听不清位置必须停止自动执行；界面 4 项：语音入口与四个快捷指令常驻、注入一句话零点击自动出结果、点快捷指令自动清除并回显、没听清时停在编辑态），全量 762 项通过、0 失败、2 跳过。模型文件始终没换（sha256 6f1f3530…40b），与 1.96~1.111 同一张正式签名证书、v2/v3 签名齐全，可直接覆盖安装，已下载的模型不用重下。含 1.111 笔画级精准去字与三引擎切换、1.110 缩略图看大图与模型入口、1.109 四项反馈、1.108 白底图修复、1.107 六源升级等全部能力。"
 }
