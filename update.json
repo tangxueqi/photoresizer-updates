@@ -1,13 +1,13 @@
 {
-  "versionCode": 110,
-  "versionName": "1.109",
-  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v179/BingYing-1.109.apk",
-  "size": 29539723,
+  "versionCode": 111,
+  "versionName": "1.110",
+  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v180/BingYing-1.110.apk",
+  "size": 29556103,
   "mirrors": [
-    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v179/BingYing-1.109.apk",
-    "https://ghfast.top/https://github.com/tangxueqi/photoresizer-updates/releases/download/v179/BingYing-1.109.apk",
-    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v179/BingYing-1.109.apk",
-    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v179/BingYing-1.109.apk"
+    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v180/BingYing-1.110.apk",
+    "https://ghfast.top/https://github.com/tangxueqi/photoresizer-updates/releases/download/v180/BingYing-1.110.apk",
+    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v180/BingYing-1.110.apk",
+    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v180/BingYing-1.110.apk"
   ],
-  "notes": "v1.109 按 4 条反馈逐项修复：①加水印按钮不再要求先填版权所有人，选了图片就能按，未填时直接用预置文案「本图版权归＿＿所有…」；②去水印选框微调的加减与四向按钮支持按住不动连续调整（320ms 起播、55ms 一步），手指点在选框上只拖动位置，取消框边窄带的缩放误触，改尺寸统一交给微调面板；③批量抠白底已选文件名后面加小叉可逐条删除，另有清空按钮，下一批不会重复处理上一批的图；④去水印效果下降的原因查清了：模型没换——v1.103 及更早内置在 APK 里的 assets/migan.onnx 与现在外挂的 migan.onnx 字节完全一致（sha256 6f1f3530…40b），是 v1.104 把模型移出 APK 后，本机没下载精细模型时代码静默退回基础插值，水印区只能被抹糊。现在缺模型时点开始去除或批量清除会先弹窗说明并引导下载（下载完自动重跑刚才那次处理），也可明确选择仍用基础修复；批量结果会如实报出用了基础修复的张数，处理中与结果页也会标明当前引擎。含 1.108 白底图修复、1.107 六源升级检测、1.106 探测提速、1.105 高速下载、1.104 模型外置、1.103 拼接等全部能力。与 1.96~1.108 同一张正式签名证书、v1/v2/v3 签名齐全，已装旧版可直接覆盖安装。"
+  "notes": "v1.110 修两处体验问题：①批量抠白底完成后，结果列表右侧的缩略图以前只是静态小图、点不动；现在点缩略图（或整行）即可全屏查看完成后的白底成品大图，支持双指缩放与拖动，顶部显示文件名和「已存相册」，点右上角叉或系统返回键关闭。②精细去水印模型的下载入口以前只在「本机确实没有模型文件」时才显示一条 11sp 提示 + 小文字按钮，而老用户从内置模型版本升级后 migan_v1.onnx 本来就在、校验也通过，提示条根本不出现；结果页那句「下载精细模型后重做效果更好」也只是纯文字，没有可点的地方。现在水印页标题栏常驻「下载精细模型 / 修复精细模型 / 精细模型 ✓」按钮，点开即有明确主操作（下载 / 重新下载 / 重新加载）与外挂模型管理入口；底部提示条改成醒目的实心主按钮，缺模型或模型加载失败都会出现；结果页基础修复提示补上「下载精细模型并重做」按钮，下载完自动用精细模型重跑这一张。同时识别「模型文件在但推理没生效」的情况并允许强制重下修复损坏文件——模型文件本身始终没换（sha256 6f1f3530…40b）。含 1.109 的 4 项反馈修复、1.108 白底图修复、1.107 六源升级检测、1.106 探测提速、1.105 高速下载、1.104 模型外置、1.103 拼接等全部能力。与 1.96~1.109 同一张正式签名证书、v1/v2/v3 签名齐全，已装旧版可直接覆盖安装，已下载的模型不用重下。"
 }
