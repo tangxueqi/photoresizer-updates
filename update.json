@@ -1,12 +1,12 @@
 {
-  "versionCode": 104,
-  "versionName": "1.103",
-  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v173/BingYing-1.103.apk",
-  "size": 57586350,
+  "versionCode": 105,
+  "versionName": "1.104",
+  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v174/BingYing-1.104.apk",
+  "size": 29523353,
   "mirrors": [
-    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v173/BingYing-1.103.apk",
-    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v173/BingYing-1.103.apk",
-    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v173/BingYing-1.103.apk"
+    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v174/BingYing-1.104.apk",
+    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v174/BingYing-1.104.apk",
+    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v174/BingYing-1.104.apk"
   ],
-  "notes": "v1.103 新增「图片拼接」：首页图片功能区新增「拼接」按钮，进入后是一张 1:1 的大图，先用预设模板划成区块——上下排列、左右排列、左 1 右 2、左 2 右 1、上 1 下 2、上 2 下 1、四宫格共 7 种。点大图里的某个区块，就单独为这一格挑一张图片，也就是「指定什么图片放在什么位置」（不是选一批图按顺序自动填格）；图片在该格内等比居中裁剪铺满、不变形，每格可反复换图或单独清除，未指定的格子导出时留白。点「生成并保存」输出固定 800×800 的 JPEG 并存入系统相册。首页不必预先选图，进页面后逐格点选即可。与 1.96~1.102 同一张正式签名证书、v1/v2/v3 三套签名齐全，已装旧版可直接覆盖安装；应用内升级清单已同步到 1.103，重新打开 App 即可检测到新版本。"
+  "notes": "v1.104 主程序瘦身：安装包从约 57 MB 降到约 29 MB（少 28 MB，约 49%），以后每次升级都不用再重下模型。把精细去水印模型（MI-GAN，约 28 MB）连同此前已有的抠白底模型一起，统一改成「外挂模型」：主程序不打包任何 .onnx 模型，改为按需分批下载。启动时不会弹窗骚扰，只有进入「水印」或「抠白底」功能、发现本机缺模型时才提示一次，也可随时在「管理全部外挂模型」页里单独下载、删除或一键补全；下载走多镜像自动切换、带进度与 sha256 校验，成功后永久离线可用。老用户本机已存在的去水印模型会直接复用，不必重新下载 28 MB；模型缺失时基础去水印仍可用，不阻断功能。含 v1.103 的图片拼接等全部能力。与 1.96~1.103 同一张正式签名证书、v1/v2/v3 三套签名齐全，已装旧版可直接覆盖安装；应用内升级清单已同步到 1.104，重新打开 App 即可检测到新版本。"
 }
