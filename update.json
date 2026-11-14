@@ -1,12 +1,12 @@
 {
-  "versionCode": 102,
-  "versionName": "1.101",
-  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v171/BingYing-1.101.apk",
-  "size": 57471652,
+  "versionCode": 103,
+  "versionName": "1.102",
+  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v172/BingYing-1.102.apk",
+  "size": 57569964,
   "mirrors": [
-    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v171/BingYing-1.101.apk",
-    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v171/BingYing-1.101.apk",
-    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v171/BingYing-1.101.apk"
+    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v172/BingYing-1.102.apk",
+    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v172/BingYing-1.102.apk",
+    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v172/BingYing-1.102.apk"
   ],
-  "notes": "v1.101 简化首页版面：① 批量改名从「大标题 + 说明 + 全宽蓝按钮」改成像「修改 MD5」那样的描边小按钮，去掉多余说明文字；② 「解析下载」按钮与链接输入框并到同一排、置于输入框右侧；③ 下方「批量改名 · 修改 MD5 · 提取音频」三个按钮并排一行。功能逻辑不变：批量改名仍支持任意文件类型（前缀 + 自增序号 + 原扩展名，写权限授权与失败原因提示照旧）。与 1.100 同一张正式签名证书、v1/v2/v3 三套签名齐全，已装 1.100 的用户可直接覆盖安装；若你还在更早的 1.95（调试证书）版本，请先卸载旧版再装。"
+  "notes": "v1.102 新增「批量抠白底图」：首页视频工具下方新增入口，多选图片后用去背景模型（RMBG-1.4）抠出主体、自动合成白底并逐张存入相册，适合电商商品图。可选内置两档模型（快速版 44MB / 高清版 88MB，标注非商用），并支持「添加可商用模型」粘贴自备 onnx 直链；模型不进安装包，首次进入按需下载一次、之后离线可用。同时修复本版编译与测试问题（ONNX 输入名读取、测试断言、模型 sha256 落真值）。与 1.96~1.101 同一张正式签名证书、v1/v2/v3 三套签名齐全，已装旧版可直接覆盖安装；若你还在更早的 1.95（调试证书）版本，请先卸载旧版再装。应用内升级清单已同步更新到 1.102，重新打开 App 即可检测到新版本。"
 }
