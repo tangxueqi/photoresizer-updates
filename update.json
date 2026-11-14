@@ -1,13 +1,13 @@
 {
-  "versionCode": 111,
-  "versionName": "1.110",
-  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v180/BingYing-1.110.apk",
-  "size": 29556103,
+  "versionCode": 112,
+  "versionName": "1.111",
+  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v181/BingYing-1.111.apk",
+  "size": 29572488,
   "mirrors": [
-    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v180/BingYing-1.110.apk",
-    "https://ghfast.top/https://github.com/tangxueqi/photoresizer-updates/releases/download/v180/BingYing-1.110.apk",
-    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v180/BingYing-1.110.apk",
-    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v180/BingYing-1.110.apk"
+    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v181/BingYing-1.111.apk",
+    "https://ghfast.top/https://github.com/tangxueqi/photoresizer-updates/releases/download/v181/BingYing-1.111.apk",
+    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v181/BingYing-1.111.apk",
+    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v181/BingYing-1.111.apk"
   ],
-  "notes": "v1.110 修两处体验问题：①批量抠白底完成后，结果列表右侧的缩略图以前只是静态小图、点不动；现在点缩略图（或整行）即可全屏查看完成后的白底成品大图，支持双指缩放与拖动，顶部显示文件名和「已存相册」，点右上角叉或系统返回键关闭。②精细去水印模型的下载入口以前只在「本机确实没有模型文件」时才显示一条 11sp 提示 + 小文字按钮，而老用户从内置模型版本升级后 migan_v1.onnx 本来就在、校验也通过，提示条根本不出现；结果页那句「下载精细模型后重做效果更好」也只是纯文字，没有可点的地方。现在水印页标题栏常驻「下载精细模型 / 修复精细模型 / 精细模型 ✓」按钮，点开即有明确主操作（下载 / 重新下载 / 重新加载）与外挂模型管理入口；底部提示条改成醒目的实心主按钮，缺模型或模型加载失败都会出现；结果页基础修复提示补上「下载精细模型并重做」按钮，下载完自动用精细模型重跑这一张。同时识别「模型文件在但推理没生效」的情况并允许强制重下修复损坏文件——模型文件本身始终没换（sha256 6f1f3530…40b）。含 1.109 的 4 项反馈修复、1.108 白底图修复、1.107 六源升级检测、1.106 探测提速、1.105 高速下载、1.104 模型外置、1.103 拼接等全部能力。与 1.96~1.109 同一张正式签名证书、v1/v2/v3 签名齐全，已装旧版可直接覆盖安装，已下载的模型不用重下。"
+  "notes": "v1.111 专修去水印「没有仅把水印去除」。根因找到了：旧版把用户框选的整个矩形都标成待修复区交给 MI-GAN，生成式模型拿到一个大洞只能凭先验把它画满，压在版权文字下面的齿轮、金属纹理被一起重画，于是出现模糊、变形。用 800×800 原图与云端去水印结果配准出文字真值后实测：整框推理会改动框内非文字像素平均 30.3/255、24509 个像素明显变化；改成笔画级掩膜后降到 16.7/255，齿形与金属纹理逐像素保真。新增笔画级掩膜：在选框/涂抹区域内用双向一维中值估计背景，只留「窄亮凸起」的文字笔画，闭运算接回断笔画、向外 2px 盖住抗锯齿边；掩膜始终与用户选区取交集，框外一个像素都不动；认不出浅色文字时自动退回整框，保证一定能把水印抹掉；再压掉生成式修复在笔画里补出来的零星白点。修复引擎改为用户可选、随时可改：底部一行「精准去字（默认，只改文字笔画、主体不变形）/ 精细重绘（整块 AI，适合纯色背景）/ 基础修复（整块插值，无需模型）」，结果页常驻「换个方式重做」，不再一清除完就锁死在精细模型上；批量按坐标清除同样支持三种引擎。新增 8 项测试，全量 747 项通过、0 失败、2 跳过。模型文件始终没换（sha256 6f1f3530…40b），与 1.96~1.110 同一张正式签名证书、v2/v3 签名齐全，可直接覆盖安装，已下载的模型不用重下。含 1.110 缩略图看大图与模型入口、1.109 四项反馈、1.108 白底图修复、1.107 六源升级等全部能力。"
 }
