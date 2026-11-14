@@ -77,19 +77,30 @@
     <div class="meta">
       <span class="tag">Android 7.0+</span>
       <span class="tag">约 29 MB</span>
-      <span class="tag">版本 1.109</span>
+      <span class="tag">版本 1.110</span>
       <span class="tag">正式签名版</span>
     </div>
-    <a class="btn" href="https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v179/BingYing-1.109.apk" download>下载 APK 安装包（v1.109）</a>
+    <a class="btn" href="https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v180/BingYing-1.110.apk" download>下载 APK 安装包（v1.110）</a>
     <span class="btn-sub">国内加速下载地址（GitHub Releases 加速镜像，支持多镜像自动切换与并行下载）</span>
-    <span class="btn-sub">若加速镜像不可用，点 <a href="https://github.com/tangxueqi/photoresizer-updates/releases/download/v179/BingYing-1.109.apk" target="_blank">GitHub 直链</a> 或换用桌面浏览器下载后再传手机</span>
+    <span class="btn-sub">若加速镜像不可用，点 <a href="https://github.com/tangxueqi/photoresizer-updates/releases/download/v180/BingYing-1.110.apk" target="_blank">GitHub 直链</a> 或换用桌面浏览器下载后再传手机</span>
     <div class="warn" style="margin-top:14px;background:#E8F6EE;border-color:#A9D9BE;color:#1F6B3A">
-      <strong>✓ 这是一次正常升级，4 项反馈全部修好</strong><br>
-      1.109 修好了「加水印按钮要填版权人才能按」「选框微调按一下才动一下」「抠白底列表清不掉」「去水印效果不如以前」四项，安装包仍是精简后的 <strong>29 MB</strong>，<strong>已下载的模型不用重下</strong>。1.109 与 1.96~1.108 使用同一张正式签名证书，<strong>已装这些版本的用户可直接覆盖安装</strong>，无需卸载，应用内升级也可直接检测到。若你还在更早的 1.95（调试证书）版本，请先按当时的提示卸载旧版再装。
+      <strong>✓ 正常升级：抠白底能看成品大图，精细模型下载入口也找得到了</strong><br>
+      1.110 修好两处：抠白底完成后点结果右侧缩略图即可看<strong>成品大图</strong>；精细去水印的下载入口改成<strong>水印页标题栏常驻按钮</strong>，不再因为「本机已有模型文件」而整个隐藏。安装包仍是精简后的 <strong>29 MB</strong>，<strong>已下载的模型不用重下</strong>。1.110 与 1.96~1.109 使用同一张正式签名证书，<strong>已装这些版本的用户可直接覆盖安装</strong>，无需卸载，应用内升级也可直接检测到。若你还在更早的 1.95（调试证书）版本，请先按当时的提示卸载旧版再装。
     </div>
     <div class="warn" style="margin-top:10px;background:#FFF6E5;border-color:#F0C97A;color:#7A5200">
       <strong>模型按需下载</strong>——精细去水印（约 28 MB）与抠白底（快速版约 44 MB / 高清版约 88 MB）的模型不在安装包里。只有当你点进「水印」或「抠白底」功能、App 发现本机还没有对应模型时，才会提示下载一次；下载完永久离线可用。不用这些功能就完全不必下载。
     </div>
+  </div>
+
+
+  <div class="card">
+    <h2>v1.110 更新内容：2 处体验问题</h2>
+    <ol>
+      <li><strong>抠白底成品能看大图了</strong>——完成后结果列表右侧那张缩略图以前只是静态小图，点击毫无反应。现在<strong>点缩略图或整行</strong>即可全屏查看完成后的白底成品大图，支持<strong>双指缩放与拖动</strong>，顶部显示文件名与「已存相册」，点右上角叉或按系统返回键关闭。看的就是已经存进相册的那张成品，不用再退出去相册里翻</li>
+      <li><strong>精细去水印模型的下载入口终于找得到</strong>——以前只在「本机确实没有模型文件」时，才在底部面板显示一条 11sp 提示加一个小小的文字「下载」按钮；而从模型内置在 APK 里的老版本升级上来的用户，<code>migan_v1.onnx</code> 本来就在本机、校验也通过，提示条<strong>根本不会出现</strong>，结果页那句「下载精细模型后重做效果更好」又只是纯文字、没有可点的地方。现在<strong>水印页标题栏常驻一个模型按钮</strong>（缺模型显示「下载精细模型」、模型异常显示「修复精细模型」、正常显示「精细模型 ✓」），点开就有明确的主操作：下载 / 重新下载 / 重新加载，也可跳到外挂模型管理；底部提示条改成醒目的实心主按钮；结果页补上「下载精细模型并重做 →」，下完自动用精细模型重跑这一张</li>
+      <li><strong>顺带把「模型在但没生效」也识别出来</strong>——如果模型文件在、这次却仍退回基础插值，界面会标明并允许<strong>强制重下</strong>修复损坏文件，不再只给一张糊图。模型文件本身自始至终没换（<code>sha256 6f1f3530…40b</code>），效果差异来自是否真正用上了精细修复</li>
+    </ol>
+    <p class="note">包含 1.109 的 4 项反馈修复、1.108 的白底图修复、1.107 的六源升级检测、1.106 的探测提速、1.105 的高速下载引擎、1.104 的模型外置瘦身、1.103 的图片拼接等全部能力。<strong>可直接覆盖安装</strong>（与 1.96~1.109 同证书、v1/v2/v3 签名齐全）。</p>
   </div>
 
 
