@@ -77,19 +77,37 @@
     <div class="meta">
       <span class="tag">Android 7.0+</span>
       <span class="tag">约 29 MB</span>
-      <span class="tag">版本 1.120</span>
+      <span class="tag">版本 1.121</span>
       <span class="tag">正式签名版</span>
     </div>
-    <a class="btn" href="https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v190/BingYing-1.120.apk" download>下载 APK 安装包（v1.120）</a>
+    <a class="btn" href="https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v191/BingYing-1.121.apk" download>下载 APK 安装包（v1.121）</a>
     <span class="btn-sub">国内加速下载地址（GitHub Releases 加速镜像，支持多镜像自动切换与并行下载）</span>
-    <span class="btn-sub">若加速镜像不可用，点 <a href="https://github.com/tangxueqi/photoresizer-updates/releases/download/v190/BingYing-1.120.apk" target="_blank">GitHub 直链</a> 或换用桌面浏览器下载后再传手机</span>
+    <span class="btn-sub">若加速镜像不可用，点 <a href="https://github.com/tangxueqi/photoresizer-updates/releases/download/v191/BingYing-1.121.apk" target="_blank">GitHub 直链</a> 或换用桌面浏览器下载后再传手机</span>
     <div class="warn" style="margin-top:14px;background:#E8F6EE;border-color:#A9D9BE;color:#1F6B3A">
-      <strong>✓ v1.120：写一句话，直接清除水印，不用再框选</strong><br>
+      <strong>✓ v1.121：修复「文字水印根本没去掉」——高亮粗艺术字检测失效</strong><br>
+      用户反馈「<strong>这个文字水印根本就没有去除，这个模型到底行不行，不行的话换一个行的。</strong>」沙箱复现坐实：<strong>不是模型不干活，是检测算法把字筛没了</strong>——两行米白底金色描边艺术字单行高 281px，被 v1.120 写死的 <code>150px</code> 带高上限整段丢弃，最终「文字带」全是磨盘纹理与豆浆高光，<strong>送去修复的掩膜落在文字上覆盖率 0.0%</strong>。这一版把判据从「亮凸起」换成<strong>局部边缘密度</strong>（文字是细窄高频结构，实测文字带边缘均值 51.7 / 非文字区 8.4），带高改为按图高比例不再写死，并去掉会把新掩膜再砍 45% 的二次 <code>refine()</code>。实测文字区召回 <strong>0% → 57.7%</strong>。安装包仍 <strong>29 MB</strong>，图片与视频处理全程在本地。如实说明：本地 28MB 模型是移动端小物体快速修复，大面积粗字会留修补痕迹；豆包那种通透感是云端扩散语义重绘，需联网上传、密钥、按次计费，纯本地做不到。<strong>模型未换、已下载的模型不用重下</strong>。1.121 与 1.96~1.120 使用同一张正式签名证书，<strong>已装这些版本的用户可直接覆盖安装</strong>，应用内升级也可直接检测到。若你还在更早的 1.95（调试证书）版本，请先按当时的提示卸载旧版再装。
+    </div>
+    <div class="warn" style="margin-top:10px;background:#F0F4FF;border-color:#A9BFE0;color:#1F3D6B">
+      <strong>v1.120（历史）：写一句话，直接清除水印，不用再框选</strong><br>
       用户反馈「<strong>发文字命令的话，应该不是用框选的方式。如果要用框选的方式，那我何必去加这个东西。应该像豆包一样的清除方法。直接清除。</strong>」之前写一句话仍然会解析方位、切到框选模式、画出蓝色虚线框再按框修复，等于给手动框选套了层文字壳。这一版把这条链路整个换掉：<strong>文字命令不再产出任何框</strong>——不解析方位、不画虚线框、不显示坐标，App 自己<strong>全图扫描文字行</strong>并直接修复，一次可清掉多行文字。位置词写不写都一样，「把水印去掉」「去水印」都能直接执行；「中间 / 左上角」不再影响清除范围。扫描用双向一维中值估计背景（窗口随图尺寸自适应）＋<strong>相对背景的亮度凸起</strong>，去掉了旧的「必须是亮白字」限制，实测你截图里那两行<strong>灰色暗字</strong>旧判据召回 0%，新版分别到 30.5% 与 54.9%，地毯纹理 0% 误检；仍是笔画级掩膜，文字带外一个像素不动。手动涂抹、手动框选、自动识别、批量按坐标清除、三引擎切换全部保留不变。如实说明：本地 27MB 模型做的是笔画级修复，不是云端扩散语义重绘，本版解决的是「不用框、直接执行」这个交互问题。安装包仍 <strong>29 MB</strong>，图片与视频处理全程在本地。1.120 与 1.96~1.119 使用同一张正式签名证书，<strong>已装这些版本的用户可直接覆盖安装</strong>，无需卸载，应用内升级也可直接检测到，<strong>已下载的模型不用重下</strong>。若你还在更早的 1.95（调试证书）版本，请先按当时的提示卸载旧版再装。
     </div>
     <div class="warn" style="margin-top:10px;background:#FFF6E5;border-color:#F0C97A;color:#7A5200">
       <strong>模型按需下载</strong>——精细去水印（约 28 MB）与抠白底（快速版约 44 MB / 高清版约 88 MB）的模型不在安装包里。只有当你点进「水印」或「抠白底」功能、App 发现本机还没有对应模型时，才会提示下载一次；下载完永久离线可用。不用这些功能就完全不必下载。
     </div>
+  </div>
+
+
+  <div class="card">
+    <h2>v1.121 更新内容：修复「文字水印根本没去掉」——高亮粗艺术字检测失效</h2>
+    <ol>
+      <li><strong>问题：界面报「已清除」，图上一个字都没少</strong>——用户上传截图 <code>9820.jpg</code> 并指出「这个文字水印根本就没有去除，这个模型到底行不行，不行的话换一个行的」。截图里两行<strong>米白底的金棕描边艺术字</strong>清完之后原样还在</li>
+      <li><strong>先复现坐实：不是模型问题，是检测把字筛没了</strong>——沙箱裁出预览图（1060×1060）实测：两行大字 <code>y=88..368</code>、<strong>单行高 281px</strong>，而 v1.120 <code>detectTextLines()</code> 写死 <code>SCAN_MAX_BAND_H=150</code>，把这两段<strong>整段判为不合格丢弃</strong>；最终认出的 4 个「文字带」全是豆浆高光 / 磨盘纹理 / 底部阴影；<strong>送去修复的掩膜落在文字矩形上的覆盖率 0.0%</strong>——模型压根没拿到活。可视化确认红点全在磨盘与高光上、两行大字上一个都没有。整图 luma≈216~230，白字芯只比背景亮十几级，旧的「相对背景亮凸起」判据也盯不住金棕描边与立体阴影</li>
+      <li><strong>修法一：改判局部边缘密度</strong>——文字笔画本质是细窄高频结构。<code>detectTextLines()</code> 把「亮凸起」换成中心差分边缘强度 <code>edgeStrength()</code> + 自适应分位数阈值 <code>percentile(edge,80)</code>（下限 24）。实测文字带边缘均值 <strong>51.7</strong>、紧邻非文字区 8.4、磨盘纹理 21.5，区分度足够，白字 / 灰字 / 带描边艺术字通吃。新增水平闭运算 <code>closeHorizontal()</code>（1×5）把被高光切断的同笔画接回来，再 3×3 膨胀盖抗锯齿</li>
+      <li><strong>修法二：带高按图高比例，不再写死 150px</strong>——删掉 <code>SCAN_MAX_BAND_H=150</code>，改成图高的 45% 上限（下限保 4px）。281px 的大字带不再被误杀，128px 小图上的窄水印条仍能执行；<code>span&gt;=0.20</code>、带内密度 <code>&gt;=0.010</code> 与 <code>ratio&gt;15%</code> 安全上限全部保留</li>
+      <li><strong>修法三：文字命令不再被二次 refine 砍掉掩膜</strong>——文字命令传入的 <code>maskOverride</code> 已是边缘检测得到的笔画掩膜，但默认 PRECISE 引擎还会再跑一次 v1.111 的白字判据 <code>refine()</code>（<code>g&gt;150</code>），实测把新掩膜再砍约 45% 还误报「精化成功」。现改为<strong>仅手动路径才走二次 refine</strong>，文字命令直接用扫描掩膜；结果页「仅修文字笔画」标记对文字命令也如实显示</li>
+      <li><strong>效果与边界</strong>——新判据在 9820 预览图上文字区召回从 <strong>0% → 57.7%</strong>、落在文字区比例 94.2%、非文字区误判仅 1.1%。<strong>如实说明</strong>：本地 28MB MI-GAN 是移动端小物体快速修复，大面积粗字会留修补痕迹；开源 LaMa 实测 208MB / 桌面 43 秒 / 峰值约 1GB 内存 / 尺寸锁死 512×512，INT8 量化后精度崩坏，手机上跑不动；豆包那种通透感是<strong>云端扩散语义重绘 + 超分</strong>，需联网上传、AK/SK、按次计费，纯本地不是调参能达到的。本版解决的是「字没被框到、一个字都没去掉」这个硬 bug，<strong>模型未换</strong></li>
+    </ol>
+    <p class="note">测试：全量 <strong>779 项通过、0 失败、0 错误、2 跳过、76 套件</strong>。<code>WatermarkPreciseMaskScanTest</code> 新增 <code>scan_tallArtisticTextOnBrightBackground_isDetected</code>（800×800 合成图，字带高 205px 超过旧 150 上限、占比 0.041，锁住本次翻车场景）。安装包 <strong>29,588,880 B（约 29 MB）</strong>，sha256 <code>97805b15…0330b</code>，v2/v3 签名齐全，<strong>模型文件未换、已下载的模型不用重下</strong>，1.121 与 1.96~1.120 同一张正式签名证书，可直接覆盖安装。</p>
   </div>
 
 
