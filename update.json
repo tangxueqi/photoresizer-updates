@@ -1,13 +1,13 @@
 {
-  "versionCode": 113,
-  "versionName": "1.112",
-  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v182/BingYing-1.112.apk",
-  "size": 29588998,
+  "versionCode": 114,
+  "versionName": "1.113",
+  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v183/BingYing-1.113.apk",
+  "size": 29589009,
   "mirrors": [
-    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v182/BingYing-1.112.apk",
-    "https://ghfast.top/https://github.com/tangxueqi/photoresizer-updates/releases/download/v182/BingYing-1.112.apk",
-    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v182/BingYing-1.112.apk",
-    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v182/BingYing-1.112.apk"
+    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v183/BingYing-1.113.apk",
+    "https://ghfast.top/https://github.com/tangxueqi/photoresizer-updates/releases/download/v183/BingYing-1.113.apk",
+    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v183/BingYing-1.113.apk",
+    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v183/BingYing-1.113.apk"
   ],
-  "notes": "v1.112 新增「说一句就自动去水印」：进水印页点标题栏麦克风或底部「点我说话」，说「去掉中间那行版权字」「清除左上角的 logo」，App 直接定位到粗框并自动跑一次去除，不用手拖选框、不用点开始。语音转文字用系统识别服务 + 离线优先标志，不往安装包里塞 ASR 模型和 JNI 库，包体仍是 29 MB，国内 ROM 的中文识别反而更稳；图片与识别文本全程不出手机，不上传任何服务器。指令理解是纯 Kotlin 的本地解析：九个方位（四角 / 上下 / 左右 / 中间）× 几种水印形态（版权文字横条 / 图标角标近方形 / 日期短横条 / 默认窄框）决定归一化选框，再加「精准 / 重绘 / 基础」等关键词决定修复引擎；解析出的框与引擎显式传给处理函数，避免界面状态还没刷新就读了旧框，出现「说了左上角却擦了中间」。**没听清明确位置时绝不猜框动手**——那会误伤主体，只会停下来给提示，让用户改用常驻底部的一键快捷指令（中间版权字 / 左上角图标 / 底部水印 / 右上角日期）；系统没装语音识别、没给麦克风权限或不想说话时也走这套快捷指令，功能不打折。结果页回显本次指令被理解成了什么，仍可「换个方式重做」；顺带把重做按钮的引擎时序也改成显式传值。定位到粗框后交给 1.111 的「精准去字」自动精化成笔画级掩膜，所以不需要端侧大模型。新增 15 项测试（指令解析 11 项：方位区分、全角/标点/大小写、引擎关键词、所有框不越界且面积不过半、听不清位置必须停止自动执行；界面 4 项：语音入口与四个快捷指令常驻、注入一句话零点击自动出结果、点快捷指令自动清除并回显、没听清时停在编辑态），全量 762 项通过、0 失败、2 跳过。模型文件始终没换（sha256 6f1f3530…40b），与 1.96~1.111 同一张正式签名证书、v2/v3 签名齐全，可直接覆盖安装，已下载的模型不用重下。含 1.111 笔画级精准去字与三引擎切换、1.110 缩略图看大图与模型入口、1.109 四项反馈、1.108 白底图修复、1.107 六源升级等全部能力。"
+  "notes": "v1.113 修复用户反馈「点我说话那里并没有录音」：v1.112 用 queryIntentActivities(ACTION_RECOGNIZE_SPEECH) 判断语音是否可用，查的是「能弹出系统语音界面的 Activity」，而国内 ROM 大多没有这个界面、讯飞/百度/Google 等引擎只注册 RecognitionService，于是一进来就走降级提示，一次录音都没启动。本版改为直连系统 SpeechRecognizer 服务并用 isRecognitionAvailable() 判可用性，点击后真正开始收音；界面新增录音状态机（启动/正在听/识别中/出结果/出错），出现红点、录音中提示与随声音起伏的实时音量波形，说完自动出字并跑一次去除。去掉强制 EXTRA_PREFER_OFFLINE：没下载离线中文包的机器会因该标志直接失败，是否联网改由手机自带引擎决定。识别失败按系统错误码给具体原因（麦克风被占用/没给权限/没听清/超时/引擎联网失败等），不再只显示一行模糊小字。另加一条打字输入兜底，不方便说话时直接打字说位置，走与语音完全相同的解析与自动执行链路；四个一键快捷指令照常可用，没听清位置时仍会停下来提示，绝不猜框误伤主体。控制器抽成可注入接口，新增单测用假控制器在 JVM 里真跑「点我说话 → 出现录音状态 → 说出结果 → 自动清除」整条链路。如实更正上一版两处说法：①「国内 ROM 上系统语音界面反而更稳」是反的；②「图片、录音、识别文本全程不出手机」不准确——本应用不上传图片、不上传录音到自己的服务器，图片处理（含精准去字）始终在本地完成，但语音转文字由手机自带引擎完成，该引擎是否联网取决于系统设置。全量 771 项通过、0 失败、2 跳过；安装包仍约 29 MB，模型文件未换（sha256 6f1f3530…40b）、已下载的模型不用重下，与 1.96~1.112 同一张正式签名证书、v2/v3 签名齐全，可直接覆盖安装。含 1.112 语音指令与快捷指令、1.111 笔画级精准去字与三引擎切换、1.110~1.104 全部能力。"
 }
