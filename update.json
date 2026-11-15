@@ -1,13 +1,13 @@
 {
-  "versionCode": 121,
-  "versionName": "1.120",
-  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v190/BingYing-1.120.apk",
-  "size": 29588863,
+  "versionCode": 122,
+  "versionName": "1.121",
+  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v191/BingYing-1.121.apk",
+  "size": 29588880,
   "mirrors": [
-    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v190/BingYing-1.120.apk",
-    "https://ghfast.top/https://github.com/tangxueqi/photoresizer-updates/releases/download/v190/BingYing-1.120.apk",
-    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v190/BingYing-1.120.apk",
-    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v190/BingYing-1.120.apk"
+    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v191/BingYing-1.121.apk",
+    "https://ghfast.top/https://github.com/tangxueqi/photoresizer-updates/releases/download/v191/BingYing-1.121.apk",
+    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v191/BingYing-1.121.apk",
+    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v191/BingYing-1.121.apk"
   ],
-  "notes": "v1.120 修复用户反馈「发文字命令的话，应该不是用框选的方式。如果要用框选的方式，那我何必去加这个东西。应该像豆包一样的清除方法。直接清除」。根因：v1.112~v1.119 的一句话去水印链路其实是「解析方位词 → 生成归一化 WatermarkBox → 切 MarkMode.BOX → 画蓝色虚线框 → buildBoxMask 生成矩形修复区 → 按框修复」，等于给手动框选套了一层文字壳；用户截图 9818.jpg 里蓝色虚线框仍只圈住齿轮中心一小块，中间那行灰色版权字大半在框外，v1.119 把框拓宽到 0.04~0.96 也仍然是在猜一个框。本版彻底改掉：文字命令不再产出任何框。VoiceWatermarkCommand 移除 Zone/Target/FULL_ROW/box，只判断「是不是一句去水印的话」+ 从文字里读出修复引擎，方位词（中间/左上角/底部等）完全忽略、不再影响清除范围，「把水印去掉」「去水印」这类不带位置的话也能直接执行。新增 WatermarkPreciseMask.detectTextLines()：全图双向一维中值估计背景（窗口随图尺寸自适应 7~25，小图不再把窄水印当背景）→ 取「相对局部背景的窄亮凸起 >12」为文字笔画（去掉旧的 g>150 亮度下限，才能识别灰色暗字）→ 闭运算接断笔画 + 膨胀盖抗锯齿 → 按行密度投影切出横向铺开的文字带（span>=0.20、带内密度>=0.010），带外一律清零，一次可清掉多行文字；总掩膜占比上限 15%，另有全局亮度兜底保证小图 / 粗体字也能直接执行。实测：用户 9818.jpg（1080×2412，裁出预览区缩到 800）里顶部大字与中间版权行都是灰色暗字，旧 refine 判据（g>150 且凸起>16）两行召回都是 0%，只抓到截图里那行白色 UI 提示；放宽成凸起>12 后顶部大字 30.5%、中间版权行 54.9%、地毯纹理 0%。UI 同步：submitTextCommand 不再切 BOX、不设 box、不画蓝色虚线框、不显示「坐标已保存」；命令面板标题改为「写一句话，自动清除水印（不用框选）」；结果页摘要由「中间 · 版权文字 · 精准去字」改成「自动找到 N 行文字并直接清除」，不再出现任何方位 / 框选措辞。安全底线：仍是笔画级掩膜，文字带外一个像素不动，通过 startRemove 新增的 maskOverride 直通修复区；手动涂抹、手动框选、自动识别、批量按坐标清除、三引擎切换全部保持原样。测试：全量 778 项通过、0 失败、0 错误、2 跳过、76 套件。重写 VoiceWatermarkCommandTest（不再断言框、不再要求写位置、label 不含方位与「框」字）；新增 WatermarkPreciseMaskScanTest（多行文字带、灰色暗字、128px 小图窄水印条、纯色图不误判）；WatermarkScreenTest 新增「无位置也直接执行且全程不进框选模式」，并守住结果页不再出现方位框摘要。如实说明边界：本地 27MB MI-GAN + 纯算法仍是笔画级修复，不是豆包那种云端扩散语义重绘；本版解决的是「不用框、直接执行」这个交互问题。其余一律不变：1.119 整行文字框、1.118 输入法弹出输入框不再被裁、1.117 批量下载防重名、1.116 去水印文本框、1.115 图片占半屏、1.111 笔画级精准去字与三引擎切换、抠白底、拼接、批量改名、改 MD5、提取音频、外挂模型与多源升级。图片与视频处理全程在本地；模型文件未换（migan.onnx 28,079,181 B / sha256 6f1f3530…40b），已下载的模型不用重下，与 1.96~1.119 同一张正式签名证书、v2/v3 签名齐全，可直接覆盖安装。"
+  "notes": "v1.121 修复用户反馈「这个文字水印根本就没有去除，这个模型到底行不行，不行的话换一个行的」。根因不是模型：沙箱复现 9820.jpg 裁出的预览图，两行米白底金棕描边艺术字单行高 281px，而 v1.120 的 detectTextLines() 写死 SCAN_MAX_BAND_H=150，把两段整段判为不合格丢弃；最终认出的 4 个「文字带」全是豆浆高光/磨盘纹理/底部阴影，送去修复的掩膜落在文字上覆盖率 0.0%——模型压根没拿到活。而且整图 luma≈216~230，旧的「相对背景亮凸起」判据盯不住金棕描边与阴影。修法一：detectTextLines 改判局部中心差分边缘强度 + 自适应分位数阈值（下限24）——文字是细窄高频结构，实测文字带边缘均值 51.7、非文字区 8.4、磨盘纹理 21.5，白字/灰字/带描边艺术字通吃；新增水平闭运算接回断笔画。修法二：删掉写死的 150px 带高上限，改成按图高比例（上限 45%、下限保 4px），281px 大字带不再被误杀，128px 小图窄条仍能执行。修法三：文字命令传入的 maskOverride 已是笔画掩膜，但默认 PRECISE 引擎会再跑一次 v1.111 的白字判据 refine() 把它砍掉约 45% 还误报成功——现改为仅手动路径才走二次 refine，文字命令直接用扫描掩膜。验证：新判据在 9820 预览图上文字区召回 0%→57.7%、落在文字区比例 94.2%、非文字区误判 1.1%。如实说明边界：本地 28MB MI-GAN 是移动端小物体快速修复，大面积粗字会留修补痕迹；开源 LaMa 实测 208MB/桌面43秒/约1GB内存/尺寸锁死512，INT8 量化后精度崩坏，手机上跑不动；豆包那种通透感是云端扩散语义重绘+超分，需联网上传、AK/SK、按次计费，纯本地不是调参能达到的。本版解决的是「字没被框到、一个字都没去掉」这个硬 bug，模型未换。其余一律不变：1.120 写一句话不用框选直接清除、1.119 整行文字框、1.118 输入法弹出输入框不再被裁、1.117 批量下载防重名、1.116 去水印文本框、1.115 图片占半屏、1.111 笔画级精准去字与三引擎切换、抠白底、拼接、批量改名、改 MD5、提取音频、外挂模型与六源升级。模型文件未换（migan.onnx 28,079,181 B / sha256 6f1f3530…40b），已下载的模型不用重下，与 1.96~1.120 同一张正式签名证书、v2/v3 签名齐全，可直接覆盖安装。"
 }
