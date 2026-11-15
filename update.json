@@ -1,13 +1,13 @@
 {
-  "versionCode": 118,
-  "versionName": "1.117",
-  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v187/BingYing-1.117.apk",
-  "size": 29588880,
+  "versionCode": 119,
+  "versionName": "1.118",
+  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v188/BingYing-1.118.apk",
+  "size": 29588878,
   "mirrors": [
-    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v187/BingYing-1.117.apk",
-    "https://ghfast.top/https://github.com/tangxueqi/photoresizer-updates/releases/download/v187/BingYing-1.117.apk",
-    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v187/BingYing-1.117.apk",
-    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v187/BingYing-1.117.apk"
+    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v188/BingYing-1.118.apk",
+    "https://ghfast.top/https://github.com/tangxueqi/photoresizer-updates/releases/download/v188/BingYing-1.118.apk",
+    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v188/BingYing-1.118.apk",
+    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v188/BingYing-1.118.apk"
   ],
-  "notes": "v1.117 按用户要求改掉批量下载视频的命名规则。用户原话：「批量下载视频的时候填写了文件名的前缀，后面就加上年月日和时间，然后后面再加上01序号，这样避免文件名重复现象。比如SPA20261115153501，文件多的则序号顺序加1」。旧规则是「前缀 + 下划线 + 三位序号」（如 sfzj_001.mp4），每批下载都从 001 重新开始，同一个前缀下载两批就会生成完全同名的文件，正是用户说的重复现象。本版改为「前缀 + 年月日时分(12位) + 至少两位序号」，例如前缀 SPA、批次时间 2026-11-15 15:35、共 3 条时依次存成 SPA20261115153501.mp4、SPA20261115153502.mp4、SPA20261115153503.mp4。关键点是整批只在点「开始下载」时取一次时间戳并显式传给每条的命名函数：同一批里前缀和时间戳完全相同、只有末尾序号从 01 递增；不同批次时间不同，因此重复用同一个前缀下载也不会重名。序号至少 2 位，总条数超过 99 时自动加宽以保证排序稳定；前缀留空仍退化为平台默认前缀（douyin_ / wechat_ / toutiao_），但同样带时间戳。批量输入框下方仍实时预览前两条成品名，预览与实际下载读同一个 state.batchStamp，保证「预览是 A、存成也是 A」且不会每帧跳字；占位提示与相关注释同步改成新规则。单条下载若填了前缀也按同一规则命名。其余一律不变：批量逐条解析下载、失败不中断、成功/失败汇总、下载标题记录、进度条、首页版面、去水印文本框方案、抠白底、拼接、批量改名、改 MD5、提取音频、外挂模型与多源升级。全量 773 项通过、0 失败、0 错误、2 跳过；图片与视频处理全程在本地；模型文件未换（migan.onnx 28,079,181 B / sha256 6f1f3530…40b），已下载的模型不用重下，与 1.96~1.116 同一张正式签名证书、v2/v3 签名齐全，可直接覆盖安装。含 1.116 去水印文本框、1.115 图片占半屏、1.114 语音简化、1.113 真录音修复、1.112 语音指令、1.111 笔画级精准去字与三引擎切换、1.110~1.104 全部能力。"
+  "notes": "v1.118 修复用户反馈「打开输入法后，这个文本框就只剩一半了，只能看到上半截的字」。根因有三层：① AndroidManifest.xml 的 android:windowSoftInputMode=\"adjustResize\" 会在输入法弹出时压缩窗口高度；② MainScreen.kt 首页 mode==null 分支刻意「一屏放下不滚动」，内部 Column(Modifier.fillMaxSize()) 没有 verticalScroll，而 1.117 批量模式又多出「前缀输入框 + 命名预览」约 70dp，内容超过被压缩后的一屏时，底部输入框直接被裁掉，只剩上半截；③ VideoDownloadSection.kt 两个 OutlinedTextField 硬设 Modifier.height(50.dp)，低于 Material3 输入框内部最小高度 56dp，内部文字被垂直压缩裁切，聚焦时尤其明显。本版改法：首页内部 Column 加 .verticalScroll(rememberScrollState())，内容放得下时滚动不生效、版面与原来完全一致，放不下时（键盘压缩窗口 / 批量模式多控件）可滚到全部控件；链接输入框与批量前缀输入框由硬 50dp 改为 .heightIn(min = 56.dp)，让 M3 自然测量、不再硬压；HomeVideoBlockHeight 的注释同步改为输入框 56dp 并说明超出预算由滚动兜底，常量值仍 175.dp，上半部分边长计算与版面不变。回归测试两条：videoInputs_areAtLeastMaterialMinHeight_andPlaceholderNotClipped 断言两个输入框高度 >=56dp、占位文字上下边界完整落在框内；imeShrunkWindow_renamePrefixStillFullyReachableByScrolling 用 w411dp-h420dp-xxhdpi 模拟键盘压缩后的矮窗口，performScrollTo() 能到达前缀框且完整显示、输入框仍 >=56dp、文字不被裁（没有滚动容器时该调用直接失败，正好守住这次修复）。顺带修正测试里 onNodeWithText 的参数名为 useUnmergedTree（useUnmergedNode 属于 onNodeWithTag）。全量 775 项通过、0 失败、0 错误、2 跳过、75 套件。其余一律不变：1.117 批量下载「前缀 + 年月日时分 + 01 序号」防重名、1.116 去水印文本框方案、1.115 图片占半屏、1.111 笔画级精准去字与三引擎切换、抠白底、拼接、批量改名、改 MD5、提取音频、外挂模型与多源升级。图片与视频处理全程在本地；模型文件未换（migan.onnx 28,079,181 B / sha256 6f1f3530…40b），已下载的模型不用重下，与 1.96~1.117 同一张正式签名证书、v2/v3 签名齐全，可直接覆盖安装。"
 }
