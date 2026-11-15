@@ -1,13 +1,13 @@
 {
-  "versionCode": 122,
-  "versionName": "1.121",
-  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v191/BingYing-1.121.apk",
-  "size": 29588880,
+  "versionCode": 123,
+  "versionName": "1.122",
+  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v192/BingYing-1.122.apk",
+  "size": 29588873,
   "mirrors": [
-    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v191/BingYing-1.121.apk",
-    "https://ghfast.top/https://github.com/tangxueqi/photoresizer-updates/releases/download/v191/BingYing-1.121.apk",
-    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v191/BingYing-1.121.apk",
-    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v191/BingYing-1.121.apk"
+    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v192/BingYing-1.122.apk",
+    "https://ghfast.top/https://github.com/tangxueqi/photoresizer-updates/releases/download/v192/BingYing-1.122.apk",
+    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v192/BingYing-1.122.apk",
+    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v192/BingYing-1.122.apk"
   ],
-  "notes": "v1.121 修复用户反馈「这个文字水印根本就没有去除，这个模型到底行不行，不行的话换一个行的」。根因不是模型：沙箱复现 9820.jpg 裁出的预览图，两行米白底金棕描边艺术字单行高 281px，而 v1.120 的 detectTextLines() 写死 SCAN_MAX_BAND_H=150，把两段整段判为不合格丢弃；最终认出的 4 个「文字带」全是豆浆高光/磨盘纹理/底部阴影，送去修复的掩膜落在文字上覆盖率 0.0%——模型压根没拿到活。而且整图 luma≈216~230，旧的「相对背景亮凸起」判据盯不住金棕描边与阴影。修法一：detectTextLines 改判局部中心差分边缘强度 + 自适应分位数阈值（下限24）——文字是细窄高频结构，实测文字带边缘均值 51.7、非文字区 8.4、磨盘纹理 21.5，白字/灰字/带描边艺术字通吃；新增水平闭运算接回断笔画。修法二：删掉写死的 150px 带高上限，改成按图高比例（上限 45%、下限保 4px），281px 大字带不再被误杀，128px 小图窄条仍能执行。修法三：文字命令传入的 maskOverride 已是笔画掩膜，但默认 PRECISE 引擎会再跑一次 v1.111 的白字判据 refine() 把它砍掉约 45% 还误报成功——现改为仅手动路径才走二次 refine，文字命令直接用扫描掩膜。验证：新判据在 9820 预览图上文字区召回 0%→57.7%、落在文字区比例 94.2%、非文字区误判 1.1%。如实说明边界：本地 28MB MI-GAN 是移动端小物体快速修复，大面积粗字会留修补痕迹；开源 LaMa 实测 208MB/桌面43秒/约1GB内存/尺寸锁死512，INT8 量化后精度崩坏，手机上跑不动；豆包那种通透感是云端扩散语义重绘+超分，需联网上传、AK/SK、按次计费，纯本地不是调参能达到的。本版解决的是「字没被框到、一个字都没去掉」这个硬 bug，模型未换。其余一律不变：1.120 写一句话不用框选直接清除、1.119 整行文字框、1.118 输入法弹出输入框不再被裁、1.117 批量下载防重名、1.116 去水印文本框、1.115 图片占半屏、1.111 笔画级精准去字与三引擎切换、抠白底、拼接、批量改名、改 MD5、提取音频、外挂模型与六源升级。模型文件未换（migan.onnx 28,079,181 B / sha256 6f1f3530…40b），已下载的模型不用重下，与 1.96~1.120 同一张正式签名证书、v2/v3 签名齐全，可直接覆盖安装。"
+  "notes": "v1.122 修复用户 9821.jpg 反馈「按说话的文字清除后白色字芯、金边、阴影还是没清干净」。根因不是模型：v1.121 的 detectTextLines 只把高频边缘像素送进修复掩膜（文字区召回仅 31%），而粗艺术字的字芯是 10~13px 的实心白块——实心内部恰恰是「非边缘」，于是整块白字芯、金棕描边、右下阴影被留在掩膜外，MI-GAN 根本没收到这些活。而且旧的带边界阈值（35% 峰值）把文字带切在字芯中段，顶部笔画和底部阴影落在带外。修法一：低阈值（10% 峰值）把文字带上下边界扩到描边与阴影的弱边缘处，再按带高留 padding；同时把带高下限改回纯图高比例 max(4,3%h)，保住 160px 小图上 6px 细笔画不被误杀。修法二：带内按列把每个字「top..bottom 整段补实」——字芯连同描边、阴影一起进掩膜，水平桥接 3px 连回被高光切断的笔画。修法三：自适应外扩（粗字 6px / 细字 1px），并与扩展带取交集，既盖全描边阴影又不下探到下方磨片。沙箱复现 9820/9821 裁图验证：文字 100% 进掩膜、金边阴影全包、磨片零误检；合成细笔画图 ratio 0.098、空心艺术字 0.126，全部维持在原安全线内；本地引擎与云端共用这份「字芯+描边+阴影」掩膜。全量单测 780 通过 0 失败（debug 变体，含新增的补实字芯回归测试）。如实说明边界：本地 28MB MI-GAN 是移动端小物体快速修复，大面积粗字重绘后仍会留轻微修补痕迹，做不到豆包那种云端扩散语义重绘+超分的通透感（需联网上传、AK/SK、按次计费）；本版解决的是「字芯和描边压根没被框到、清不干净」的硬 bug，模型未换。其余一律不变：1.121 边缘密度检测与动态带高、1.120 写一句话不用框选直接清除、1.119 整行文字框、1.118 输入法输入框、1.117 批量下载防重名、1.116 去水印文本框、1.111 笔画级精准去字与三引擎切换、抠白底、拼接、批量改名、改 MD5、提取音频、外挂模型与六源升级。模型文件未换（migan.onnx 28,079,181 B），已下载的模型不用重下，与 1.96~1.121 同一张正式签名证书、v2/v3 签名齐全，可直接覆盖安装。"
 }
