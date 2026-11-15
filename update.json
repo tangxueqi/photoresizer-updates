@@ -1,13 +1,13 @@
 {
-  "versionCode": 115,
-  "versionName": "1.114",
-  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v184/BingYing-1.114.apk",
-  "size": 29588998,
+  "versionCode": 116,
+  "versionName": "1.115",
+  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v185/BingYing-1.115.apk",
+  "size": 29589001,
   "mirrors": [
-    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v184/BingYing-1.114.apk",
-    "https://ghfast.top/https://github.com/tangxueqi/photoresizer-updates/releases/download/v184/BingYing-1.114.apk",
-    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v184/BingYing-1.114.apk",
-    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v184/BingYing-1.114.apk"
+    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v185/BingYing-1.115.apk",
+    "https://ghfast.top/https://github.com/tangxueqi/photoresizer-updates/releases/download/v185/BingYing-1.115.apk",
+    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v185/BingYing-1.115.apk",
+    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v185/BingYing-1.115.apk"
   ],
-  "notes": "v1.114 按用户反馈「我要的不是输入语音，要的是像豆包那样说话→转成文字→按文字内容执行，别做复杂了」重做语音交互。前两版把语音做成了一堆控件的输入工具：打字输入、四个快捷指令 chip、实时音量波形、录音红点、多余状态文案，而且识别出的原话根本没显示给用户，说完直接闷头执行。本版全部砍掉，语音区只剩一个「说话」按钮 + 一句示例：点一下真的开始收音，说完系统把这句话转成文字显示在屏幕上（「你说：去掉中间那行版权字」），紧接着按文字内容解析出位置与修复方式并立刻自动跑一次去除，结果页也回显「你说：…」与「已按这句话执行：中间 · 版权文字 · 精准去字」。没有二次确认、没有要选的按钮。删除打字框与四个快捷 chip 后，系统错误提示也不再引导已不存在的入口，改为「请再说一次 / 手动框选水印后点开始去除」；没听清明确位置时仍停下来提示、绝不猜框误伤主体。真录音链路不变：仍直连系统 SpeechRecognizer 服务（1.113 修好的「点了没反应」不会回来），仍用本地纯 Kotlin 解析九个方位 × 水印形态 × 修复引擎，解析出的框与引擎显式传参避免状态时序错位。原有的手动框选、涂抹、三种引擎切换、选框微调等老功能一个没动。全量 768 项通过、0 失败、2 跳过；安装包仍约 29 MB，图片处理全程在本地、不上传图片或录音到本应用服务器；语音转文字由手机自带引擎完成，是否联网取决于系统设置。模型文件未换、已下载的模型不用重下，与 1.96~1.113 同一张正式签名证书、v2/v3 签名齐全，可直接覆盖安装。含 1.113 真录音修复、1.112 语音指令、1.111 笔画级精准去字与三引擎切换、1.110~1.104 全部能力。效果边界如实说明：语音只负责听懂在哪、擦什么，画质仍是本地笔画级精准去字，不是豆包那种云端扩散模型整体重绘。"
+  "notes": "v1.115 按用户截图反馈修两件事。① 图片预览被压得几乎看不到：根因是图片区用 weight(1f)，底部操作面板自适应高度、内容又极多，Column 先测面板就把高度几乎全拿走，图片只剩一条几十像素的黑带。本版按整屏高度取 1/2 固定给图片预览，剩下一半给可滚动的底部面板，谁也不挤谁；小屏上滚一下仍可点到全部按钮。② 点「说话」没有把语音转成文字显示出来：上一版虽把原话显示出来，但只是面板里一行 12sp 小字，且系统给的中间文字 onPartialResults 被直接丢掉，用户说完之前屏幕一片死寂，错误提示还挂在面板最末尾要滚到底才看得见。本版把语音区改成一个明显的大文字框：说话过程中中间文字实时写进框里（像豆包那样边说边出字），说完定稿显示完整原话 +「按这句话执行：…」并立刻自动清除，失败原因也直接显示在框内。用户说「如果做不到的话，那就简化」：本机没有系统语音识别服务时 App 无论如何变不出文字，该情况下整块语音 UI（含标题栏麦克风、说话按钮、文字框、示例）收成一行说明，不再留一个点了没反应也永远出不来文字的假按钮，手动框选清除照常可用。同时把系统错误文案里仍指向已删除的「打字输入 / 快捷指令」的过时引导全部改掉。保留真录音（直连系统 SpeechRecognizer 服务）、听不清位置不猜框不误伤主体、解析出的框与引擎显式传参；手动框选、涂抹、三种修复引擎、选框微调等老功能一个没动。全量 772 项通过、0 失败、2 跳过；安装包约 29 MB，图片处理全程在本地、不上传图片或录音到本应用服务器；语音转文字由手机自带引擎完成，是否联网取决于系统设置，App 不能保证每台机型都能出字。模型文件未换、已下载的模型不用重下，与 1.96~1.114 同一张正式签名证书、v2/v3 签名齐全，可直接覆盖安装。效果边界如实说明：语音只负责听懂在哪、擦什么，画质仍是本地笔画级精准去字，不是豆包那种云端扩散模型整体重绘。含 1.114 语音简化、1.113 真录音修复、1.112 语音指令、1.111 笔画级精准去字与三引擎切换、1.110~1.104 全部能力。"
 }
