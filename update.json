@@ -1,13 +1,13 @@
 {
-  "versionCode": 117,
-  "versionName": "1.116",
-  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v186/BingYing-1.116.apk",
-  "size": 29572493,
+  "versionCode": 118,
+  "versionName": "1.117",
+  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v187/BingYing-1.117.apk",
+  "size": 29588880,
   "mirrors": [
-    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v186/BingYing-1.116.apk",
-    "https://ghfast.top/https://github.com/tangxueqi/photoresizer-updates/releases/download/v186/BingYing-1.116.apk",
-    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v186/BingYing-1.116.apk",
-    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v186/BingYing-1.116.apk"
+    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v187/BingYing-1.117.apk",
+    "https://ghfast.top/https://github.com/tangxueqi/photoresizer-updates/releases/download/v187/BingYing-1.117.apk",
+    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v187/BingYing-1.117.apk",
+    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v187/BingYing-1.117.apk"
   ],
-  "notes": "v1.116 按用户明确要求，彻底改掉「点击说话没转成文字」这条走不通的路。用户原话：「你干脆就做成文本框，然后我自己语音转成文字输入进去。你再去理解文本中的意思，再去做相关的动作就行了」。之前几版一直在做应用内语音识别（RecognizerIntent → 直连 SpeechRecognizer 系统服务 → 中间文字实时进文字框），但这台手机的系统语音服务始终不回传文字，继续加 UI、状态机、波形都变不出字，反而留一个点了没反应的假按钮。本版直接删掉整条应用内 ASR 链路：删除 VoiceInputController.kt / VoiceInputControllerTest.kt、SystemVoiceInputController、VoiceInputState，以及 SpeechRecognizer / RecognitionListener / RecognizerIntent 的全部引用；移除 RECORD_AUDIO 权限与 AndroidManifest 里两个语音服务 queries；删除标题栏麦克风、「说话」按钮、录音态、实时波形、红点、快捷 chips、无引擎简化说明等全部语音控件。取而代之的是一个最普通的可编辑文本框 OutlinedTextField + 一个「按这句话清除」按钮 + 一行提示：用户自己打字，或点开输入框用输入法自带的语音转文字把声音变成字填进去，App 只负责理解这句话的意思并立刻执行，不再碰系统语音识别、不申请麦克风权限、不联网上传任何音频。理解与执行沿用已验证的本地纯 Kotlin 解析器 VoiceWatermarkCommand.parse()：九个方位 × 水印形态 × 三种修复引擎翻译成归一化框与引擎，点按钮或输入法「完成」键即自动跑一次去除，结果页回显「输入：…」+「已按这句话执行：…」。安全底线不变：没写清位置时停下来给可读提示、绝不猜框误伤主体；解析出的 box / engine 显式传参，避免 Compose 重组时序读到旧值。图片预览仍固定占屏 1/2、底部面板可滚动；手动框选、涂抹、三引擎切换、选框微调、批量按坐标清除等老功能一个没动。全量 769 项通过、0 失败、0 错误、2 跳过；图片处理全程在本地，不上传图片或文字到本应用服务器；模型文件未换（migan.onnx 28,079,181 B / sha256 6f1f3530…40b），已下载的模型不用重下，与 1.96~1.115 同一张正式签名证书、v2/v3 签名齐全，可直接覆盖安装。效果边界如实说明：文本框只负责理解在哪、擦什么，画质仍是本地笔画级精准去字，不是豆包那种云端扩散模型整体重绘。含 1.115 图片占半屏、1.114 语音简化、1.113 真录音修复、1.112 语音指令、1.111 笔画级精准去字与三引擎切换、1.110~1.104 全部能力。"
+  "notes": "v1.117 按用户要求改掉批量下载视频的命名规则。用户原话：「批量下载视频的时候填写了文件名的前缀，后面就加上年月日和时间，然后后面再加上01序号，这样避免文件名重复现象。比如SPA20261115153501，文件多的则序号顺序加1」。旧规则是「前缀 + 下划线 + 三位序号」（如 sfzj_001.mp4），每批下载都从 001 重新开始，同一个前缀下载两批就会生成完全同名的文件，正是用户说的重复现象。本版改为「前缀 + 年月日时分(12位) + 至少两位序号」，例如前缀 SPA、批次时间 2026-11-15 15:35、共 3 条时依次存成 SPA20261115153501.mp4、SPA20261115153502.mp4、SPA20261115153503.mp4。关键点是整批只在点「开始下载」时取一次时间戳并显式传给每条的命名函数：同一批里前缀和时间戳完全相同、只有末尾序号从 01 递增；不同批次时间不同，因此重复用同一个前缀下载也不会重名。序号至少 2 位，总条数超过 99 时自动加宽以保证排序稳定；前缀留空仍退化为平台默认前缀（douyin_ / wechat_ / toutiao_），但同样带时间戳。批量输入框下方仍实时预览前两条成品名，预览与实际下载读同一个 state.batchStamp，保证「预览是 A、存成也是 A」且不会每帧跳字；占位提示与相关注释同步改成新规则。单条下载若填了前缀也按同一规则命名。其余一律不变：批量逐条解析下载、失败不中断、成功/失败汇总、下载标题记录、进度条、首页版面、去水印文本框方案、抠白底、拼接、批量改名、改 MD5、提取音频、外挂模型与多源升级。全量 773 项通过、0 失败、0 错误、2 跳过；图片与视频处理全程在本地；模型文件未换（migan.onnx 28,079,181 B / sha256 6f1f3530…40b），已下载的模型不用重下，与 1.96~1.116 同一张正式签名证书、v2/v3 签名齐全，可直接覆盖安装。含 1.116 去水印文本框、1.115 图片占半屏、1.114 语音简化、1.113 真录音修复、1.112 语音指令、1.111 笔画级精准去字与三引擎切换、1.110~1.104 全部能力。"
 }
