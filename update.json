@@ -1,13 +1,13 @@
 {
-  "versionCode": 120,
-  "versionName": "1.119",
-  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v189/BingYing-1.119.apk",
-  "size": 29588876,
+  "versionCode": 121,
+  "versionName": "1.120",
+  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v190/BingYing-1.120.apk",
+  "size": 29588863,
   "mirrors": [
-    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v189/BingYing-1.119.apk",
-    "https://ghfast.top/https://github.com/tangxueqi/photoresizer-updates/releases/download/v189/BingYing-1.119.apk",
-    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v189/BingYing-1.119.apk",
-    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v189/BingYing-1.119.apk"
+    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v190/BingYing-1.120.apk",
+    "https://ghfast.top/https://github.com/tangxueqi/photoresizer-updates/releases/download/v190/BingYing-1.120.apk",
+    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v190/BingYing-1.120.apk",
+    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v190/BingYing-1.120.apk"
   ],
-  "notes": "v1.119 修复用户反馈「说了清除图片中的文字水印，但是产生的选框没有把文字全部框选，造成清除失败」。根因：VoiceWatermarkCommand.parse() 给「文字/水印」类指令一律用 0.42 宽的居中窄框（GENERIC 默认 w=0.42、h=0.16、x≈0.29~0.71），而真实水印常是横跨整幅画面的一行字。用用户上传的截图（9816.jpg，1080×2412）按项目自己的笔画判据（双向 25 一维中值取小 + 亮度凸起 >16 且 luma>150）实测：中间那行白色版权字横向占画面 0.175~0.888、纵向 0.474~0.534；旧框 x=0.29~0.71 只覆盖 60.3% 的文字笔画，左右约四成字留在框外，所以去除后仍看得到半行字。本版让「版权文字 / 水印」目标在非角落方位改用几乎整幅宽的横向条带（x=0.04、w=0.92、h=0.18），实测覆盖率 100%；纵向位置仍由九个方位决定（顶部框 y=0.02、底部框 y=0.81），位置语义不丢。四个角落的水印、logo、日期保持原有窄框，避免把半个画面圈进去。关键安全点：粗框只是候选区，精准去字引擎用 WatermarkPreciseMask.refine() 把整条带精化成「只有文字笔画」的掩膜，膨胀绝不越过候选区、框外一个像素都不动；实测这类条带下笔画占比约 0.06~0.21，落在 refine 的 [0.02, 0.62] 有效区间，detected=true，不会退回整块重绘，主体保真与 1.111 一致。测试：VoiceWatermarkCommandTest 新增 centerWatermark_usesFullRowBox_soWholeTextLineIsInside（用户原话框宽>=0.90、左右端<=0.05/>=0.95、纵向中心仍是中间）、fullRowOnlyForNonCornerTextTargets_cornerLogoDateStayNarrow、fullRowBoxes_stillRespectVerticalPosition；WatermarkPreciseMaskTest 新增 wideRowCandidate_capturesStrokesAcrossWholeLine_unlikeNarrowCenterBox（宽条带精化掩膜必须含最左/最右端笔画、窄框结果碰不到两端、掩膜远小于候选区、ratio 落在有效区间）。全量 779 项通过、0 失败、0 错误、2 跳过、75 套件。其余一律不变：1.118 输入法弹出输入框不再被裁、1.117 批量下载防重名、1.116 去水印文本框、1.115 图片占半屏、1.111 笔画级精准去字与三引擎切换、抠白底、拼接、批量改名、改 MD5、提取音频、外挂模型与多源升级。图片与视频处理全程在本地；模型文件未换（migan.onnx 28,079,181 B / sha256 6f1f3530…40b），已下载的模型不用重下，与 1.96~1.118 同一张正式签名证书、v2/v3 签名齐全，可直接覆盖安装。"
+  "notes": "v1.120 修复用户反馈「发文字命令的话，应该不是用框选的方式。如果要用框选的方式，那我何必去加这个东西。应该像豆包一样的清除方法。直接清除」。根因：v1.112~v1.119 的一句话去水印链路其实是「解析方位词 → 生成归一化 WatermarkBox → 切 MarkMode.BOX → 画蓝色虚线框 → buildBoxMask 生成矩形修复区 → 按框修复」，等于给手动框选套了一层文字壳；用户截图 9818.jpg 里蓝色虚线框仍只圈住齿轮中心一小块，中间那行灰色版权字大半在框外，v1.119 把框拓宽到 0.04~0.96 也仍然是在猜一个框。本版彻底改掉：文字命令不再产出任何框。VoiceWatermarkCommand 移除 Zone/Target/FULL_ROW/box，只判断「是不是一句去水印的话」+ 从文字里读出修复引擎，方位词（中间/左上角/底部等）完全忽略、不再影响清除范围，「把水印去掉」「去水印」这类不带位置的话也能直接执行。新增 WatermarkPreciseMask.detectTextLines()：全图双向一维中值估计背景（窗口随图尺寸自适应 7~25，小图不再把窄水印当背景）→ 取「相对局部背景的窄亮凸起 >12」为文字笔画（去掉旧的 g>150 亮度下限，才能识别灰色暗字）→ 闭运算接断笔画 + 膨胀盖抗锯齿 → 按行密度投影切出横向铺开的文字带（span>=0.20、带内密度>=0.010），带外一律清零，一次可清掉多行文字；总掩膜占比上限 15%，另有全局亮度兜底保证小图 / 粗体字也能直接执行。实测：用户 9818.jpg（1080×2412，裁出预览区缩到 800）里顶部大字与中间版权行都是灰色暗字，旧 refine 判据（g>150 且凸起>16）两行召回都是 0%，只抓到截图里那行白色 UI 提示；放宽成凸起>12 后顶部大字 30.5%、中间版权行 54.9%、地毯纹理 0%。UI 同步：submitTextCommand 不再切 BOX、不设 box、不画蓝色虚线框、不显示「坐标已保存」；命令面板标题改为「写一句话，自动清除水印（不用框选）」；结果页摘要由「中间 · 版权文字 · 精准去字」改成「自动找到 N 行文字并直接清除」，不再出现任何方位 / 框选措辞。安全底线：仍是笔画级掩膜，文字带外一个像素不动，通过 startRemove 新增的 maskOverride 直通修复区；手动涂抹、手动框选、自动识别、批量按坐标清除、三引擎切换全部保持原样。测试：全量 778 项通过、0 失败、0 错误、2 跳过、76 套件。重写 VoiceWatermarkCommandTest（不再断言框、不再要求写位置、label 不含方位与「框」字）；新增 WatermarkPreciseMaskScanTest（多行文字带、灰色暗字、128px 小图窄水印条、纯色图不误判）；WatermarkScreenTest 新增「无位置也直接执行且全程不进框选模式」，并守住结果页不再出现方位框摘要。如实说明边界：本地 27MB MI-GAN + 纯算法仍是笔画级修复，不是豆包那种云端扩散语义重绘；本版解决的是「不用框、直接执行」这个交互问题。其余一律不变：1.119 整行文字框、1.118 输入法弹出输入框不再被裁、1.117 批量下载防重名、1.116 去水印文本框、1.115 图片占半屏、1.111 笔画级精准去字与三引擎切换、抠白底、拼接、批量改名、改 MD5、提取音频、外挂模型与多源升级。图片与视频处理全程在本地；模型文件未换（migan.onnx 28,079,181 B / sha256 6f1f3530…40b），已下载的模型不用重下，与 1.96~1.119 同一张正式签名证书、v2/v3 签名齐全，可直接覆盖安装。"
 }
