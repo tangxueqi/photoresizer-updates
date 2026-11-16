@@ -77,14 +77,18 @@
     <div class="meta">
       <span class="tag">Android 7.0+</span>
       <span class="tag">约 29 MB</span>
-      <span class="tag">版本 1.127</span>
+      <span class="tag">版本 1.128</span>
       <span class="tag">正式签名版</span>
     </div>
-    <a class="btn" href="https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v197/BingYing-1.127.apk" download>下载 APK 安装包（v1.127）</a>
+    <a class="btn" href="https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v198/BingYing-1.128.apk" download>下载 APK 安装包（v1.128）</a>
     <span class="btn-sub">国内加速下载地址（GitHub Releases 加速镜像，支持多镜像自动切换与并行下载）</span>
-    <span class="btn-sub">若加速镜像不可用，点 <a href="https://github.com/tangxueqi/photoresizer-updates/releases/download/v197/BingYing-1.127.apk" target="_blank">GitHub 直链</a> 或换用桌面浏览器下载后再传手机</span>
+    <span class="btn-sub">若加速镜像不可用，点 <a href="https://github.com/tangxueqi/photoresizer-updates/releases/download/v198/BingYing-1.128.apk" target="_blank">GitHub 直链</a> 或换用桌面浏览器下载后再传手机</span>
     <div class="warn" style="margin-top:14px;background:#E8F6EE;border-color:#A9D9BE;color:#1F6B3A">
-      <strong>✓ v1.127：图片元数据分析器合规升级——AI 标识只读识别 + GPS 诊断 + 隐私清除强化</strong><br>
+      <strong>✓ v1.128：修复「保存坐标让新图不再自动识别」——纯色底水印清不掉的真正原因</strong><br>
+      你这次截图里出现了「<strong>已载入保存的坐标，点开始去除即可按框清除</strong>」。查到根因：之前只要本机存过一次框坐标，打开任何新图都会强制进<strong>选框模式</strong>，直接按旧框整块修，<strong>文字检测根本没跑</strong>——所以看起来像「连纯色背景上的水印都识别不了」。这一版把单张打开恢复为<strong>始终先走文字行扫描 detectTextLines()</strong>；保存坐标只在你主动点「选框」或执行批量按坐标清除时才用，并新增<strong>「清除保存坐标」</strong>入口，旧坐标不会再永久污染新图。全量单测 <strong>817 项通过、0 失败、2 跳过</strong>。模型未换、已下载模型无需重下；与历史版本同一张正式签名证书，可直接覆盖安装。
+    </div>
+    <div class="warn" style="margin-top:10px;background:#F0F4FF;border-color:#A9BFE0;color:#1F3D6B">
+      <strong>v1.127（历史）：图片元数据分析器合规升级——AI 标识只读识别 + GPS 诊断 + 隐私清除强化</strong><br>
       这一版把「元数据分析器」按你最后确认的合法方向重做：<strong>删掉手动添加/删除 AI 命中入口，保存时不再抹除 AI 标识</strong>；AI 识别扩展到豆包 / 即梦 / 剪映、国标 <strong>AIGC（GB 45438 / TC260）</strong>、<strong>C2PA/JUMBF</strong>、<strong>XMP trainedAlgorithmicMedia</strong>、PNG 生成参数等；GPS 页会明确区分「文件本来没有 GPS」和「有 GPS 字段但解析失败」；一键清除隐私覆盖序列号、机主、作者、拍摄时间、XMP 个人字段与全部常见 GPS 字段，同时保留 AI 标识载体字段。<strong>全量单测 815 项通过、0 失败、2 跳过</strong>。安装包仍约 29 MB，处理全程在本地，模型未换，可直接覆盖安装。
     </div>
     <div class="warn" style="margin-top:10px;background:#F0F4FF;border-color:#A9BFE0;color:#1F3D6B">
