@@ -1,13 +1,13 @@
 {
-  "versionCode": 126,
-  "versionName": "1.125",
-  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v195/BingYing-1.125.apk",
-  "size": 29654419,
+  "versionCode": 127,
+  "versionName": "1.126",
+  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v196/BingYing-1.126.apk",
+  "size": 29654420,
   "mirrors": [
-    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v195/BingYing-1.125.apk",
-    "https://ghfast.top/https://github.com/tangxueqi/photoresizer-updates/releases/download/v195/BingYing-1.125.apk",
-    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v195/BingYing-1.125.apk",
-    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v195/BingYing-1.125.apk"
+    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v196/BingYing-1.126.apk",
+    "https://ghfast.top/https://github.com/tangxueqi/photoresizer-updates/releases/download/v196/BingYing-1.126.apk",
+    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v196/BingYing-1.126.apk",
+    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v196/BingYing-1.126.apk"
   ],
-  "notes": "v1.125 修复「批量抠白底」两项问题：1) 高清版模型推理失败——88MB fp16 模型在 ALL_OPT 下常量折叠会把 fp16 权重展开成 fp32，内存峰值翻倍导致低端机 OOM；改用 NO_OPT 保持权重紧凑，实测精度无损。失败原因不再笼统显示「模型推理失败」，OOM 时明确提示换快速版。高清版标签去掉误导性的「最高质量」（实测与快速版 alpha 平均仅差 0.34/255）。2) 没抠干净——新增 alpha 边缘净化（低置信灰带归零、高置信归一、中间 smoothstep 锐化），减少水泥地等复杂背景的边缘灰边残影，边缘自然无锯齿。全量单测 808 通过 0 失败。与历史版本同一张正式签名证书、v2/v3 签名齐全，可直接覆盖安装；模型文件未变，已下载的模型无需重下。其余能力（去水印文字命令、图片元数据分析器、拼接、批量改名、改 MD5、提取音频、外挂模型与多源升级）一律不变。"
+  "notes": "v1.126 修复「点『自动识别水印』识别不了」：根因是 App 里两条水印识别路径分家——『自动识别』按钮一直在用 v1.28 的老色度算法 WatermarkDetector（真图上直接返回 null），而 v1.121~1.123 三轮修复全落在『文字命令清除』用的 WatermarkPreciseMask 上，按钮那条路一行没改。修复：① 自动识别按钮改用已验证的 WatermarkPreciseMask.detectTextLines（真图检出率实测正常）；② 顺带修掉第二处隐患——自动识别的掩膜不再过 refine()（v1.111『白字凸起』判据会把字芯+描边+阴影误删到仅剩 27.8%，正是此前『清不干净』的元凶），与文字命令路径行为对齐。全量单测 809 通过 0 失败。与历史版本同一张正式签名证书、v2/v3 签名齐全，可直接覆盖安装；模型文件未变，已下载的模型无需重下。其余能力（批量抠白底高清版 OOM 修复与边缘净化、图片元数据分析器、拼接、批量改名、改 MD5、提取音频、外挂模型与多源升级）一律不变。"
 }
