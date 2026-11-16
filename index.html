@@ -77,14 +77,18 @@
     <div class="meta">
       <span class="tag">Android 7.0+</span>
       <span class="tag">约 29 MB</span>
-      <span class="tag">版本 1.125</span>
+      <span class="tag">版本 1.126</span>
       <span class="tag">正式签名版</span>
     </div>
-    <a class="btn" href="https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v195/BingYing-1.125.apk" download>下载 APK 安装包（v1.125）</a>
+    <a class="btn" href="https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v196/BingYing-1.126.apk" download>下载 APK 安装包（v1.126）</a>
     <span class="btn-sub">国内加速下载地址（GitHub Releases 加速镜像，支持多镜像自动切换与并行下载）</span>
-    <span class="btn-sub">若加速镜像不可用，点 <a href="https://github.com/tangxueqi/photoresizer-updates/releases/download/v195/BingYing-1.125.apk" target="_blank">GitHub 直链</a> 或换用桌面浏览器下载后再传手机</span>
+    <span class="btn-sub">若加速镜像不可用，点 <a href="https://github.com/tangxueqi/photoresizer-updates/releases/download/v196/BingYing-1.126.apk" target="_blank">GitHub 直链</a> 或换用桌面浏览器下载后再传手机</span>
     <div class="warn" style="margin-top:14px;background:#E8F6EE;border-color:#A9D9BE;color:#1F6B3A">
-      <strong>✓ v1.125：修复「批量抠白底」——高清版推理失败 + 边缘抠不干净</strong><br>
+      <strong>✓ v1.126：修复「点『自动识别水印』识别不了」</strong><br>
+      你发现「自动识别水印」按钮点了识别不出来。根因是 App 里有<strong>两条互不相干的水印识别路径</strong>：这个按钮一直在用 v1.28 写的老色度算法，在你那张真图上<strong>直接返回「没识别到」</strong>；而前几轮修复（1.121~1.123）全落在「写一句话清除」那条路上的新引擎上，按钮这条<strong>一行都没改过</strong>。这一版把按钮也切到已验证的新引擎，真图实测能正常检出；顺带修掉第二处隐患：识别出的水印区域以前会被再「精化」一次、把字芯描边误删到只剩 27.8%（这正是以前「清不干净」的元凶），现在不再二次精化。<strong>全量单测 809 项通过、0 失败</strong>。安装包仍 <strong>约 29 MB</strong>，处理全程在本地。<strong>模型未换、已下载的模型不用重下</strong>，与历史版本同一张正式签名证书，<strong>可直接覆盖安装</strong>。
+    </div>
+    <div class="warn" style="margin-top:10px;background:#F0F4FF;border-color:#A9BFE0;color:#1F3D6B">
+      <strong>v1.125（历史）：修复「批量抠白底」——高清版推理失败 + 边缘抠不干净</strong><br>
       高清版（88MB）以前一点就报「模型推理失败」：<strong>不是模型坏了，是加载时内存翻倍把手机撑爆了</strong>（fp16 权重被优化器展开成 fp32）。这一版让大模型加载时不再展开，实测精度不变；失败提示也不再含糊，内存不足会明确告诉你「换快速版」。<strong>顺带说清一个真相</strong>：实测高清版和快速版抠图结果几乎一模一样（平均只差 0.34/255），所以已把「最高质量」这个误导标签去掉——它只是更大、更占内存，并不更干净。针对「没抠干净」，新增<strong>边缘净化</strong>：把水泥地留下的半透明灰边和外侧噪点收紧，边缘自然无锯齿。全量单测 <strong>808 项通过、0 失败</strong>。安装包仍 <strong>约 29 MB</strong>，处理全程在本地。<strong>模型未换、已下载的模型不用重下</strong>，与历史版本同一张正式签名证书，<strong>可直接覆盖安装</strong>。
     </div>
     <div class="warn" style="margin-top:10px;background:#F0F4FF;border-color:#A9BFE0;color:#1F3D6B">
@@ -112,6 +116,17 @@
     </div>
   </div>
 
+
+  <div class="card">
+    <h2>v1.126 更新内容：修复「点『自动识别水印』识别不了」</h2>
+    <ol>
+      <li><strong>根因：两条识别路径分家，按钮那条从没修过</strong>——App 里有两套文字水印识别逻辑：「写一句话清除」走的是 v1.121~1.123 连续修过三轮的新引擎 <code>WatermarkPreciseMask.detectTextLines</code>（边缘密度检测，能认白字/金边艺术字）；而「自动识别」按钮走的却是 v1.28 时代的旧算法 <code>WatermarkDetector</code>（按色度偏移找水印）。拿你的真原图（watermark_9216.png，1024×1024）做对照实测：旧算法<strong>直接返回 null</strong>（界面就提示「未识别到文字水印」），新引擎 <code>detected=true</code>、正常检出文字带。也就是说，这三轮修复完全没覆盖到按钮，按钮一直在用被淘汰的老逻辑</li>
+      <li><strong>修复一：按钮改用已验证的新引擎</strong>——「自动识别」按钮（含打开图片时自动触发的识别）现在和「写一句话清除」用同一套 <code>WatermarkPreciseMask.detectTextLines</code>，两条路径统一。检测出的字芯+描边+阴影完整掩膜直接用于修复</li>
+      <li><strong>修复二：自动识别的掩膜不再二次 <code>refine()</code></strong>——原先自动识别成功后点「开始去除」，掩膜还会被 <code>refine()</code>（v1.111 的「白字凸起」判据）再筛一遍。实测这会把完整掩膜从 176412 像素砍到 48970，<strong>保留率仅 27.8%</strong>——金棕描边和右下阴影被当「非凸起」误删，又回到「清不干净」。这正是 v1.121 在文字命令路径修过、却漏掉按钮路径的同一处问题。现在自动识别路径与文字命令一样跳过 refine，描边阴影完整保留</li>
+      <li><strong>回归锁死</strong>——新增真图对照测试，断言「老算法在该图失败、新引擎成功、掩膜过 refine 会被误删」，防止以后有人再把按钮切回老引擎或重新引入二次精化。原有两个依赖「老引擎识别失败才使按钮禁用」的界面测试，改用无水印纯色图，保持它们验证笔刷面板/模型提示的本来意图</li>
+      <li><strong>其余一律不变</strong>——批量抠白底（高清版 OOM 修复 + 边缘净化）、图片元数据分析器、拼接、批量改名、改 MD5、提取音频、外挂模型与六源升级全部不动。与历史版本同一张正式签名证书、v2/v3 签名齐全，可直接覆盖安装；<strong>模型文件未换，已下载的模型不用重下</strong></li>
+    </ol>
+  </div>
 
   <div class="card">
     <h2>v1.125 更新内容：修复「批量抠白底」——高清版推理失败 + 边缘抠不干净</h2>
