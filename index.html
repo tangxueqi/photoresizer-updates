@@ -77,15 +77,15 @@
     <div class="meta">
       <span class="tag">Android 7.0+</span>
       <span class="tag">约 29 MB</span>
-      <span class="tag">版本 1.126</span>
+      <span class="tag">版本 1.127</span>
       <span class="tag">正式签名版</span>
     </div>
-    <a class="btn" href="https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v196/BingYing-1.126.apk" download>下载 APK 安装包（v1.126）</a>
+    <a class="btn" href="https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v197/BingYing-1.127.apk" download>下载 APK 安装包（v1.127）</a>
     <span class="btn-sub">国内加速下载地址（GitHub Releases 加速镜像，支持多镜像自动切换与并行下载）</span>
-    <span class="btn-sub">若加速镜像不可用，点 <a href="https://github.com/tangxueqi/photoresizer-updates/releases/download/v196/BingYing-1.126.apk" target="_blank">GitHub 直链</a> 或换用桌面浏览器下载后再传手机</span>
+    <span class="btn-sub">若加速镜像不可用，点 <a href="https://github.com/tangxueqi/photoresizer-updates/releases/download/v197/BingYing-1.127.apk" target="_blank">GitHub 直链</a> 或换用桌面浏览器下载后再传手机</span>
     <div class="warn" style="margin-top:14px;background:#E8F6EE;border-color:#A9D9BE;color:#1F6B3A">
-      <strong>✓ v1.126：修复「点『自动识别水印』识别不了」</strong><br>
-      你发现「自动识别水印」按钮点了识别不出来。根因是 App 里有<strong>两条互不相干的水印识别路径</strong>：这个按钮一直在用 v1.28 写的老色度算法，在你那张真图上<strong>直接返回「没识别到」</strong>；而前几轮修复（1.121~1.123）全落在「写一句话清除」那条路上的新引擎上，按钮这条<strong>一行都没改过</strong>。这一版把按钮也切到已验证的新引擎，真图实测能正常检出；顺带修掉第二处隐患：识别出的水印区域以前会被再「精化」一次、把字芯描边误删到只剩 27.8%（这正是以前「清不干净」的元凶），现在不再二次精化。<strong>全量单测 809 项通过、0 失败</strong>。安装包仍 <strong>约 29 MB</strong>，处理全程在本地。<strong>模型未换、已下载的模型不用重下</strong>，与历史版本同一张正式签名证书，<strong>可直接覆盖安装</strong>。
+      <strong>✓ v1.127：图片元数据分析器合规升级——AI 标识只读识别 + GPS 诊断 + 隐私清除强化</strong><br>
+      这一版把「元数据分析器」按你最后确认的合法方向重做：<strong>删掉手动添加/删除 AI 命中入口，保存时不再抹除 AI 标识</strong>；AI 识别扩展到豆包 / 即梦 / 剪映、国标 <strong>AIGC（GB 45438 / TC260）</strong>、<strong>C2PA/JUMBF</strong>、<strong>XMP trainedAlgorithmicMedia</strong>、PNG 生成参数等；GPS 页会明确区分「文件本来没有 GPS」和「有 GPS 字段但解析失败」；一键清除隐私覆盖序列号、机主、作者、拍摄时间、XMP 个人字段与全部常见 GPS 字段，同时保留 AI 标识载体字段。<strong>全量单测 815 项通过、0 失败、2 跳过</strong>。安装包仍约 29 MB，处理全程在本地，模型未换，可直接覆盖安装。
     </div>
     <div class="warn" style="margin-top:10px;background:#F0F4FF;border-color:#A9BFE0;color:#1F3D6B">
       <strong>v1.125（历史）：修复「批量抠白底」——高清版推理失败 + 边缘抠不干净</strong><br>
@@ -116,6 +116,18 @@
     </div>
   </div>
 
+
+  <div class="card">
+    <h2>v1.127 更新内容：图片元数据分析器合规升级</h2>
+    <ol>
+      <li><strong>删掉伪造/改写 AI 来源的入口</strong>——移除「手动添加工具名」「添加」「删除命中」等按钮；AI Tab 改为纯只读识别展示，不再提供写入、伪造或删除 AI 标识的操作语义</li>
+      <li><strong>保存链路不再抹除 AI 标识</strong>——写回器彻底移除按 AI 命中抹字节的逻辑；安全导出只改文件名后缀避免覆盖，不再剥离文件名里的 AI 工具词；隐私字段如果本身承载 AI 标识（如 <code>Software=豆包…</code>）会保留，避免误删</li>
+      <li><strong>补全 AI 标识识别</strong>——新增剪映/CapCut、可灵、Adobe Firefly；补上国标 AIGC（TC260 namespace、Label、ContentProducer、ProduceID、ContentID）、C2PA/JUMBF、XMP <code>trainedAlgorithmicMedia</code>、PNG <code>Negative prompt / CFG scale / Model hash / ComfyUI</code> 等特征，并提取相关参数展示</li>
+      <li><strong>GPS 读取诊断</strong>——金属零件图这类没有 EXIF/GPS 的图片，不再只显示笼统「未发现 GPS」，而是明确提示「文件未包含 EXIF GPS 定位字段（不是解析失败）」；若有 GPS 原始字段但坐标解析失败，会展示原始字段供核对。十进制与 DMS 双向联动保持不变</li>
+      <li><strong>强化一键清除隐私</strong>——补齐纬度/经度 Ref、海拔基准、速度、方向、目的坐标、水平定位精度、XMP GPS 等字段；扩展机身/镜头序列号、机主、图像唯一 ID、拍摄/数字化时间、XMP 作者/城市/国家等隐私字段</li>
+      <li><strong>全量回归</strong>——debug 单测 <strong>815 项通过、0 失败、0 错误、2 跳过</strong>；水印、抠白底、升级器、首页入口等其他能力不受影响。与历史版本同一张正式签名证书，v2/v3 签名齐全，可直接覆盖安装；模型文件未变，已下载的模型无需重下</li>
+    </ol>
+  </div>
 
   <div class="card">
     <h2>v1.126 更新内容：修复「点『自动识别水印』识别不了」</h2>
