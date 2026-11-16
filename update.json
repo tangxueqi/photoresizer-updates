@@ -1,13 +1,13 @@
 {
-  "versionCode": 127,
-  "versionName": "1.126",
-  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v196/BingYing-1.126.apk",
-  "size": 29654420,
+  "versionCode": 128,
+  "versionName": "1.127",
+  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v197/BingYing-1.127.apk",
+  "size": 29654409,
   "mirrors": [
-    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v196/BingYing-1.126.apk",
-    "https://ghfast.top/https://github.com/tangxueqi/photoresizer-updates/releases/download/v196/BingYing-1.126.apk",
-    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v196/BingYing-1.126.apk",
-    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v196/BingYing-1.126.apk"
+    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v197/BingYing-1.127.apk",
+    "https://ghfast.top/https://github.com/tangxueqi/photoresizer-updates/releases/download/v197/BingYing-1.127.apk",
+    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v197/BingYing-1.127.apk",
+    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v197/BingYing-1.127.apk"
   ],
-  "notes": "v1.126 修复「点『自动识别水印』识别不了」：根因是 App 里两条水印识别路径分家——『自动识别』按钮一直在用 v1.28 的老色度算法 WatermarkDetector（真图上直接返回 null），而 v1.121~1.123 三轮修复全落在『文字命令清除』用的 WatermarkPreciseMask 上，按钮那条路一行没改。修复：① 自动识别按钮改用已验证的 WatermarkPreciseMask.detectTextLines（真图检出率实测正常）；② 顺带修掉第二处隐患——自动识别的掩膜不再过 refine()（v1.111『白字凸起』判据会把字芯+描边+阴影误删到仅剩 27.8%，正是此前『清不干净』的元凶），与文字命令路径行为对齐。全量单测 809 通过 0 失败。与历史版本同一张正式签名证书、v2/v3 签名齐全，可直接覆盖安装；模型文件未变，已下载的模型无需重下。其余能力（批量抠白底高清版 OOM 修复与边缘净化、图片元数据分析器、拼接、批量改名、改 MD5、提取音频、外挂模型与多源升级）一律不变。"
+  "notes": "v1.127 图片元数据分析器合规升级：① 删除手动添加/删除 AI 命中等伪造或改写 AI 来源的入口，AI 页改为只读识别；② 保存链路不再抹除 AI 标识，安全导出不再剥离文件名 AI 工具词，隐私字段如本身承载 AI 标识会保留；③ AI 识别补齐豆包/即梦/剪映、国标 AIGC（GB 45438/TC260，Label/ContentProducer/ProduceID/ContentID）、C2PA/JUMBF、XMP trainedAlgorithmicMedia、PNG 生成参数；④ GPS 明确区分“文件本来没有 GPS”和“有 GPS 字段但解析失败”，并展示原始字段供核对；⑤ 一键清除隐私补齐 GPS 全字段、序列号、机主、图像唯一 ID、拍摄时间、XMP 个人字段等。全量 debug 单测 815 通过、0 失败、0 错误、2 跳过。模型未换，已下载模型无需重下；与历史版本同一张正式签名证书，v2/v3 签名齐全，可直接覆盖安装。"
 }
