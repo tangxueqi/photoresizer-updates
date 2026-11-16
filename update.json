@@ -1,13 +1,13 @@
 {
-  "versionCode": 125,
-  "versionName": "1.124",
-  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v194/BingYing-1.124.apk",
-  "size": 29654422,
+  "versionCode": 126,
+  "versionName": "1.125",
+  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v195/BingYing-1.125.apk",
+  "size": 29654419,
   "mirrors": [
-    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v194/BingYing-1.124.apk",
-    "https://ghfast.top/https://github.com/tangxueqi/photoresizer-updates/releases/download/v194/BingYing-1.124.apk",
-    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v194/BingYing-1.124.apk",
-    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v194/BingYing-1.124.apk"
+    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v195/BingYing-1.125.apk",
+    "https://ghfast.top/https://github.com/tangxueqi/photoresizer-updates/releases/download/v195/BingYing-1.125.apk",
+    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v195/BingYing-1.125.apk",
+    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v195/BingYing-1.125.apk"
   ],
-  "notes": "v1.124 新增「图片元数据分析器」，首页第八个功能入口，本页自选取图、与已选图片互不影响。功能：从相册选一张图大图预览，双语（中文大字主标题 + 英文 Key 小字）展示通用/EXIF/GPS/TIFF/IPTC/文字提取/AI 处理七类元数据；EXIF 数字 tag 39424 映射为中文「拍摄手机型号」（ExifInterface 无公开 API，走精简 TIFF/IFD 二进制读取）；GPS 深度解析，十进制 ↔ 度分秒 DMS 双向联动、合法性与边界校验；AI 处理识别按「文件里是否带标记」三重通道扫描——二进制流式（8KB 块 + 重叠窗口，UTF-8/GBK/UTF-16LE/BE 多编码 + ASCII 大小写折叠）、元数据字段（Seed/Steps/CFG/版本参数正则）、文件名与 URI 路径，命中豆包/即梦/Midjourney/Stable Diffusion/DALL·E/通义万相/文心一格等特征串即展示，无命中显示「未检测到 AI 处理」并支持手动添加；用户可选择抹除 AI 痕迹——二进制等长覆写 0x20 保持文件长度与段偏移合法、PNG 全 chunk 重算 CRC、saveAttributes 后按工具名重新定位抹除（避免重写 XMP 后旧 offset 失效）；一键清除隐私（GPS/序列号/作者/版权/39424 等）；覆盖保存（content:// 走 openOutputStream wt 模式，失败明确降级安全导出、绝不假装成功）；换图/清空彻底重置状态并删暂存。如实声明边界：AI 识别只按文件标记判定，不承诺靠画面判断是否 AI 生成；zTXt 压缩块等需变长的场景不支持抹除，UI 明示；文件名/URI 痕迹只有安全导出换新文件名才彻底去除。全量单测 801 通过 0 失败 0 错误 2 跳过（debug 变体）。与 1.96~1.123 同一张正式签名证书、v2/v3 签名齐全，可直接覆盖安装；模型文件未换、已下载的模型不用重下。其余能力（去水印文字命令、抠白底、拼接、批量改名、改 MD5、提取音频、外挂模型与多源升级）一律不变。"
+  "notes": "v1.125 修复「批量抠白底」两项问题：1) 高清版模型推理失败——88MB fp16 模型在 ALL_OPT 下常量折叠会把 fp16 权重展开成 fp32，内存峰值翻倍导致低端机 OOM；改用 NO_OPT 保持权重紧凑，实测精度无损。失败原因不再笼统显示「模型推理失败」，OOM 时明确提示换快速版。高清版标签去掉误导性的「最高质量」（实测与快速版 alpha 平均仅差 0.34/255）。2) 没抠干净——新增 alpha 边缘净化（低置信灰带归零、高置信归一、中间 smoothstep 锐化），减少水泥地等复杂背景的边缘灰边残影，边缘自然无锯齿。全量单测 808 通过 0 失败。与历史版本同一张正式签名证书、v2/v3 签名齐全，可直接覆盖安装；模型文件未变，已下载的模型无需重下。其余能力（去水印文字命令、图片元数据分析器、拼接、批量改名、改 MD5、提取音频、外挂模型与多源升级）一律不变。"
 }
