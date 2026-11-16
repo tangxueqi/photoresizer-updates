@@ -1,13 +1,13 @@
 {
-  "versionCode": 129,
-  "versionName": "1.128",
-  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v198/BingYing-1.128.apk",
-  "size": 29654412,
+  "versionCode": 130,
+  "versionName": "1.129",
+  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v199/BingYing-1.129.apk",
+  "size": 29654416,
   "mirrors": [
-    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v198/BingYing-1.128.apk",
-    "https://ghfast.top/https://github.com/tangxueqi/photoresizer-updates/releases/download/v198/BingYing-1.128.apk",
-    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v198/BingYing-1.128.apk",
-    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v198/BingYing-1.128.apk"
+    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v199/BingYing-1.129.apk",
+    "https://ghfast.top/https://github.com/tangxueqi/photoresizer-updates/releases/download/v199/BingYing-1.129.apk",
+    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v199/BingYing-1.129.apk",
+    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v199/BingYing-1.129.apk"
   ],
-  "notes": "v1.128 修复「保存过的水印坐标覆盖自动识别」：单张图片打开时不再因为本地存有旧坐标而直接进选框模式，默认始终先走文字检测 detectTextLines；保存坐标只保留给批量按坐标清除和用户主动点「选框」时使用，并新增「清除保存坐标」入口。全量 debug 单测 817 通过、0 失败、0 错误、2 跳过。模型未换，已下载模型无需重下；与历史版本同一张正式签名证书，v2/v3 签名齐全，可直接覆盖安装。"
+  "notes": "v1.129 修复「手动选框/涂抹结果页显示修复完成但水印原样保留」：删除手动路径的亮白字 refine，框选/涂抹覆盖哪里就整块修哪里；批量按坐标清除同步取消 refine。红色印章、深色公司名、彩色横幅不再被误判为非文字而放过。结果页明确显示『按框/涂抹区域整块修复』。全量 debug 单测 818 通过、0 失败、0 错误、2 跳过。模型未换，已下载模型无需重下；与历史版本同一张正式签名证书，可直接覆盖安装。"
 }
