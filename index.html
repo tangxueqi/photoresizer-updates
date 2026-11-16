@@ -77,14 +77,26 @@
     <div class="meta">
       <span class="tag">Android 7.0+</span>
       <span class="tag">约 29 MB</span>
-      <span class="tag">版本 1.121</span>
+      <span class="tag">版本 1.124</span>
       <span class="tag">正式签名版</span>
     </div>
-    <a class="btn" href="https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v191/BingYing-1.121.apk" download>下载 APK 安装包（v1.121）</a>
+    <a class="btn" href="https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v194/BingYing-1.124.apk" download>下载 APK 安装包（v1.124）</a>
     <span class="btn-sub">国内加速下载地址（GitHub Releases 加速镜像，支持多镜像自动切换与并行下载）</span>
-    <span class="btn-sub">若加速镜像不可用，点 <a href="https://github.com/tangxueqi/photoresizer-updates/releases/download/v191/BingYing-1.121.apk" target="_blank">GitHub 直链</a> 或换用桌面浏览器下载后再传手机</span>
+    <span class="btn-sub">若加速镜像不可用，点 <a href="https://github.com/tangxueqi/photoresizer-updates/releases/download/v194/BingYing-1.124.apk" target="_blank">GitHub 直链</a> 或换用桌面浏览器下载后再传手机</span>
     <div class="warn" style="margin-top:14px;background:#E8F6EE;border-color:#A9D9BE;color:#1F6B3A">
-      <strong>✓ v1.121：修复「文字水印根本没去掉」——高亮粗艺术字检测失效</strong><br>
+      <strong>✓ v1.124：新增「图片元数据分析器」——看图里藏了什么信息、是否被 AI 处理过</strong><br>
+      首页新增第八个功能入口「元数据分析」，在本页自己选图，与已选图片互不影响。选一张图后可看七类元数据：通用（文件名/大小/MIME/尺寸）、EXIF（厂商/型号/拍摄参数，数字 tag 39424 显示为中文「拍摄手机型号」）、GPS（十进制 ↔ 度分秒双向联动）、TIFF、IPTC、文字提取、AI 处理。每项都是<strong>中文大字主标题 + 英文 Key 小字</strong>双语展示。<strong>AI 处理识别</strong>按「文件里是否带标记」三重通道扫描（二进制多编码流 + 元数据字段参数 + 文件名/URI），命中豆包/即梦/Midjourney 等特征串即展示并提取 Seed/Steps/CFG 参数；若你确认要清，可<strong>选择抹除这些 AI 痕迹</strong>（等长覆写字节、PNG 重算 CRC，保持图片可解码），另有一键清除隐私（GPS/序列号/作者/版权）、覆盖保存、安全导出（换干净新文件名）。安装包 <strong>约 29 MB</strong>，处理全程在本地。<strong>如实说明边界</strong>：AI 识别只检查文件里有没有工具标记，<strong>无法仅凭画面判断是不是 AI 生成</strong>；zTXt 压缩块等需变长的场景不支持抹除，界面会明示；文件名/URI 里的痕迹只有「安全导出」换新文件名才彻底去除。全量单测 <strong>801 项通过、0 失败</strong>。<strong>模型未换、已下载的模型不用重下</strong>，与 1.96~1.123 同一张正式签名证书，<strong>可直接覆盖安装</strong>。
+    </div>
+    <div class="warn" style="margin-top:10px;background:#F0F4FF;border-color:#A9BFE0;color:#1F3D6B">
+      <strong>v1.123（历史）：修复「一句话清除在真图上直接检测失败、找都找不到字」</strong><br>
+      用户拿<strong>真原图</strong>反馈「你这哪里清除净了，现在找都找不到字了」——点「按这句话清除」后 App 提示「没自动找到文字水印」，清除根本没执行。关键转折：之前几版一直在用截图裁出来的缩略图验证，和真机原图分辨率不同，才反复「沙箱全绿、真机打脸」；这次拿到 1024×1024 真原图才复现出来——<strong>检测其实找到了文字，但同时把下半部磨片和阴影也误检成文字，三带合并掩膜占比 0.48 触发了「掩膜太大就判跑偏」的安全阀，直接返回没找到</strong>。这一版给每个文字带打质量分（边缘密度 × √带高），真图上文字带得分是磨片误检的约 2.8 倍，只留高分带，磨片误检被干净剔除；超限也只退回最高分那带重算，绝不整体返回空。<strong>真图实测：文字 56% 覆盖、磨片 0% 误检、detected=true、占比回落到 0.17</strong>，并把这张真原图加进回归测试锁死。安装包仍 <strong>29 MB</strong>，处理全程在本地。如实说明边界：本地 28MB 模型修大面积粗字后仍会留很淡痕迹，做不到豆包那种云端扩散语义重绘的通透感（需联网、密钥、按次计费），纯本地到不了。<strong>模型未换、已下载的模型不用重下</strong>。与 1.96~1.122 同一张正式签名证书，<strong>可直接覆盖安装</strong>。
+    </div>
+    <div class="warn" style="margin-top:10px;background:#F0F4FF;border-color:#A9BFE0;color:#1F3D6B">
+      <strong>v1.122（历史）：修复「文字命令清除后字芯、金边、阴影还在」——只修了边缘，没补字芯</strong><br>
+      用户反馈「<strong>按说话的文字来清除的效果就是这个图，这些调一下参数吧，没有清除干净</strong>」。复现坐实：<strong>不是模型的问题，是掩膜只圈了字的边缘</strong>——粗艺术字的字芯是 10~13px 的<strong>实心白块</strong>，实心内部恰恰「不是边缘」，v1.121 只把高频边缘送进修复，文字区召回仅 <strong>31%</strong>，整块白字芯、金棕描边、右下阴影全被留在掩膜外。这一版把文字带边界用低阈值扩到描边阴影处，再<strong>按列把每个字从顶到底整段补实</strong>（字芯连同描边阴影一起进掩膜），并按带高自适应外扩、与带取交集保证不碰下方磨片。实测<strong>文字 100% 进掩膜、磨片零误检</strong>，合成细笔画 / 空心艺术字占比仍守在原安全线内。安装包仍 <strong>29 MB</strong>，图片与视频处理全程在本地。如实说明：本地 28MB 模型是移动端小物体快速修复，大面积粗字重绘后仍会留轻微痕迹；豆包那种通透感是云端扩散语义重绘，需联网、密钥、按次计费，纯本地做不到。<strong>模型未换、已下载的模型不用重下</strong>。1.122 与 1.96~1.121 使用同一张正式签名证书，<strong>已装这些版本的用户可直接覆盖安装</strong>，应用内升级也可直接检测到。若你还在更早的 1.95（调试证书）版本，请先按当时的提示卸载旧版再装。
+    </div>
+    <div class="warn" style="margin-top:10px;background:#F0F4FF;border-color:#A9BFE0;color:#1F3D6B">
+      <strong>v1.121（历史）：修复「文字水印根本没去掉」——高亮粗艺术字检测失效</strong><br>
       用户反馈「<strong>这个文字水印根本就没有去除，这个模型到底行不行，不行的话换一个行的。</strong>」沙箱复现坐实：<strong>不是模型不干活，是检测算法把字筛没了</strong>——两行米白底金色描边艺术字单行高 281px，被 v1.120 写死的 <code>150px</code> 带高上限整段丢弃，最终「文字带」全是磨盘纹理与豆浆高光，<strong>送去修复的掩膜落在文字上覆盖率 0.0%</strong>。这一版把判据从「亮凸起」换成<strong>局部边缘密度</strong>（文字是细窄高频结构，实测文字带边缘均值 51.7 / 非文字区 8.4），带高改为按图高比例不再写死，并去掉会把新掩膜再砍 45% 的二次 <code>refine()</code>。实测文字区召回 <strong>0% → 57.7%</strong>。安装包仍 <strong>29 MB</strong>，图片与视频处理全程在本地。如实说明：本地 28MB 模型是移动端小物体快速修复，大面积粗字会留修补痕迹；豆包那种通透感是云端扩散语义重绘，需联网上传、密钥、按次计费，纯本地做不到。<strong>模型未换、已下载的模型不用重下</strong>。1.121 与 1.96~1.120 使用同一张正式签名证书，<strong>已装这些版本的用户可直接覆盖安装</strong>，应用内升级也可直接检测到。若你还在更早的 1.95（调试证书）版本，请先按当时的提示卸载旧版再装。
     </div>
     <div class="warn" style="margin-top:10px;background:#F0F4FF;border-color:#A9BFE0;color:#1F3D6B">
@@ -94,6 +106,46 @@
     <div class="warn" style="margin-top:10px;background:#FFF6E5;border-color:#F0C97A;color:#7A5200">
       <strong>模型按需下载</strong>——精细去水印（约 28 MB）与抠白底（快速版约 44 MB / 高清版约 88 MB）的模型不在安装包里。只有当你点进「水印」或「抠白底」功能、App 发现本机还没有对应模型时，才会提示下载一次；下载完永久离线可用。不用这些功能就完全不必下载。
     </div>
+  </div>
+
+
+  <div class="card">
+    <h2>v1.124 更新内容：新增「图片元数据分析器」</h2>
+    <ol>
+      <li><strong>七类元数据，双语展示</strong>——从相册选一张图大图预览，按通用 / EXIF / GPS / TIFF / IPTC / 文字提取 / AI 处理七个分类切换查看。每个字段都用<strong>中文大字主标题 + 英文 Key 小字</strong>呈现，既看得懂也知道对应哪个标准字段，例如「拍摄时间 / DateTimeOriginal」</li>
+      <li><strong>EXIF 39424 映射为中文「拍摄手机型号」</strong>——这个厂商自定义数字标签 ExifInterface 没有公开 API，专门写了精简 TIFF/IFD 二进制读取把它解析出来并按 PRD 要求映射成中文主标题</li>
+      <li><strong>GPS 深度解析，双向联动</strong>——从 EXIF 有理数还原十进制经纬度，界面上十进制与度分秒（DMS）双向编辑联动，带纬度/经度合法性与度分秒边界校验，改一边另一边自动更新</li>
+      <li><strong>AI 处理识别：三重通道扫描文件标记</strong>——①二进制流式扫描（8KB 块 + 重叠窗口，UTF-8/GBK/UTF-16LE/BE 多编码 + ASCII 大小写折叠，记录字节偏移供抹除）；②元数据字段文本匹配并提取 Seed/Steps/CFG/版本参数；③文件名与 URI 路径。命中豆包 / 即梦 / Midjourney / Stable Diffusion / DALL·E / 通义万相 / 文心一格等特征串即展示，无命中显示「未检测到 AI 处理」并支持手动添加</li>
+      <li><strong>清除 AI 痕迹：等长覆写，保持图片可解码</strong>——用户可选择抹除命中痕迹：把特征字节用空格等长覆盖（不改文件长度、段偏移天然合法），PNG 覆写后对所有 chunk 重算 CRC；关键修复是 <code>saveAttributes()</code> 会重写 JPEG/XMP 导致旧偏移失效，改为保存后按工具名在成品上重新定位再抹除，并用真图单测锁死「抹除后复扫无命中、图片仍可解码」</li>
+      <li><strong>一键清除隐私 + 覆盖保存 + 安全导出</strong>——一键清空 GPS / 序列号 / 机主 / 作者 / 版权 / 39424 等敏感字段；覆盖保存对 content:// 走 wt 模式，失败明确降级为安全导出并提示，绝不假装覆盖成功；安全导出换新文件名，彻底去掉文件名/URI 里的 AI 工具词。换图/清空会彻底重置状态并删暂存，防止串数据</li>
+    </ol>
+    <p class="note"><strong>如实说明能力边界</strong>：AI 识别只判断「文件里有没有 AI 工具标记」，<strong>不承诺靠画面判断图片是否由 AI 生成</strong>——界面用的是「未检测到 AI 处理」而非「无 AI」，并提供手动添加兜底漏检。二进制抹除只处理已知强特征 token；zTXt 压缩块、需变长的场景不支持抹除，界面会明示；文件名 / URI 里的痕迹只有「安全导出」换新文件名才彻底去除，覆盖保存会保留原文件名，操作前有提示。全量 <strong>801 项通过、0 失败、0 错误、2 跳过</strong>（debug 变体）。安装包 <strong>29,654,422 B（约 29 MB）</strong>，sha256 <code>52e81ea0…5155</code>，v2/v3 签名齐全，<strong>模型文件未换、已下载的模型不用重下</strong>，与 1.96~1.123 同一张正式签名证书，可直接覆盖安装。</p>
+  </div>
+
+  <div class="card">
+    <h2>v1.123 更新内容：修复「一句话清除在真图上直接检测失败、找都找不到字」</h2>
+    <ol>
+      <li><strong>问题：点了「按这句话清除」，App 却说没找到文字</strong>——用户上传 9216.png 真原图并指出「<strong>你这哪里清除净了，现在找都找不到字了</strong>」。截图里指令框明明写着「把图片里的文字去除掉」，下面却提示「没自动找到文字水印，请用手指涂抹后点开始去除」，两行字清晰还在，清除根本没执行</li>
+      <li><strong>关键转折：之前一直在用错的图验证</strong>——v1.121→v1.122 反复出现「沙箱全绿、真机打脸」，根因是手上只有用户拍的<strong>界面截图</strong>，我一直用截图里抠出的缩略图复现，分辨率、压缩、纹理强度都和真机原图不同。这次用户直接给了 <strong>1024×1024 真原图</strong>，才第一次精确复现出失败</li>
+      <li><strong>真正根因：安全阀把「找到的文字」整个否掉了</strong>——真图上检测其实<strong>找到了文字带</strong>，但同时把下半部两片磨片和接触阴影也误检成文字带；三带合并后掩膜占比 <strong>0.48</strong>，触发了 v1.122「掩膜超过 35% 就判定识别跑偏」的安全阀，直接 <code>detected=false</code> —— 于是界面显示没找到。<strong>不是模型、不是内存，是检测的判断逻辑</strong></li>
+      <li><strong>修法：给每个文字带打质量分，只留高分带</strong>——每个候选带的分数 = 带内平均行边缘密度 × √带高。真图上文字带得分约 <strong>4974</strong>，两个误检带只有 <strong>1791 / 1181</strong>（相差约 2.8 倍）；只保留得分 ≥ 最高分 50% 的带，磨片与阴影误检被干净剔除，而质量接近的多行文字会一起保留、不漏行。这样三带变一带，掩膜占比自然回落到安全范围，不再触发安全阀</li>
+      <li><strong>兜底：超限也不再整体返回空</strong>——万一极端复杂图仍超 35%，也不再把整张掩膜丢弃返回没找到，而是只退回质量分最高的那一个带重算，保证用户发一句清除指令就一定能执行</li>
+      <li><strong>效果与边界</strong>——真原图实测：文字区覆盖 <strong>56%</strong>、磨片区误检 <strong>0%</strong>、detected=true、掩膜占比回落到 <strong>0.17</strong>；<strong>这张真原图已加进回归测试锁死</strong>。<strong>如实说明</strong>：本地 28MB MI-GAN 做大面积粗字重绘，修完可能仍有很淡的修补痕迹，做不到豆包那种云端扩散语义重绘的通透感（需联网、密钥、按次计费），纯本地到不了。<strong>模型未换</strong></li>
+    </ol>
+    <p class="note">测试：全量 <strong>781 项通过、0 失败、0 错误、2 跳过</strong>（debug 变体）。<code>WatermarkPreciseMaskScanTest</code> 新增 <code>scan_realPhoto_grindingDiscNotMistakenAsText</code>（加载真原图 watermark_9216.png，断言 detected=true、文字进掩膜、磨片区零误检）。安装包 <strong>29,588,875 B（约 29 MB）</strong>，sha256 <code>69fa69d0…369ef</code>，v2/v3 签名齐全，<strong>模型文件未换、已下载的模型不用重下</strong>，与 1.96~1.122 同一张正式签名证书，可直接覆盖安装。</p>
+  </div>
+
+  <div class="card">
+    <h2>v1.122 更新内容：修复「文字命令清除后字芯、金边、阴影还在」——只修边缘没补字芯</h2>
+    <ol>
+      <li><strong>问题：字还在，只是边缘被蹭了一下</strong>——用户上传 9821.jpg 并指出「<strong>按说话的文字来清除的效果就是这个图，这些调一下参数吧，没有清除干净</strong>」。放大看：两行字的<strong>白色字芯、金棕描边、右下阴影都清晰残留</strong>，只有笔画最外缘被改动过</li>
+      <li><strong>先复现坐实：不是模型，是掩膜只圈到边缘</strong>——v1.121 <code>detectTextLines()</code> 把「高频边缘」像素送进修复掩膜，实测文字区召回<strong>仅 31.1%</strong>。而粗艺术字的字芯是 <strong>10~13px 的实心白块</strong>——实心内部没有强度跳变，恰恰「不是边缘」；边缘只落在字芯两侧和描边外沿。于是整块白字芯、3~5px 金棕描边、2~4px 右下阴影<strong>全部留在掩膜外</strong>，MI-GAN 根本没收到这些活。另外旧带边界阈值（35% 峰值）把带切在字芯中段，顶部笔画与底部阴影还落在带外</li>
+      <li><strong>修法一：低阈值把带边界扩到描边阴影</strong>——文字带上下边界从「35% 峰值」改用 <strong>10% 峰值</strong>的低阈值向外扩展，再按带高留 5% padding（上限 14px），把顶部笔画和底部阴影一并纳入；带高下限改回纯图高比例 <code>max(4, 3%h)</code>，保住 160px 小图上 6px 细笔画不被误杀（旧版 <code>max(12,..)</code> 会把它筛掉）</li>
+      <li><strong>修法二：带内按列补实字芯，连描边阴影一起进掩膜</strong>——在扩展带内，按列取「该列笔画的 top..bottom 整段填实」，<strong>字芯连同描边、阴影一起进掩膜</strong>；水平方向桥接 3px 连回被高光切断的笔画。这一步让文字区召回从 31% 抬到接近 100%，是本次的核心修复</li>
+      <li><strong>修法三：自适应外扩 + 带交集，不碰磨片</strong>——外扩半径按带高自适应（粗字 6px / 细字 1px）盖住描边与立体阴影，再与扩展文字带取交集，保证掩膜<strong>不下探到下方磨片</strong>。磨片窄带误检用带高下限一并滤掉。本地引擎与云端共用这份「字芯+描边+阴影」掩膜</li>
+      <li><strong>效果与边界</strong>——9820/9821 裁图实测：文字 <strong>100% 进掩膜</strong>、金边阴影全包、磨片<strong>零误检</strong>；合成细笔画图 ratio 0.098、空心艺术字 0.126，全部维持在原安全线内。<strong>如实说明</strong>：本地 28MB MI-GAN 是移动端小物体快速修复，大面积粗字重绘后仍会留轻微修补痕迹，做不到豆包那种<strong>云端扩散语义重绘 + 超分</strong>的通透感（需联网上传、AK/SK、按次计费）。本版解决的是「字芯和描边压根没被框到、清不干净」这个硬 bug，<strong>模型未换</strong></li>
+    </ol>
+    <p class="note">测试：全量 <strong>780 项通过、0 失败、0 错误、2 跳过</strong>（debug 变体）。<code>WatermarkPreciseMaskScanTest</code> 新增 <code>scan_solidCore_isFilledNotJustEdges</code>（800×800 空心描边字，断言字芯内部填充率 &gt; 0.9，锁住「只修边缘会露白」的回归）。安装包 <strong>29,588,873 B（约 29 MB）</strong>，sha256 <code>eb4a0990…8c301</code>，v2/v3 签名齐全，<strong>模型文件未换、已下载的模型不用重下</strong>，1.122 与 1.96~1.121 同一张正式签名证书，可直接覆盖安装。<br>另注：release 变体的 Compose UI 测试在 Robolectric 下有 <code>Unable to resolve activity</code> 的环境问题（debug 变体同一批测试全绿），与本次改动无关，属历史工具链遗留。</p>
   </div>
 
 
