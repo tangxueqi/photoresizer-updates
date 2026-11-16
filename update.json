@@ -1,13 +1,13 @@
 {
-  "versionCode": 128,
-  "versionName": "1.127",
-  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v197/BingYing-1.127.apk",
-  "size": 29654409,
+  "versionCode": 129,
+  "versionName": "1.128",
+  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v198/BingYing-1.128.apk",
+  "size": 29654412,
   "mirrors": [
-    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v197/BingYing-1.127.apk",
-    "https://ghfast.top/https://github.com/tangxueqi/photoresizer-updates/releases/download/v197/BingYing-1.127.apk",
-    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v197/BingYing-1.127.apk",
-    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v197/BingYing-1.127.apk"
+    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v198/BingYing-1.128.apk",
+    "https://ghfast.top/https://github.com/tangxueqi/photoresizer-updates/releases/download/v198/BingYing-1.128.apk",
+    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v198/BingYing-1.128.apk",
+    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v198/BingYing-1.128.apk"
   ],
-  "notes": "v1.127 图片元数据分析器合规升级：① 删除手动添加/删除 AI 命中等伪造或改写 AI 来源的入口，AI 页改为只读识别；② 保存链路不再抹除 AI 标识，安全导出不再剥离文件名 AI 工具词，隐私字段如本身承载 AI 标识会保留；③ AI 识别补齐豆包/即梦/剪映、国标 AIGC（GB 45438/TC260，Label/ContentProducer/ProduceID/ContentID）、C2PA/JUMBF、XMP trainedAlgorithmicMedia、PNG 生成参数；④ GPS 明确区分“文件本来没有 GPS”和“有 GPS 字段但解析失败”，并展示原始字段供核对；⑤ 一键清除隐私补齐 GPS 全字段、序列号、机主、图像唯一 ID、拍摄时间、XMP 个人字段等。全量 debug 单测 815 通过、0 失败、0 错误、2 跳过。模型未换，已下载模型无需重下；与历史版本同一张正式签名证书，v2/v3 签名齐全，可直接覆盖安装。"
+  "notes": "v1.128 修复「保存过的水印坐标覆盖自动识别」：单张图片打开时不再因为本地存有旧坐标而直接进选框模式，默认始终先走文字检测 detectTextLines；保存坐标只保留给批量按坐标清除和用户主动点「选框」时使用，并新增「清除保存坐标」入口。全量 debug 单测 817 通过、0 失败、0 错误、2 跳过。模型未换，已下载模型无需重下；与历史版本同一张正式签名证书，v2/v3 签名齐全，可直接覆盖安装。"
 }
