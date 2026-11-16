@@ -1,13 +1,13 @@
 {
-  "versionCode": 124,
-  "versionName": "1.123",
-  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v193/BingYing-1.123.apk",
-  "size": 29588875,
+  "versionCode": 125,
+  "versionName": "1.124",
+  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v194/BingYing-1.124.apk",
+  "size": 29654422,
   "mirrors": [
-    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v193/BingYing-1.123.apk",
-    "https://ghfast.top/https://github.com/tangxueqi/photoresizer-updates/releases/download/v193/BingYing-1.123.apk",
-    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v193/BingYing-1.123.apk",
-    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v193/BingYing-1.123.apk"
+    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v194/BingYing-1.124.apk",
+    "https://ghfast.top/https://github.com/tangxueqi/photoresizer-updates/releases/download/v194/BingYing-1.124.apk",
+    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v194/BingYing-1.124.apk",
+    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v194/BingYing-1.124.apk"
   ],
-  "notes": "v1.123 修复用户 9216.png 真原图反馈「现在找都找不到字了」——按「把图片里的文字去除掉」后 App 提示「没自动找到文字水印，请用手指涂抹」，清除根本没执行。根因不是模型、也不是内存：拿到真原图（1024×1024）精确复现后发现，检测其实找到了文字带，但同时也把下半部两片磨片和接触阴影误检成文字带（三带合并掩膜占比 0.48），触发了 v1.122 的「掩膜超过 35% 就判定识别跑偏」安全阀，直接返回 detected=false —— 于是界面显示没找到。之前几版一直在用截图裁出来的缩略图验证，分辨率和真机原图不同，才反复出现「沙箱全绿、真机打脸」。修法：给每个候选文字带打质量分（带内平均行边缘密度 × √带高），真图上文字带得分约为磨片误检带的 2.8 倍（4974 vs 1791/1181），只保留得分 ≥ 最高分 50% 的带——磨片与阴影误检被干净剔除，质量接近的多行文字会一起保留、不漏行；万一仍超过安全阀，也只退回最高分那一个带重算，绝不再整体丢弃返回空结果。真原图实测：文字区覆盖 56%、磨片区误检 0%、detected=true、掩膜占比回落到 0.17 安全范围；并把这张真原图加进回归测试锁死。全量单测 781 通过 0 失败（debug 变体，含新增真图回归）。如实说明边界：本地 28MB MI-GAN 做大面积粗字重绘，修完可能仍有很淡的修补痕迹，做不到豆包那种云端扩散语义重绘 + 超分的通透感（需联网上传、AK/SK、按次计费），纯本地到不了；本版解决的是「一句话清除在真图上直接检测失败、清都不清」的硬 bug，模型未换。其余一律不变：1.122 字芯+描边+阴影补实掩膜、1.121 边缘密度检测与动态带高、1.120 写一句话不用框选直接清除、1.119 整行文字框、1.118 输入法输入框、1.117 批量下载防重名、1.116 去水印文本框、1.111 笔画级精准去字与三引擎切换、抠白底、拼接、批量改名、改 MD5、提取音频、外挂模型与六源升级。模型文件未换（migan.onnx 28,079,181 B），已下载的模型不用重下，与 1.96~1.122 同一张正式签名证书、v2/v3 签名齐全，可直接覆盖安装。"
+  "notes": "v1.124 新增「图片元数据分析器」，首页第八个功能入口，本页自选取图、与已选图片互不影响。功能：从相册选一张图大图预览，双语（中文大字主标题 + 英文 Key 小字）展示通用/EXIF/GPS/TIFF/IPTC/文字提取/AI 处理七类元数据；EXIF 数字 tag 39424 映射为中文「拍摄手机型号」（ExifInterface 无公开 API，走精简 TIFF/IFD 二进制读取）；GPS 深度解析，十进制 ↔ 度分秒 DMS 双向联动、合法性与边界校验；AI 处理识别按「文件里是否带标记」三重通道扫描——二进制流式（8KB 块 + 重叠窗口，UTF-8/GBK/UTF-16LE/BE 多编码 + ASCII 大小写折叠）、元数据字段（Seed/Steps/CFG/版本参数正则）、文件名与 URI 路径，命中豆包/即梦/Midjourney/Stable Diffusion/DALL·E/通义万相/文心一格等特征串即展示，无命中显示「未检测到 AI 处理」并支持手动添加；用户可选择抹除 AI 痕迹——二进制等长覆写 0x20 保持文件长度与段偏移合法、PNG 全 chunk 重算 CRC、saveAttributes 后按工具名重新定位抹除（避免重写 XMP 后旧 offset 失效）；一键清除隐私（GPS/序列号/作者/版权/39424 等）；覆盖保存（content:// 走 openOutputStream wt 模式，失败明确降级安全导出、绝不假装成功）；换图/清空彻底重置状态并删暂存。如实声明边界：AI 识别只按文件标记判定，不承诺靠画面判断是否 AI 生成；zTXt 压缩块等需变长的场景不支持抹除，UI 明示；文件名/URI 痕迹只有安全导出换新文件名才彻底去除。全量单测 801 通过 0 失败 0 错误 2 跳过（debug 变体）。与 1.96~1.123 同一张正式签名证书、v2/v3 签名齐全，可直接覆盖安装；模型文件未换、已下载的模型不用重下。其余能力（去水印文字命令、抠白底、拼接、批量改名、改 MD5、提取音频、外挂模型与多源升级）一律不变。"
 }
