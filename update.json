@@ -1,13 +1,13 @@
 {
-  "versionCode": 131,
-  "versionName": "1.130",
-  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v200/BingYing-1.130.apk",
-  "size": 29654408,
+  "versionCode": 132,
+  "versionName": "1.131",
+  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v201/BingYing-1.131.apk",
+  "size": 29654410,
   "mirrors": [
-    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v200/BingYing-1.130.apk",
-    "https://ghfast.top/https://github.com/tangxueqi/photoresizer-updates/releases/download/v200/BingYing-1.130.apk",
-    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v200/BingYing-1.130.apk",
-    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v200/BingYing-1.130.apk"
+    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v201/BingYing-1.131.apk",
+    "https://ghfast.top/https://github.com/tangxueqi/photoresizer-updates/releases/download/v201/BingYing-1.131.apk",
+    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v201/BingYing-1.131.apk",
+    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v201/BingYing-1.131.apk"
   ],
-  "notes": "v1.130 修复自动识别漏掉横幅小字：新增高密度全宽窄文字带的补救逻辑，紧贴已确认大字带的『100%实拍图』不再被质量分过滤丢掉；真图回归验证顶部公司名、100%实拍图、底部大字三段同时进掩膜，产品主体不误圈。全量 debug 单测 819 通过、0 失败、0 错误、2 跳过。模型未换，已下载模型无需重下；与历史版本同一张正式签名证书，可直接覆盖安装。"
+  "notes": "v1.131 修复主图中央『浩欣』粉红印章漏检：原有按行文字带检测只能覆盖上下横幅文字，局部印章只占图宽约 20%，按行投影时质量分远低于大字而被过滤；现在在上下文字带之间单独按粉红/红色连通域识别印章，逐行补实内部白字并膨胀 4px，同时用 G/B 色相差排除豆浆暖黄色误检。真图回归确认顶部公司名、100%实拍图、底部大字、中央印章同时进掩膜，产品主体与 9216 磨片不误圈。全量 debug 单测 820 通过、0 失败、0 错误、2 跳过。模型未换，已下载模型无需重下；与历史版本同一张正式签名证书，可直接覆盖安装。"
 }
