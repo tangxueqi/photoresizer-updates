@@ -1,13 +1,13 @@
 {
-  "versionCode": 130,
-  "versionName": "1.129",
-  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v199/BingYing-1.129.apk",
-  "size": 29654416,
+  "versionCode": 131,
+  "versionName": "1.130",
+  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v200/BingYing-1.130.apk",
+  "size": 29654408,
   "mirrors": [
-    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v199/BingYing-1.129.apk",
-    "https://ghfast.top/https://github.com/tangxueqi/photoresizer-updates/releases/download/v199/BingYing-1.129.apk",
-    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v199/BingYing-1.129.apk",
-    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v199/BingYing-1.129.apk"
+    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v200/BingYing-1.130.apk",
+    "https://ghfast.top/https://github.com/tangxueqi/photoresizer-updates/releases/download/v200/BingYing-1.130.apk",
+    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v200/BingYing-1.130.apk",
+    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v200/BingYing-1.130.apk"
   ],
-  "notes": "v1.129 修复「手动选框/涂抹结果页显示修复完成但水印原样保留」：删除手动路径的亮白字 refine，框选/涂抹覆盖哪里就整块修哪里；批量按坐标清除同步取消 refine。红色印章、深色公司名、彩色横幅不再被误判为非文字而放过。结果页明确显示『按框/涂抹区域整块修复』。全量 debug 单测 818 通过、0 失败、0 错误、2 跳过。模型未换，已下载模型无需重下；与历史版本同一张正式签名证书，可直接覆盖安装。"
+  "notes": "v1.130 修复自动识别漏掉横幅小字：新增高密度全宽窄文字带的补救逻辑，紧贴已确认大字带的『100%实拍图』不再被质量分过滤丢掉；真图回归验证顶部公司名、100%实拍图、底部大字三段同时进掩膜，产品主体不误圈。全量 debug 单测 819 通过、0 失败、0 错误、2 跳过。模型未换，已下载模型无需重下；与历史版本同一张正式签名证书，可直接覆盖安装。"
 }
