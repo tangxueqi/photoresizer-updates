@@ -1,13 +1,13 @@
 {
-  "versionCode": 134,
-  "versionName": "1.133",
-  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v203/BingYing-1.133.apk",
-  "size": 29670796,
+  "versionCode": 135,
+  "versionName": "1.134",
+  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v204/BingYing-1.134.apk",
+  "size": 29670804,
   "mirrors": [
-    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v203/BingYing-1.133.apk",
-    "https://ghfast.top/https://github.com/tangxueqi/photoresizer-updates/releases/download/v203/BingYing-1.133.apk",
-    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v203/BingYing-1.133.apk",
-    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v203/BingYing-1.133.apk"
+    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v204/BingYing-1.134.apk",
+    "https://ghfast.top/https://github.com/tangxueqi/photoresizer-updates/releases/download/v204/BingYing-1.134.apk",
+    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v204/BingYing-1.134.apk",
+    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v204/BingYing-1.134.apk"
   ],
-  "notes": "v1.133 新增「Python查图」独立按钮：把最初发的 check_image() 脚本逐函数忠实移植进 App——文件名/后缀/是否存在XMP/TC260_AIGC结果/EXIF信息五项，附完整 JSON 可复制。XMP 三能力复用上一版读取器，TC260 保留原始 JSON 类型；EXIF 按 PIL 语义全量遍历 IFD0/ExifIFD/GPSIFD 并用 TAGS 字典映射名字。只读展示，不判断画面、不改标识。全量 debug 单测 836 通过、0 失败、0 错误、2 跳过。模型未换，已下载模型无需重下；与历史版本同一张正式签名证书，可直接覆盖安装。"
+  "notes": "v1.134 移除抠白底高清版：从模型清单删除 88MB 的 RMBG-1.4 高清版（实测与快速版质量几乎一致却占内存、低配机易失败），升级后启动时自动清理已下载的 rmbg14_fp16.onnx 残留文件，直接释放约 88MB 本机空间，无需手动操作、不误删快速版。全量 debug 单测 837 通过、0 失败、0 错误、2 跳过。快速版与已下载模型不变、无需重下；与历史版本同一张正式签名证书，可直接覆盖安装。"
 }
