@@ -1,13 +1,13 @@
 {
-  "versionCode": 132,
-  "versionName": "1.131",
-  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v201/BingYing-1.131.apk",
-  "size": 29654410,
+  "versionCode": 133,
+  "versionName": "1.132",
+  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v202/BingYing-1.132.apk",
+  "size": 29654420,
   "mirrors": [
-    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v201/BingYing-1.131.apk",
-    "https://ghfast.top/https://github.com/tangxueqi/photoresizer-updates/releases/download/v201/BingYing-1.131.apk",
-    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v201/BingYing-1.131.apk",
-    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v201/BingYing-1.131.apk"
+    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v202/BingYing-1.132.apk",
+    "https://ghfast.top/https://github.com/tangxueqi/photoresizer-updates/releases/download/v202/BingYing-1.132.apk",
+    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v202/BingYing-1.132.apk",
+    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v202/BingYing-1.132.apk"
   ],
-  "notes": "v1.131 修复主图中央『浩欣』粉红印章漏检：原有按行文字带检测只能覆盖上下横幅文字，局部印章只占图宽约 20%，按行投影时质量分远低于大字而被过滤；现在在上下文字带之间单独按粉红/红色连通域识别印章，逐行补实内部白字并膨胀 4px，同时用 G/B 色相差排除豆浆暖黄色误检。真图回归确认顶部公司名、100%实拍图、底部大字、中央印章同时进掩膜，产品主体与 9216 磨片不误圈。全量 debug 单测 820 通过、0 失败、0 错误、2 跳过。模型未换，已下载模型无需重下；与历史版本同一张正式签名证书，可直接覆盖安装。"
+  "notes": "v1.132 图片元数据分析器补上 XMP / TC260 AIGC 结构化识别：移植你提供的 Python 三能力——JPEG 二进制直取 XMP、PNG iTXt XMP（含 zlib 解压）、TC260 AIGC JSON 结构化解析。原来只靠 ExifInterface 读零散字段，现在完整 XMP 包并入文本扫描，Label/ContentProducer/ProduceID/ContentID 直接以键值对展示在 AI Tab；坏 JSON 保留预览不崩溃。全部只读识别，不删除/篡改/伪造/隐匿 AI 标识。全量 debug 单测 829 通过、0 失败、0 错误、2 跳过。模型未换，已下载模型无需重下；与历史版本同一张正式签名证书，可直接覆盖安装。"
 }
