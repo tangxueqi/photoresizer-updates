@@ -1,13 +1,13 @@
 {
-  "versionCode": 137,
-  "versionName": "1.136",
-  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v206/BingYing-1.136.apk",
-  "size": 29605258,
+  "versionCode": 138,
+  "versionName": "1.137",
+  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v207/BingYing-1.137.apk",
+  "size": 29605262,
   "mirrors": [
-    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v206/BingYing-1.136.apk",
-    "https://ghfast.top/https://github.com/tangxueqi/photoresizer-updates/releases/download/v206/BingYing-1.136.apk",
-    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v206/BingYing-1.136.apk",
-    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v206/BingYing-1.136.apk"
+    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v207/BingYing-1.137.apk",
+    "https://ghfast.top/https://github.com/tangxueqi/photoresizer-updates/releases/download/v207/BingYing-1.137.apk",
+    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v207/BingYing-1.137.apk",
+    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v207/BingYing-1.137.apk"
   ],
-  "notes": "v1.136 「分析图片」改为文本查看器：选图后把整个文件按文本解码，完整展示在可复制文字框里，由你自己检查。编码可切换（字节原样/UTF-8/UTF-16LE/GBK，默认字节原样让每个字节可见），支持「复制全部」与「另存为 .txt」。等价于改后缀用记事本打开但全程只读、不改文件名、不损坏原图。删除上一版自动判定逻辑，程序不再给结论。超大文件仅显示前200万字符并提示。全量单测 803 通过、0 失败、2 跳过。与历史版本同一张正式签名证书，可直接覆盖安装。"
+  "notes": "v1.137 修复「另存为 .txt」与手动改后缀内容不一致：之前用 UTF-8 重编码会把字节膨胀约48%、内容改变；现在字节级保真，与原图逐字节一致。新增「可读明文」区，自动把文件里的国标 AIGC JSON、XMP、TC260 命名空间、doubao 等可读字符串按长度列出，每条可复制，免去在乱码里翻找。全部只读，不删改任何 AI 标识。全量单测 808 通过、0 失败、2 跳过。同一张正式签名证书，可直接覆盖安装。"
 }
