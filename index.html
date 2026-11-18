@@ -77,14 +77,18 @@
     <div class="meta">
       <span class="tag">Android 7.0+</span>
       <span class="tag">约 29 MB</span>
-      <span class="tag">版本 1.131</span>
+      <span class="tag">版本 1.132</span>
       <span class="tag">正式签名版</span>
     </div>
-    <a class="btn" href="https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v201/BingYing-1.131.apk" download>下载 APK 安装包（v1.131）</a>
+    <a class="btn" href="https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v202/BingYing-1.132.apk" download>下载 APK 安装包（v1.132）</a>
     <span class="btn-sub">国内加速下载地址（GitHub Releases 加速镜像，支持多镜像自动切换与并行下载）</span>
-    <span class="btn-sub">若加速镜像不可用，点 <a href="https://github.com/tangxueqi/photoresizer-updates/releases/download/v201/BingYing-1.131.apk" target="_blank">GitHub 直链</a> 或换用桌面浏览器下载后再传手机</span>
+    <span class="btn-sub">若加速镜像不可用，点 <a href="https://github.com/tangxueqi/photoresizer-updates/releases/download/v202/BingYing-1.132.apk" target="_blank">GitHub 直链</a> 或换用桌面浏览器下载后再传手机</span>
     <div class="warn" style="margin-top:14px;background:#E8F6EE;border-color:#A9D9BE;color:#1F6B3A">
-      <strong>✓ v1.131：主图中央的粉红印章也能识别到了</strong><br>
+      <strong>✓ v1.132：图片元数据识别补上 XMP / TC260 AIGC 结构化解析</strong><br>
+      把你贴的 Python 查 AI 图片元数据的三块能力移植进 App 的<strong>只读</strong>识别链：<strong>JPEG 二进制直取 XMP</strong>、<strong>PNG iTXt XMP（含 zlib 解压）</strong>、<strong>TC260 AIGC JSON 结构化解析</strong>。原来只靠 ExifInterface 读零散字段，现在完整 XMP 包并入文本扫描，Label / ContentProducer / ProduceID / ContentID 直接以键值对展示在 AI Tab；坏 JSON 保留预览不崩溃。全部只读，不删除、篡改、伪造或隐匿 AI 标识。全量单测 <strong>829 项通过、0 失败、2 跳过</strong>。模型未换、已下载模型无需重下；与历史版本同一张正式签名证书，可直接覆盖安装。
+    </div>
+    <div class="warn" style="margin-top:10px;background:#F0F4FF;border-color:#A9BFE0;color:#1F3D6B">
+      <strong>v1.131（历史）：主图中央的粉红印章也能识别到了</strong><br>
       这版修的是你刚反馈的「上下文字都掩膜到了，主图上面的那个水印为什么没有识别到」。根因：顶部公司名、100%实拍图、底部大字都是<strong>横跨全图的文字带</strong>，而中央『浩欣』印章只占图宽约 20%，按行投影时质量分远低于大字，旧版直接把它当成「局部色块」过滤掉了。现在在<strong>上下文字带之间</strong>单独按粉红/红色连通域识别印章，逐行补实内部白字并向外扩 4px；同时用 <strong>G/B 色相差</strong>排除 9216.png 里豆浆的暖黄色误检。真图回归确认<strong>顶部公司名 + 100%实拍图 + 底部大字 + 中央印章同时进掩膜</strong>，产品主体和磨片不误圈。全量单测 <strong>820 项通过、0 失败、2 跳过</strong>。模型未换、已下载模型无需重下；与历史版本同一张正式签名证书，可直接覆盖安装。
     </div>
     <div class="warn" style="margin-top:10px;background:#F0F4FF;border-color:#A9BFE0;color:#1F3D6B">
