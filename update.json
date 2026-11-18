@@ -1,13 +1,13 @@
 {
-  "versionCode": 135,
-  "versionName": "1.134",
-  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v204/BingYing-1.134.apk",
-  "size": 29670804,
+  "versionCode": 136,
+  "versionName": "1.135",
+  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v205/BingYing-1.135.apk",
+  "size": 29605267,
   "mirrors": [
-    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v204/BingYing-1.134.apk",
-    "https://ghfast.top/https://github.com/tangxueqi/photoresizer-updates/releases/download/v204/BingYing-1.134.apk",
-    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v204/BingYing-1.134.apk",
-    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v204/BingYing-1.134.apk"
+    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v205/BingYing-1.135.apk",
+    "https://ghfast.top/https://github.com/tangxueqi/photoresizer-updates/releases/download/v205/BingYing-1.135.apk",
+    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v205/BingYing-1.135.apk",
+    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v205/BingYing-1.135.apk"
   ],
-  "notes": "v1.134 移除抠白底高清版：从模型清单删除 88MB 的 RMBG-1.4 高清版（实测与快速版质量几乎一致却占内存、低配机易失败），升级后启动时自动清理已下载的 rmbg14_fp16.onnx 残留文件，直接释放约 88MB 本机空间，无需手动操作、不误删快速版。全量 debug 单测 837 通过、0 失败、0 错误、2 跳过。快速版与已下载模型不变、无需重下；与历史版本同一张正式签名证书，可直接覆盖安装。"
+  "notes": "v1.135 删除「元数据分析」「Python查图」两个入口，合并为单一「分析图片」按钮：选图后以文本方式读取文件字节，搜索 doubao 与 TC260=\"http://www.tc260.org.cn/ns/AIGC/1.0/\"><TC260:AIGC> 两个字符串，命中显示「经检测，AI 制作」，否则「非 AI 制作」。大小写不敏感、兼容 UTF-16、分块扫描不漏。不修改文件名、不改写文件、不需要改回后缀，无损坏原图风险。只读识别，不删除篡改AI标识。全量单测 807 通过、0 失败、2 跳过。与历史版本同一张正式签名证书，可直接覆盖安装。"
 }
