@@ -77,14 +77,18 @@
     <div class="meta">
       <span class="tag">Android 7.0+</span>
       <span class="tag">约 29 MB</span>
-      <span class="tag">版本 1.133</span>
+      <span class="tag">版本 1.134</span>
       <span class="tag">正式签名版</span>
     </div>
-    <a class="btn" href="https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v203/BingYing-1.133.apk" download>下载 APK 安装包（v1.133）</a>
+    <a class="btn" href="https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v204/BingYing-1.134.apk" download>下载 APK 安装包（v1.134）</a>
     <span class="btn-sub">国内加速下载地址（GitHub Releases 加速镜像，支持多镜像自动切换与并行下载）</span>
-    <span class="btn-sub">若加速镜像不可用，点 <a href="https://github.com/tangxueqi/photoresizer-updates/releases/download/v203/BingYing-1.133.apk" target="_blank">GitHub 直链</a> 或换用桌面浏览器下载后再传手机</span>
+    <span class="btn-sub">若加速镜像不可用，点 <a href="https://github.com/tangxueqi/photoresizer-updates/releases/download/v204/BingYing-1.134.apk" target="_blank">GitHub 直链</a> 或换用桌面浏览器下载后再传手机</span>
     <div class="warn" style="margin-top:14px;background:#E8F6EE;border-color:#A9D9BE;color:#1F6B3A">
-      <strong>✓ v1.133：新增「Python查图」按钮——把你发的脚本原样做进 App</strong><br>
+      <strong>✓ v1.134：移除抠白底高清版，自动释放约 88MB 本机空间</strong><br>
+      按你的要求删掉没有实用价值的 <strong>88MB 高清版模型</strong>：从「模型选择」里移除 RMBG-1.4 高清版（实测与快速版抠图质量几乎一致，alpha 平均差仅 0.34/255，却占内存大、低配机易失败）。<strong>升级安装后启动时会自动删除已下载的 rmbg14_fp16.onnx 残留文件</strong>（含续传记录），直接释放约 88MB 空间，无需手动操作，也绝不误删快速版模型。之前下载过的用户升级后首次启动即自动清理。全量单测 <strong>837 项通过、0 失败、2 跳过</strong>。快速版模型与已下载文件不变、无需重下；与历史版本同一张正式签名证书，可直接覆盖安装。
+    </div>
+    <div class="warn" style="margin-top:10px;background:#F0F4FF;border-color:#A9BFE0;color:#1F3D6B">
+      <strong>v1.133（历史）：新增「Python查图」按钮——把你发的脚本原样做进 App</strong><br>
       首页新增独立按钮<strong>「Python查图」</strong>：选图后忠实展示你那段 <code>check_image()</code> 脚本会打印的五项——<strong>文件名 / 后缀 / 是否存在XMP / TC260_AIGC结果 / EXIF信息</strong>，并附完整 JSON（可一键复制）。XMP 三能力复用上一版读取器，TC260 结果<strong>保留原始 JSON 类型</strong>（数字仍是数字）；EXIF 按 PIL 语义<strong>全量遍历 IFD0/ExifIFD/GPSIFD</strong> 并用 TAGS 字典映射名字。只读展示，不判断画面、不改标识。全量单测 <strong>836 项通过、0 失败、2 跳过</strong>。模型未换、已下载模型无需重下；与历史版本同一张正式签名证书，可直接覆盖安装。
     </div>
     <div class="warn" style="margin-top:10px;background:#F0F4FF;border-color:#A9BFE0;color:#1F3D6B">
