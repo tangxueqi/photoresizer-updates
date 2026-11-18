@@ -77,14 +77,18 @@
     <div class="meta">
       <span class="tag">Android 7.0+</span>
       <span class="tag">约 29 MB</span>
-      <span class="tag">版本 1.137</span>
+      <span class="tag">版本 1.138</span>
       <span class="tag">正式签名版</span>
     </div>
-    <a class="btn" href="https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v207/BingYing-1.137.apk" download>下载 APK 安装包（v1.137）</a>
+    <a class="btn" href="https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v208/BingYing-1.138.apk" download>下载 APK 安装包（v1.138）</a>
     <span class="btn-sub">国内加速下载地址（GitHub Releases 加速镜像，支持多镜像自动切换与并行下载）</span>
-    <span class="btn-sub">若加速镜像不可用，点 <a href="https://github.com/tangxueqi/photoresizer-updates/releases/download/v207/BingYing-1.137.apk" target="_blank">GitHub 直链</a> 或换用桌面浏览器下载后再传手机</span>
+    <span class="btn-sub">若加速镜像不可用，点 <a href="https://github.com/tangxueqi/photoresizer-updates/releases/download/v208/BingYing-1.138.apk" target="_blank">GitHub 直链</a> 或换用桌面浏览器下载后再传手机</span>
     <div class="warn" style="margin-top:14px;background:#E8F6EE;border-color:#A9D9BE;color:#1F6B3A">
-      <strong>✓ v1.137：另存为 .txt 字节保真 + 新增「可读明文」</strong><br>
+      <strong>✓ v1.138：「分析图片」改回自动判定，不再让你自己在乱码里翻</strong><br>
+      按你最后确认的口径：首页只保留一个<strong>「分析图片」</strong>按钮，选图后直接在文件字节里搜索 AI 生成标识串。命中 <code>doubao</code>、你给的国标 TC260 AIGC 标识块，或真实豆包图里常见的国标 AIGC 字段（命名空间 URL、<code>&lt;TC260:AIGC&gt;</code>、<code>ContentProducer</code>、<code>ProduceID</code>、<code>{"AIGC"}</code>、<code>"Label":"1"</code>）任一特征，就大字显示「<strong>经检测，AI 制作</strong>」；都没命中则显示「<strong>非 AI 制作</strong>」，并列出命中依据和已扫描字节数。<strong>大小写不敏感，兼容 UTF-8/GBK/UTF-16 等字节视图</strong>。等价于「改后缀 txt → 文本打开 → Ctrl+F 搜串」，但不真的改名、不改写文件、不用改回后缀，<strong>不存在损坏原图的风险</strong>；只读识别，不删改任何 AI 标识。全量单测 <strong>807 项通过、0 失败、2 跳过</strong>。同一张正式签名证书，可直接覆盖安装。
+    </div>
+    <div class="warn" style="margin-top:10px;background:#F0F4FF;border-color:#A9BFE0;color:#1F3D6B">
+      <strong>v1.137（历史）：另存为 .txt 字节保真 + 新增「可读明文」</strong><br>
       你发现「自己改后缀打开能看到 AIGC 字符，App 存出来的却不是」——根因是旧版「另存为 .txt」用 UTF-8 重新编码，把每个 &gt;127 的字节膨胀成 2~3 字节（200KB 图变 305KB），内容已改变。这版改为<strong>字节级保真</strong>：直接写原文件字节，与手动把 .jpg 改名 .txt <strong>逐字节完全一致</strong>。同时新增<strong>「可读明文」区</strong>：自动把文件里夹着的国标 AIGC JSON（<code>{"Label":"1","ContentProducer":...}</code>）、XMP、TC260 命名空间、<code>doubao</code> 等字符串按长度列出，每条可单独复制，<strong>不用再在几十万字符乱码里翻找</strong>。全部只读，不删改任何 AI 标识。全量单测 <strong>808 项通过、0 失败、2 跳过</strong>。同一张正式签名证书，可直接覆盖安装。
     </div>
     <div class="warn" style="margin-top:10px;background:#F0F4FF;border-color:#A9BFE0;color:#1F3D6B">
