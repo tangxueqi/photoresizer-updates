@@ -1,13 +1,13 @@
 {
-  "versionCode": 133,
-  "versionName": "1.132",
-  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v202/BingYing-1.132.apk",
-  "size": 29654420,
+  "versionCode": 134,
+  "versionName": "1.133",
+  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v203/BingYing-1.133.apk",
+  "size": 29670796,
   "mirrors": [
-    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v202/BingYing-1.132.apk",
-    "https://ghfast.top/https://github.com/tangxueqi/photoresizer-updates/releases/download/v202/BingYing-1.132.apk",
-    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v202/BingYing-1.132.apk",
-    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v202/BingYing-1.132.apk"
+    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v203/BingYing-1.133.apk",
+    "https://ghfast.top/https://github.com/tangxueqi/photoresizer-updates/releases/download/v203/BingYing-1.133.apk",
+    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v203/BingYing-1.133.apk",
+    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v203/BingYing-1.133.apk"
   ],
-  "notes": "v1.132 图片元数据分析器补上 XMP / TC260 AIGC 结构化识别：移植你提供的 Python 三能力——JPEG 二进制直取 XMP、PNG iTXt XMP（含 zlib 解压）、TC260 AIGC JSON 结构化解析。原来只靠 ExifInterface 读零散字段，现在完整 XMP 包并入文本扫描，Label/ContentProducer/ProduceID/ContentID 直接以键值对展示在 AI Tab；坏 JSON 保留预览不崩溃。全部只读识别，不删除/篡改/伪造/隐匿 AI 标识。全量 debug 单测 829 通过、0 失败、0 错误、2 跳过。模型未换，已下载模型无需重下；与历史版本同一张正式签名证书，可直接覆盖安装。"
+  "notes": "v1.133 新增「Python查图」独立按钮：把最初发的 check_image() 脚本逐函数忠实移植进 App——文件名/后缀/是否存在XMP/TC260_AIGC结果/EXIF信息五项，附完整 JSON 可复制。XMP 三能力复用上一版读取器，TC260 保留原始 JSON 类型；EXIF 按 PIL 语义全量遍历 IFD0/ExifIFD/GPSIFD 并用 TAGS 字典映射名字。只读展示，不判断画面、不改标识。全量 debug 单测 836 通过、0 失败、0 错误、2 跳过。模型未换，已下载模型无需重下；与历史版本同一张正式签名证书，可直接覆盖安装。"
 }
