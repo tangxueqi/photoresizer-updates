@@ -77,14 +77,18 @@
     <div class="meta">
       <span class="tag">Android 7.0+</span>
       <span class="tag">约 29 MB</span>
-      <span class="tag">版本 1.138</span>
+      <span class="tag">版本 1.139</span>
       <span class="tag">正式签名版</span>
     </div>
-    <a class="btn" href="https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v208/BingYing-1.138.apk" download>下载 APK 安装包（v1.138）</a>
+    <a class="btn" href="https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v209/BingYing-1.139.apk" download>下载 APK 安装包（v1.139）</a>
     <span class="btn-sub">国内加速下载地址（GitHub Releases 加速镜像，支持多镜像自动切换与并行下载）</span>
-    <span class="btn-sub">若加速镜像不可用，点 <a href="https://github.com/tangxueqi/photoresizer-updates/releases/download/v208/BingYing-1.138.apk" target="_blank">GitHub 直链</a> 或换用桌面浏览器下载后再传手机</span>
+    <span class="btn-sub">若加速镜像不可用，点 <a href="https://github.com/tangxueqi/photoresizer-updates/releases/download/v209/BingYing-1.139.apk" target="_blank">GitHub 直链</a> 或换用桌面浏览器下载后再传手机</span>
     <div class="warn" style="margin-top:14px;background:#E8F6EE;border-color:#A9D9BE;color:#1F6B3A">
-      <strong>✓ v1.138：「分析图片」改回自动判定，不再让你自己在乱码里翻</strong><br>
+      <strong>✓ v1.139：视频号下载恢复——主解析服务登录态过期时自动走匿名备用链路</strong><br>
+      你反馈的链接 <code>https://weixin.qq.com/sph/APjeZgdWeA</code> 我实测复现了：链接本身有效，失败原因是主解析服务返回 <code>HTTP 401 登录态已过期</code>（上游元宝 Cookie 到期），不是 App 识别不了，也不是视频被删。这版新增<strong>匿名备用解析</strong>：主服务 401 时立即切换，只发送公开分享链接、不携带任何账号 Cookie，拿到 H.264 明文 mp4 直链后保存到相册。你这条链接已实测解析成功并下载验证：33.7 秒、760×1352、H.264/AAC、783,072 字节，可正常播放。只有公开分享内容可用；私密/付费/直播仍会明确提示。全量单测 <strong>813 通过、0 失败、2 跳过</strong>。同一张正式签名证书，可直接覆盖安装。
+    </div>
+    <div class="warn" style="margin-top:10px;background:#F0F4FF;border-color:#A9BFE0;color:#1F3D6B">
+      <strong>v1.138（历史）：「分析图片」改回自动判定，不再让你自己在乱码里翻</strong><br>
       按你最后确认的口径：首页只保留一个<strong>「分析图片」</strong>按钮，选图后直接在文件字节里搜索 AI 生成标识串。命中 <code>doubao</code>、你给的国标 TC260 AIGC 标识块，或真实豆包图里常见的国标 AIGC 字段（命名空间 URL、<code>&lt;TC260:AIGC&gt;</code>、<code>ContentProducer</code>、<code>ProduceID</code>、<code>{"AIGC"}</code>、<code>"Label":"1"</code>）任一特征，就大字显示「<strong>经检测，AI 制作</strong>」；都没命中则显示「<strong>非 AI 制作</strong>」，并列出命中依据和已扫描字节数。<strong>大小写不敏感，兼容 UTF-8/GBK/UTF-16 等字节视图</strong>。等价于「改后缀 txt → 文本打开 → Ctrl+F 搜串」，但不真的改名、不改写文件、不用改回后缀，<strong>不存在损坏原图的风险</strong>；只读识别，不删改任何 AI 标识。全量单测 <strong>807 项通过、0 失败、2 跳过</strong>。同一张正式签名证书，可直接覆盖安装。
     </div>
     <div class="warn" style="margin-top:10px;background:#F0F4FF;border-color:#A9BFE0;color:#1F3D6B">
