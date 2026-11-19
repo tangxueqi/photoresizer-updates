@@ -1,13 +1,13 @@
 {
-  "versionCode": 139,
-  "versionName": "1.138",
-  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v208/BingYing-1.138.apk",
-  "size": 29605260,
+  "versionCode": 140,
+  "versionName": "1.139",
+  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v209/BingYing-1.139.apk",
+  "size": 29605274,
   "mirrors": [
-    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v208/BingYing-1.138.apk",
-    "https://ghfast.top/https://github.com/tangxueqi/photoresizer-updates/releases/download/v208/BingYing-1.138.apk",
-    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v208/BingYing-1.138.apk",
-    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v208/BingYing-1.138.apk"
+    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v209/BingYing-1.139.apk",
+    "https://ghfast.top/https://github.com/tangxueqi/photoresizer-updates/releases/download/v209/BingYing-1.139.apk",
+    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v209/BingYing-1.139.apk",
+    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v209/BingYing-1.139.apk"
   ],
-  "notes": "v1.138 「分析图片」从文本查看器改回自动判定：选图后在文件字节里搜 AI 生成标识串，任一命中即大字显示『经检测，AI 制作』，否则『非 AI 制作』，并列出命中依据。判定串包含你指定的 doubao 与 TC260 AIGC 标识块，并扩展国标 AIGC 实测特征（命名空间URL、TC260:AIGC、ContentProducer、ProduceID、AIGC JSON、Label=1）——因为真实豆包图往往没有 doubao 字样，只写国标 AIGC JSON，只搜 doubao 会误判。大小写不敏感、兼容 UTF-8/GBK/UTF-16。只读，等价于改后缀用文本搜串但不改文件、不损原图、不删改 AI 标识。全量单测 807 通过、0 失败、2 跳过。同一张正式签名证书，可直接覆盖安装。"
+  "notes": "v1.139 修复视频号下载失败：主解析服务（wx.defou.ai）返回 HTTP 401 登录态已过期，导致所有分享链接都显示失败。新增匿名备用解析，主服务登录态失效时立即切换，只发送公开分享链接、不带账号 Cookie，解析出 H.264 明文 mp4 后保存到相册。你反馈的 https://weixin.qq.com/sph/APjeZgdWeA 已实测成功：33.7 秒、760×1352、H.264/AAC、783,072 字节，可正常播放。私密/付费/直播内容仍会明确提示。全量单测 813 通过、0 失败、2 跳过。同一张正式签名证书，可直接覆盖安装。"
 }
