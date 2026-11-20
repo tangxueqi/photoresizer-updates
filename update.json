@@ -1,13 +1,13 @@
 {
-  "versionCode": 140,
-  "versionName": "1.139",
-  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v209/BingYing-1.139.apk",
-  "size": 29605274,
+  "versionCode": 141,
+  "versionName": "1.140",
+  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v210/BingYing-1.140.apk",
+  "size": 29605260,
   "mirrors": [
-    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v209/BingYing-1.139.apk",
-    "https://ghfast.top/https://github.com/tangxueqi/photoresizer-updates/releases/download/v209/BingYing-1.139.apk",
-    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v209/BingYing-1.139.apk",
-    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v209/BingYing-1.139.apk"
+    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v210/BingYing-1.140.apk",
+    "https://ghfast.top/https://github.com/tangxueqi/photoresizer-updates/releases/download/v210/BingYing-1.140.apk",
+    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v210/BingYing-1.140.apk",
+    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v210/BingYing-1.140.apk"
   ],
-  "notes": "v1.139 修复视频号下载失败：主解析服务（wx.defou.ai）返回 HTTP 401 登录态已过期，导致所有分享链接都显示失败。新增匿名备用解析，主服务登录态失效时立即切换，只发送公开分享链接、不带账号 Cookie，解析出 H.264 明文 mp4 后保存到相册。你反馈的 https://weixin.qq.com/sph/APjeZgdWeA 已实测成功：33.7 秒、760×1352、H.264/AAC、783,072 字节，可正常播放。私密/付费/直播内容仍会明确提示。全量单测 813 通过、0 失败、2 跳过。同一张正式签名证书，可直接覆盖安装。"
+  "notes": "v1.140「分析图片」新增 EXIF GPS 定位读取与显示：选图后除了原有的 AI 标识检测，还会读取照片 EXIF 中的 GPS 坐标，显示纬度、经度（十进制度 + 度分秒），有则一并显示海拔与 UTC 定位时间；没有 GPS 则提示「这张图片未包含 GPS 定位信息」（截图、社交转发图通常已被清除 GPS）。全程只读，不改动原图、不删改任何 AI 标识与 EXIF 数据。全量单测 821 通过、0 失败、2 跳过。同一张正式签名证书，可直接覆盖安装。"
 }
