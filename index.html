@@ -77,14 +77,18 @@
     <div class="meta">
       <span class="tag">Android 7.0+</span>
       <span class="tag">约 29 MB</span>
-      <span class="tag">版本 1.139</span>
+      <span class="tag">版本 1.140</span>
       <span class="tag">正式签名版</span>
     </div>
-    <a class="btn" href="https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v209/BingYing-1.139.apk" download>下载 APK 安装包（v1.139）</a>
+    <a class="btn" href="https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v210/BingYing-1.140.apk" download>下载 APK 安装包（v1.140）</a>
     <span class="btn-sub">国内加速下载地址（GitHub Releases 加速镜像，支持多镜像自动切换与并行下载）</span>
-    <span class="btn-sub">若加速镜像不可用，点 <a href="https://github.com/tangxueqi/photoresizer-updates/releases/download/v209/BingYing-1.139.apk" target="_blank">GitHub 直链</a> 或换用桌面浏览器下载后再传手机</span>
+    <span class="btn-sub">若加速镜像不可用，点 <a href="https://github.com/tangxueqi/photoresizer-updates/releases/download/v210/BingYing-1.140.apk" target="_blank">GitHub 直链</a> 或换用桌面浏览器下载后再传手机</span>
     <div class="warn" style="margin-top:14px;background:#E8F6EE;border-color:#A9D9BE;color:#1F6B3A">
-      <strong>✓ v1.139：视频号下载恢复——主解析服务登录态过期时自动走匿名备用链路</strong><br>
+      <strong>✓ v1.140：「分析图片」新增 EXIF GPS 定位坐标读取与显示</strong><br>
+      选图后除了原有的 <strong>AI 制作 / 非 AI 制作</strong> 检测，还会读取照片 EXIF 中的 <strong>GPS 定位坐标</strong>：显示纬度、经度（十进制度 <code>39.904200° N</code> + 度分秒 <code>39°54'15.12" N</code>），有则一并显示海拔与 UTC 定位时间；没有 GPS 则明确提示「这张图片未包含 GPS 定位信息」。<strong>截图、经社交软件转发的图片通常会被清除 GPS</strong>，属于正常现象。全程只读——不改动原图，也不删除/篡改/隐匿任何 AI 标识与 EXIF 数据。全量单测 <strong>821 通过、0 失败、2 跳过</strong>。同一张正式签名证书，可直接覆盖安装。
+    </div>
+    <div class="warn" style="margin-top:10px;background:#F0F4FF;border-color:#A9BFE0;color:#1F3D6B">
+      <strong>v1.139（历史）：视频号下载恢复——主解析服务登录态过期时自动走匿名备用链路</strong><br>
       你反馈的链接 <code>https://weixin.qq.com/sph/APjeZgdWeA</code> 我实测复现了：链接本身有效，失败原因是主解析服务返回 <code>HTTP 401 登录态已过期</code>（上游元宝 Cookie 到期），不是 App 识别不了，也不是视频被删。这版新增<strong>匿名备用解析</strong>：主服务 401 时立即切换，只发送公开分享链接、不携带任何账号 Cookie，拿到 H.264 明文 mp4 直链后保存到相册。你这条链接已实测解析成功并下载验证：33.7 秒、760×1352、H.264/AAC、783,072 字节，可正常播放。只有公开分享内容可用；私密/付费/直播仍会明确提示。全量单测 <strong>813 通过、0 失败、2 跳过</strong>。同一张正式签名证书，可直接覆盖安装。
     </div>
     <div class="warn" style="margin-top:10px;background:#F0F4FF;border-color:#A9BFE0;color:#1F3D6B">
