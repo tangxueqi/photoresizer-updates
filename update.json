@@ -1,13 +1,13 @@
 {
-  "versionCode": 141,
-  "versionName": "1.140",
-  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v210/BingYing-1.140.apk",
-  "size": 29605260,
+  "versionCode": 142,
+  "versionName": "1.141",
+  "url": "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v211/BingYing-1.141.apk",
+  "size": 29605262,
   "mirrors": [
-    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v210/BingYing-1.140.apk",
-    "https://ghfast.top/https://github.com/tangxueqi/photoresizer-updates/releases/download/v210/BingYing-1.140.apk",
-    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v210/BingYing-1.140.apk",
-    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v210/BingYing-1.140.apk"
+    "https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v211/BingYing-1.141.apk",
+    "https://ghfast.top/https://github.com/tangxueqi/photoresizer-updates/releases/download/v211/BingYing-1.141.apk",
+    "https://ghproxy.net/https://github.com/tangxueqi/photoresizer-updates/releases/download/v211/BingYing-1.141.apk",
+    "https://github.com/tangxueqi/photoresizer-updates/releases/download/v211/BingYing-1.141.apk"
   ],
-  "notes": "v1.140「分析图片」新增 EXIF GPS 定位读取与显示：选图后除了原有的 AI 标识检测，还会读取照片 EXIF 中的 GPS 坐标，显示纬度、经度（十进制度 + 度分秒），有则一并显示海拔与 UTC 定位时间；没有 GPS 则提示「这张图片未包含 GPS 定位信息」（截图、社交转发图通常已被清除 GPS）。全程只读，不改动原图、不删改任何 AI 标识与 EXIF 数据。全量单测 821 通过、0 失败、2 跳过。同一张正式签名证书，可直接覆盖安装。"
+  "notes": "v1.141「分析图片」改为字节文本编辑器：选图后把图片字节按 Latin-1 一字节一字符解码进可编辑文本框，旁边「改名另存」按钮打开系统另存面板，你自己改文件名、选位置。未编辑直接另存与原图逐字节完全一致（100% 保真）；编辑后按文本框内容编码写出。原图全程只读、不改动。按你的要求去掉了原有的 AI 检测与 GPS，这个入口只做字节文本编辑与另存。全量单测 812 通过、0 失败、2 跳过。同一张正式签名证书，可直接覆盖安装。"
 }
