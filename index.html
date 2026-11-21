@@ -77,14 +77,18 @@
     <div class="meta">
       <span class="tag">Android 7.0+</span>
       <span class="tag">约 29 MB</span>
-      <span class="tag">版本 1.141</span>
+      <span class="tag">版本 1.142</span>
       <span class="tag">正式签名版</span>
     </div>
-    <a class="btn" href="https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v211/BingYing-1.141.apk" download>下载 APK 安装包（v1.141）</a>
+    <a class="btn" href="https://gh-proxy.com/https://github.com/tangxueqi/photoresizer-updates/releases/download/v212/BingYing-1.142.apk" download>下载 APK 安装包（v1.142）</a>
     <span class="btn-sub">国内加速下载地址（GitHub Releases 加速镜像，支持多镜像自动切换与并行下载）</span>
-    <span class="btn-sub">若加速镜像不可用，点 <a href="https://github.com/tangxueqi/photoresizer-updates/releases/download/v211/BingYing-1.141.apk" target="_blank">GitHub 直链</a> 或换用桌面浏览器下载后再传手机</span>
+    <span class="btn-sub">若加速镜像不可用，点 <a href="https://github.com/tangxueqi/photoresizer-updates/releases/download/v212/BingYing-1.142.apk" target="_blank">GitHub 直链</a> 或换用桌面浏览器下载后再传手机</span>
     <div class="warn" style="margin-top:14px;background:#E8F6EE;border-color:#A9D9BE;color:#1F6B3A">
-      <strong>✓ v1.141：「分析图片」改为字节文本编辑器——可编辑 + 改名另存</strong><br>
+      <strong>✓ v1.142：修复「分析图片」大文件卡顿——改分块加载</strong><br>
+      你反馈「文件太大了，卡机」。根因是上一版把整张图（几百万字符）一次性塞进文本框，渲染不过来。这版改为<strong>分块加载</strong>：一次只显示 <strong>16KB</strong>，用「上一块 / 下一块」翻页浏览编辑，<strong>翻页不丢改动</strong>；另存时流式按块拼接、内存恒定，再大的图也不卡。<strong>一块都没改就另存</strong>的文件与原图<strong>逐字节完全一致（100% 保真）</strong>，改过的块按文本框内容编码写出。全量单测 <strong>815 通过、0 失败、2 跳过</strong>。同一张正式签名证书，可直接覆盖安装。
+    </div>
+    <div class="warn" style="margin-top:10px;background:#F0F4FF;border-color:#A9BFE0;color:#1F3D6B">
+      <strong>v1.141（历史）：「分析图片」改为字节文本编辑器——可编辑 + 改名另存</strong><br>
       按你的要求，点「分析图片」选图后，把图片字节按 <strong>Latin-1 一字节一字符</strong>当文本打开，直接显示在<strong>可编辑文本框</strong>里；旁边的<strong>「改名另存」</strong>按钮打开系统另存面板，你自己改文件名、选保存位置。等价于电脑上「改后缀 .txt → 记事本打开 → 编辑 → 另存为」。<strong>不编辑直接另存</strong>的文件与原图<strong>逐字节完全一致（100% 保真）</strong>；编辑后则按文本框内容编码写出。原图全程只读、不改动。按你的口径<strong>去掉了上一版的 AI 检测与 GPS</strong>，这个入口只做字节文本编辑与另存。全量单测 <strong>812 通过、0 失败、2 跳过</strong>。同一张正式签名证书，可直接覆盖安装。
     </div>
     <div class="warn" style="margin-top:10px;background:#F0F4FF;border-color:#A9BFE0;color:#1F3D6B">
